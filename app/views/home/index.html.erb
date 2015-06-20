@@ -1,0 +1,117 @@
+
+    <div class="container">
+
+      <div class="row-header">
+        <header>
+            <div id="logo" align="center">
+              <%= image_tag("logo_vp_word1.png", :alt => "logvp") %>
+            </div>
+        </header>
+      </div>
+
+      <%= render "shared/navbar_2nd" %>
+
+      <div class="row row-offcanvas row-offcanvas-right">
+        <div class="col-xs-12 col-sm-9">
+          <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+          </p>
+          
+          <%= render "shared/sliderdua" %>
+
+          <div class="row">
+            
+            <div class="row" style="margin-left:5px;" ><h2>Coupons</h2></div>
+            <div class="row">
+              <div class="col-xs-4 col-lg-3">
+                <%= image_tag("constellations.gif", :alt => "colom2", class: "thumbnail") %>
+                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac. </p>
+                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+              </div><!--/.col-xs-6.col-lg-4-->
+
+              <div class="col-xs-4 col-lg-3">
+                <%= image_tag("dolphins.gif", :alt => "colom2", class: "thumbnail") %>
+                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac. </p>
+                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+              </div><!--/.col-xs-6.col-lg-4-->
+            
+              <div class="col-xs-4 col-lg-3">
+                <%= image_tag("imageswedd.jpg", :alt => "colom2", class: "thumbnail") %>
+                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac. </p>
+                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+              </div><!--/.col-xs-6.col-lg-4-->
+
+              <div class="col-xs-4 col-lg-3">
+                <%= image_tag("love.gif", :alt => "colom2", class: "thumbnail") %>
+                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac. </p>
+                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+              </div><!--/.col-xs-6.col-lg-4-->
+            </div>
+
+            <div class="row" style="margin-left:5px;" ><h2>Coupons</h2></div>
+            <div class="row">
+              <div class="col-xs-4 col-lg-3">
+                <%= image_tag("constellations.gif", :alt => "colom2", class: "thumbnail") %>
+                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac. </p>
+                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+              </div><!--/.col-xs-6.col-lg-4-->
+
+              <div class="col-xs-4 col-lg-3">
+                <%= image_tag("dolphins.gif", :alt => "colom2", class: "thumbnail") %>
+                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac. </p>
+                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+              </div><!--/.col-xs-6.col-lg-4-->
+            
+              <div class="col-xs-4 col-lg-3">
+                <%= image_tag("imageswedd.jpg", :alt => "colom2", class: "thumbnail") %>
+                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac. </p>
+                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+              </div><!--/.col-xs-6.col-lg-4-->
+
+              <div class="col-xs-4 col-lg-3">
+                <%= image_tag("love.gif", :alt => "colom2", class: "thumbnail") %>
+                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac. </p>
+                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+              </div><!--/.col-xs-6.col-lg-4-->
+            </div>
+
+            <div class="row" style="margin-left:5px;" ><h2>Coupons</h2></div>
+            <div class="row">
+              <div class="col-xs-4 col-lg-3">
+                <%= image_tag("constellations.gif", :alt => "colom2", class: "thumbnail") %>
+                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac. </p>
+                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+              </div><!--/.col-xs-6.col-lg-4-->
+
+              <div class="col-xs-4 col-lg-3">
+                <%= image_tag("dolphins.gif", :alt => "colom2", class: "thumbnail") %>
+                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac. </p>
+                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+              </div><!--/.col-xs-6.col-lg-4-->
+            
+              <div class="col-xs-4 col-lg-3">
+                <%= image_tag("imageswedd.jpg", :alt => "colom2", class: "thumbnail") %>
+                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac. </p>
+                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+              </div><!--/.col-xs-6.col-lg-4-->
+
+              <div class="col-xs-4 col-lg-3">
+                <%= image_tag("love.gif", :alt => "colom2", class: "thumbnail") %>
+                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac. </p>
+                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+              </div><!--/.col-xs-6.col-lg-4-->
+              <p>
+                <%= social_share_button_tag(@home.title) %>
+              </p>
+            </div>
+
+          </div><!--/row-->
+        </div><!--/.col-xs-12.col-sm-9-->
+
+        <%= render 'shared/sidebar' %>
+
+      </div><!--/row-->
+
+      <hr>
+
+    </div><!--/.container-->
