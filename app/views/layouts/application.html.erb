@@ -33,8 +33,12 @@
 
 </head>
 <body>
-<%= render 'shared/navbar' %>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 
+<%= render 'shared/navbar' %>
+<%= render 'shared/row_header' %>
+	
 <div class="main-page-content <%= controller.controller_name %>" >
 	<%= yield %>
 </div>

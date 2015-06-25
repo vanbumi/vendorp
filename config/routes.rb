@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+  resources :articles, path: 'admin/articles'
+   
+  devise_for :admins
   get 'home/index'
+  resources :admins
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

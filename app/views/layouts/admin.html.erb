@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Project1</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<style type="text/css">
+	h2{
+	    /*margin: 0;*/     
+	    /*color: #666;*/
+	    padding-top: 20px;
+	    /*font-size: 52px;*/
+	    /*font-family: "trebuchet ms", sans-serif;*/    
+	}
+	.item{
+	    background: #EC008C;    
+	    text-align: center;
+	    height: 450px !important;
+	}
+	.carousel{
+	    margin-top: 20px;
+	}
+	.bs-example{
+		margin: 20px;
+	}
+	</style>
+
+</head>
+<body>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  <%= render 'shared/admin_nav' %>
+  <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+              <li class="active">
+                <a href="#">Overview <span class="sr-only">(current)</span></a>
+              </li>
+              <li><a href="#">Reports</a></li>
+              <li><a href="#">Analytics</a></li>
+              <li><a href="#">Export</a></li>
+            </ul>
+            <ul class="nav nav-sidebar">
+              <li><a href="">Nav item</a></li>
+              <li><a href="">Nav item again</a></li>
+              <li><a href="">One more nav</a></li>
+              <li><a href="">Another nav item</a></li>
+              <li><a href="">More navigation</a></li>
+            </ul>
+            <ul class="nav nav-sidebar">
+              <li><a href="">Nav item again</a></li>
+              <li><a href="">One more nav</a></li>
+              <li><a href="">Another nav item</a></li>
+            </ul>
+          </div>
+        
+          <!-- main-page -->
+          <div class="main-page-content <%= controller.controller_name %>" >
+            <%= yield %>
+          </div>
+          <!-- # main-page -->
+        
+        </div>
+      </div>
+
+</body>
+</html>
