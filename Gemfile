@@ -11,6 +11,12 @@ gem 'mysql2'
 
 gem 'devise', '~> 3.5.1'
 
+gem 'capistrano', '~> 3.4.0'
+	gem 'capistrano-bundler', '~> 1.1.4'
+	gem 'capistrano-rails', '~> 1.1.3'
+	# Add this if you're using rvm
+	gem 'capistrano-rvm', github: "capistrano/rvm"
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -52,10 +58,6 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
-  gem 'capistrano', '~> 3.4.0'
-	gem 'capistrano-bundler', '~> 1.1.4'
-	gem 'capistrano-rails', '~> 1.1.3'
-	# Add this if you're using rvm
-	gem 'capistrano-rvm', github: "capistrano/rvm"
+  
 end
 
