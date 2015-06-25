@@ -31,4 +31,7 @@ test:
 
 production:
   <<: *default
-  database: 
+  database: vpdb
+  username: root
+  password: caca77
+  host: localhost
