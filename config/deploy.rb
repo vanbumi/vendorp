@@ -8,9 +8,10 @@ set :repo_url, 'https://github.com/vanbumi/vendorp.git'
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, '/root/home/vendorp'
+set :deploy_to, '/home/deploy/vendorp'
 set :linked_files, %w{config/database.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :tmp_dir, "/home/deploy/tmp"
 
 # Default value for :scm is :git
 # set :scm, :git
