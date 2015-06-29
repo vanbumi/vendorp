@@ -1,6 +1,6 @@
 class AdminsController < ApplicationController
   layout 'admin'
-  before_action :authenticate_admin!
+  # before_action :authenticate_admin!
 
   before_action :set_admin, only: [:show, :edit, :update, :destroy]
 
