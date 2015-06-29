@@ -1,75 +1,143 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Project1</title>
+  <title>Vendor Pernikahan</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<style type="text/css">
-	h2{
-	    /*margin: 0;*/     
-	    /*color: #666;*/
-	    padding-top: 20px;
-	    /*font-size: 52px;*/
-	    /*font-family: "trebuchet ms", sans-serif;*/    
-	}
-	.item{
-	    background: #EC008C;    
-	    text-align: center;
-	    height: 450px !important;
-	}
-	.carousel{
-	    margin-top: 20px;
-	}
-	.bs-example{
-		margin: 20px;
-	}
-	</style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <style type="text/css">
+  h2{
+      /*margin: 0;*/     
+      /*color: #666;*/
+      padding-top: 20px;
+      /*font-size: 52px;*/
+      /*font-family: "trebuchet ms", sans-serif;*/    
+  }
+  .item{
+      background: #EC008C;    
+      text-align: center;
+      height: 450px !important;
+  }
+  .carousel{
+      margin-top: 20px;
+  }
+  .bs-example{
+    margin: 20px;
+  }
+  </style>
 
 </head>
 <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 
-  <%= render 'shared/admin_nav' %>
-  <div class="container-fluid">
-        <div class="row">
-          <div class="col-sm-3 col-md-2 sidebar">
-            <ul class="nav nav-sidebar">
-              <li class="active">
-                <a href="#">Overview <span class="sr-only">(current)</span></a>
-              </li>
-              <li><a href="#">Reports</a></li>
-              <li><a href="#">Analytics</a></li>
-              <li><a href="#">Export</a></li>
-            </ul>
-            <ul class="nav nav-sidebar">
-              <li><a href="">Nav item</a></li>
-              <li><a href="">Nav item again</a></li>
-              <li><a href="">One more nav</a></li>
-              <li><a href="">Another nav item</a></li>
-              <li><a href="">More navigation</a></li>
-            </ul>
-            <ul class="nav nav-sidebar">
-              <li><a href="">Nav item again</a></li>
-              <li><a href="">One more nav</a></li>
-              <li><a href="">Another nav item</a></li>
-            </ul>
-          </div>
-        
-          <!-- main-page -->
-          <div class="main-page-content <%= controller.controller_name %>" >
-            <%= yield %>
-          </div>
-          <!-- # main-page -->
-        
+<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Administrator Vendor Pernikahan</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <!-- <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Settings</a></li> -->
+            <li><a href="#">Profile</a></li>
+            <li><%= link_to 'Sign Out', destroy_admin_session_path, method: :delete %></li>
+          </ul>
+          <!-- <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form> -->
         </div>
       </div>
+    </nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <div class="col-sm-3 col-md-2 sidebar">
+      <div class="panel">
+        <div class="panel-heading">
+          <h3 class="title"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</h3>
+        </div>
+            <!-- Accordion -->
+              <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Article
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body">
+                      <%= link_to "All Articles", articles_path %>
+                    </div>
+                    <div class="panel-body">
+                      <%= link_to "Add New", new_article_path %>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingTwo">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Vendor
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="panel-body">
+                      All Vendors
+                    </div>
+                    <div class="panel-body">
+                      New Vendor
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingThree">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Admin
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                    <div class="panel-body">
+                      <%= link_to "All Admins", admins_path %>
+                    </div>
+                    <div class="panel-body">
+                      New Admin
+                    </div>
+                  </div>
+                </div>
+              </div><!-- #Accordion -->
+                      
+          
+      </div> <!-- panel -->  
+    </div> <!-- #sidebar -->
+    <!-- Mainbar -->
+    <div class="col-sm-9 col-md-10 main">
+      <div class="main-page-content <%= controller.controller_name %>" >
+        <%= yield %>
+      </div>
+    </div> <!-- #mainbar -->
+  </div>
+
+</div>
+
+
 
 </body>
 </html>

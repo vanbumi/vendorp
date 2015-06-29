@@ -2,10 +2,11 @@ Rails.application.routes.draw do
   get 'undev/index'
 
   resources :articles, path: 'admin/articles'
-   
+  resources :admins, path: 'admin/admins'
+
   devise_for :admins
+  
   get 'home/index'
-  resources :admins
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

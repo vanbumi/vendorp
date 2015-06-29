@@ -1,23 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+<h1><%= @article.title %></h1>
 
+<p>
+  <%= image_tag(@article.image_url, :alt => @article.title) %>
+</p>
+  
 <p>
   <strong>Category:</strong>
   <%= @article.category %>
 </p>
 
 <p>
-  <strong>Body:</strong>
   <%= @article.body %>
-</p>
-
-<p>
-  <strong>Image url:</strong>
-  <%= @article.image_url %>
 </p>
 
 <p>
