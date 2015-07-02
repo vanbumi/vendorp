@@ -7,7 +7,9 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-        <a class="navbar-brand" href="#">VendorPernikahan.com</a>
+        <div class="navbar-brand">
+          <%= image_tag('logo_vp_word2.png', :alt => 'small-logo') %>
+        </div>
 
         <form class="navbar-form navbar-left" role="search">
           <div class="form-group">
@@ -21,11 +23,21 @@
         
     </div>
       <div id="navbar" class="collapse navbar-collapse">
+        <% if vendor_signed_in? %>
         <ul class="nav navbar-nav navbar-right">
-          <li class=""><a href="#">Daftar</a></li>
-          <li><a href="#about">Login</a></li>
-          <li><a href="#contact">Vendor</a></li>
+          <div class="navbar-brand">
+            <%= current_vendor.email %> |
+            <%= link_to 'Logout', destroy_vendor_session_path, method: :delete %> |
+            <%= link_to 'Vendor Area', vendors_page_path %>
+          </div>  
+            <% else %>
+          <div class="navbar-brand navbar-right">  
+            <%= link_to 'Login', new_vendor_session_path %> |
+            <%= link_to 'Register', new_vendor_registration_path %>    
+          </div>
         </ul>
+        <% end %>
       </div><!-- /.nav-collapse -->
   </div><!-- /.container -->
 </nav><!-- /.navbar -->
+

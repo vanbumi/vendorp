@@ -1,8 +1,16 @@
 Rails.application.routes.draw do
+  devise_for :vendors
   get 'undev/index'
 
   resources :articles, path: 'admin/articles'
   resources :admins, path: 'admin/admins'
+  resources :vendors, path: 'admin/vendors'
+  get 'vendors/page'
+  # resources :vendors do
+  #   member do
+  #     get :vendors, :as => 'admin/vendors'
+  #   end
+  # end
 
   devise_for :admins
   
@@ -13,7 +21,9 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'home#index'
-  root 'undev#index'
+  # root 'undev#index'
+  # Switcher <--
+  root 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
