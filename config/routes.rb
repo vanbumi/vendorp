@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
+  
+  resources :categories, path: 'admin/categories'
   devise_for :vendors
   get 'undev/index'
 
   resources :articles, path: 'admin/articles'
   resources :admins, path: 'admin/admins'
+  
   resources :vendors, path: 'admin/vendors'
+
+  resources :home
+
   get 'vendors/page'
   # resources :vendors do
   #   member do

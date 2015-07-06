@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Vendor Pernikahan</title>
+  <title>Halaman Vendor</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -51,6 +51,10 @@
           <ul class="nav navbar-nav navbar-right">
 
             <!-- <li><a href="#">Dashboard</a></li>-->
+            <% if current_vendor.supervendor? %>
+            <li><%= link_to 'Halaman Admin', admins_path %></li>
+            <% end %>
+
             <% if vendor_signed_in? %>
             <li><%= link_to current_vendor.name, current_vendor %></li>
             <li><%= link_to 'My Profile', current_vendor %></li>

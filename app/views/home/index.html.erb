@@ -1,5 +1,5 @@
 
-    <div class="container">
+<div class="container">
 
       <!-- <div class="row-header">
         <header>
@@ -9,106 +9,88 @@
         </header>
       </div> -->
 
-      <%= render "shared/navbar_2nd" %>
+  <%= render "shared/navbar_2nd" %>
 
-      <div class="row row-offcanvas row-offcanvas-right">
-        <div class="col-xs-12 col-sm-9">
-          <p class="pull-right visible-xs">
-            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
-          </p>
+  <!-- <div class="row row-offcanvas row-offcanvas-right"> -->
+  <div class="row">
+    <div class="col-xs-12 col-sm-9">
+      <p class="pull-right visible-xs">
+        <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+      </p>
           
-          <%= render "shared/sliderdua" %>
+      <%= render "shared/sliderdua" %>  
 
-          <div class="row">
-            
-            <div class="row" style="margin-left:5px;" ><h2>Coupons</h2></div>
-            <div class="row">
-              <div class="col-xs-4 col-lg-3">
-                <%= image_tag("constellations.gif", :alt => "colom2", class: "thumbnail") %>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac. </p>
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-              </div><!--/.col-xs-6.col-lg-4-->
+      <div class="container">  
+        <!-- <div class="row" style="margin-left:5px;" ><h3>Coupons</h3></div> -->
+        
+        <div class="row">
+          <h3>Coupons</h3>
+          <ul class="list-inline">
+            <% @articles.each do |article| %>
+            <li>
+              <%= image_tag(article.image_url, :alt => 'article.title', class: 'img-responsive') %>
+              <div class="caption">
+                <h4><%= truncate(article.title, length: 21) %></h4>
+              </div>
+              <p>Category: <%= article.category.title %></p>              
+              <p><%= truncate(article.body, length: 30) %></p>
+              <p><%= link_to 'Read', home_path(article) %></p>
+            </li>
+            <% end %>
+          </ul>
+        </div>
+        
+        <div class="clearfix visible-xs-block"></div>
+        
+        <div class="row">
+          <h3>Articles Event</h3>
+          <ul class="list-inline">
+            <% @articles2.each do |article2| %>
+            <li>
+              <%= image_tag(article2.image_url, :alt => 'article2.title', class: 'img-responsive') %>
+              <div class="caption">
+                <h4><%= truncate(article2.title, length: 21) %></h4>
+              </div>
+              <p>Category: <%= article2.category.title %></p>              
+              <p><%= truncate(article2.body, length: 30) %></p>
+              <p><%= link_to 'Read', home_path(article2) %></p>
+            </li>
+            <% end %>
+          </ul>
+        </div> 
 
-              <div class="col-xs-4 col-lg-3">
-                <%= image_tag("dolphins.gif", :alt => "colom2", class: "thumbnail") %>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac. </p>
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-              </div><!--/.col-xs-6.col-lg-4-->
-            
-              <div class="col-xs-4 col-lg-3">
-                <%= image_tag("imageswedd.jpg", :alt => "colom2", class: "thumbnail") %>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac. </p>
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-              </div><!--/.col-xs-6.col-lg-4-->
+        <div class="clearfix visible-xs-block"></div>
+        
+        <div class="row">
+          <h3>Events</h3>
+          <ul class="list-inline">
+            <% @articles3.each do |article3| %>
+            <li>
+              <%= image_tag(article3.image_url, :alt => 'article3.title', class: 'img-responsive') %>
+              <div class="caption">
+                <h4><%= truncate(article3.title, length: 21) %></h4>
+              </div>
+              <p>Category: <%= article3.category.title %></p>              
+              <p><%= truncate(article3.body, length: 30) %></p>
+              <p><%= link_to 'Read', home_path(article3) %></p>
+            </li>
+            <% end %>
+          </ul>
+        </div>        
+        
+        <div class="clearfix visible-xs-block"></div>
+        
+      </div>  
 
-              <div class="col-xs-4 col-lg-3">
-                <%= image_tag("love.gif", :alt => "colom2", class: "thumbnail") %>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac. </p>
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-              </div><!--/.col-xs-6.col-lg-4-->
-            </div>
+      <div class="row">
+                              
+    </div><!--/row-->
+    </div><!--/.col-xs-12.col-sm-9-->
 
-            <div class="row" style="margin-left:5px;" ><h2>Coupons</h2></div>
-            <div class="row">
-              <div class="col-xs-4 col-lg-3">
-                <%= image_tag("constellations.gif", :alt => "colom2", class: "thumbnail") %>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac. </p>
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-              </div><!--/.col-xs-6.col-lg-4-->
+    <%= render 'shared/sidebar' %>
 
-              <div class="col-xs-4 col-lg-3">
-                <%= image_tag("dolphins.gif", :alt => "colom2", class: "thumbnail") %>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac. </p>
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-              </div><!--/.col-xs-6.col-lg-4-->
-            
-              <div class="col-xs-4 col-lg-3">
-                <%= image_tag("imageswedd.jpg", :alt => "colom2", class: "thumbnail") %>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac. </p>
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-              </div><!--/.col-xs-6.col-lg-4-->
+  </div><!--/row-->
 
-              <div class="col-xs-4 col-lg-3">
-                <%= image_tag("love.gif", :alt => "colom2", class: "thumbnail") %>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac. </p>
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-              </div><!--/.col-xs-6.col-lg-4-->
-            </div>
+  <hr>
 
-            <div class="row" style="margin-left:5px;" ><h2>Coupons</h2></div>
-            <div class="row">
-              <div class="col-xs-4 col-lg-3">
-                <%= image_tag("constellations.gif", :alt => "colom2", class: "thumbnail") %>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac. </p>
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-              </div><!--/.col-xs-6.col-lg-4-->
-
-              <div class="col-xs-4 col-lg-3">
-                <%= image_tag("dolphins.gif", :alt => "colom2", class: "thumbnail") %>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac. </p>
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-              </div><!--/.col-xs-6.col-lg-4-->
-            
-              <div class="col-xs-4 col-lg-3">
-                <%= image_tag("imageswedd.jpg", :alt => "colom2", class: "thumbnail") %>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac. </p>
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-              </div><!--/.col-xs-6.col-lg-4-->
-
-              <div class="col-xs-4 col-lg-3">
-                <%= image_tag("love.gif", :alt => "colom2", class: "thumbnail") %>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac. </p>
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-              </div><!--/.col-xs-6.col-lg-4-->
-            </div>
-
-          </div><!--/row-->
-        </div><!--/.col-xs-12.col-sm-9-->
-
-        <%= render 'shared/sidebar' %>
-
-      </div><!--/row-->
-
-      <hr>
-
-    </div><!--/.container-->
+</div><!--/.container-->

@@ -45,15 +45,21 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Administrator Vendor Pernikahan</a>
+          <a class="navbar-brand" href="#">Halaman Administrator VP</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
+        
           <ul class="nav navbar-nav navbar-right">
             <!-- <li><a href="#">Dashboard</a></li>-->
-            <li><a href="#">Admin</a></li> 
-            <li><a href="#">Profile</a></li>
+          <% if current_admin.superadmin? %>
+            <li><%= link_to 'Superadmin : ' %></li>
+          <% end %>
+          <% if admin_signed_in? %>
+            <li><%= link_to current_admin.name %></li> 
+            <li><%= link_to 'My Profile', current_admin %></li>
             <li><%= link_to 'Sign Out', destroy_admin_session_path, method: :delete %></li>
-            <!-- <li class="dropdown">
+          <% end %>
+              <!-- <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Action</a></li>
@@ -69,6 +75,7 @@
             <input type="text" class="form-control" placeholder="Search...">
           </form> -->
           </ul>
+          
         </div>
       </div>
     </nav>
@@ -110,10 +117,10 @@
                   </div>
                   <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                     <div class="panel-body">
-                      All Vendors
+                      <%= link_to 'All Vendors', vendors_path %>
                     </div>
                     <div class="panel-body">
-                      New Vendor
+                      <%= link_to 'New Vendor', new_vendor_registration_path %>
                     </div>
                   </div>
                 </div>
@@ -130,7 +137,7 @@
                       <%= link_to "All Admins", admins_path %>
                     </div>
                     <div class="panel-body">
-                      New Admin
+                      <%= link_to 'New Admin', new_admin_path %>
                     </div>
                   </div>
                 </div>

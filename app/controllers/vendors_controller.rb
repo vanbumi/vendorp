@@ -8,7 +8,12 @@ class VendorsController < ApplicationController
   # GET /vendors
   # GET /vendors.json
   def index
+    unless current_vendor.supervendor
+      redirect_to vendors_page_path
+    end
+
     @vendors = Vendor.all
+    
   end
 
   def page
@@ -77,6 +82,6 @@ class VendorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vendor_params
-      params[:vendor].permit(:name)
+      params[:vendor].permit(:name, :image_url)
     end
 end

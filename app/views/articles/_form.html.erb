@@ -13,14 +13,15 @@
     <% end %>
 
   <form>
+        
+    <div class="form-group">  
+      <%= f.label :Category %><br> 
+      <%= f.collection_select :category_id, Category.all, :id, :title, :multiple => true, :prompt => "Select Category" %>  
+    </div>
+    
     <div class="form-group">    
         <%= f.label :title %>
         <%= f.text_field :title, class: 'form-control' %>
-    </div>
-
-    <div class="form-group">  
-        <%= f.label :category %><br> 
-        <%= f.text_field :category, class: 'form-control' %>
     </div>
 
     <div class="form-group">  

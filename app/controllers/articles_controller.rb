@@ -9,27 +9,32 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all.order('created_at DESC')
+    @articles = Article.all.order('created_at DESC') 
   end
 
   # GET /articles/1
   # GET /articles/1.json
   def show
+    
   end
 
   # GET /articles/new
   def new
     @article = Article.new
+    @categories = Category.all
   end
 
   # GET /articles/1/edit
   def edit
+    @categories = Category.all
+    @category = Category.new
   end
 
   # POST /articles
   # POST /articles.json
   def create
     @article = Article.new(article_params)
+    # @category = Category.new(category_params)
 
     respond_to do |format|
       if @article.save
@@ -74,6 +79,9 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :category, :body, :image_url, :author)
+      params.require(:article).permit(:title, :category, :category_id, :body, :image_url, :author)
     end
+
+    
+
 end

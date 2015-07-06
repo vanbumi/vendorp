@@ -1,6 +1,6 @@
 <div class="container">	
 	
-	<div class="col-sm-12">
+	<div class="col-sm-10">
 		<h1>Profile Vendor</h1>
 		<div class="panel panel-default">
 			
@@ -11,28 +11,36 @@
 			<div class="panel-body">
 				<p id="notice"><%= notice %></p>
 
-				<div class="col-sm-12">	
+				<div class="col-sm-8">	
 					<form class="form-horizontal">
 						<div class="form-group">
+							<% %>
 							<label class="col-sm-2 control-label">	
-								<%= image_tag('me2.jpg', :alt => 'foto', class: 'img-circle') %>
+								<%= image_tag(@vendor.image_url, :alt => 'foto-vendor', :height => '120', :width => '120', class: 'img-circle') %>
 							</label>
 						</div>
-						<!-- <div class="text-center">	
-								<%= image_tag('me2.jpg', :alt => 'foto', class: 'img-circle') %>
-						</div> -->
+
 					  <div class="form-group">
 					    <label for="inputName3" class="col-sm-2 control-label">Name:</label>
-					    <div class="col-sm-10">
+					    <div class="col-sm-8">
 					      <input type="name" class="form-control" id="inputEmail3" placeholder="<%= @vendor.name %>">
 					    </div>
 					  </div>
+
 					  <div class="form-group">
-					    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-					    <div class="col-sm-10">
+					    <label for="inputEmail3" class="col-sm-2 control-label">Email:</label>
+					    <div class="col-sm-8">
 					      <input type="email" class="form-control" id="inputEmail3" placeholder="<%= @vendor.email %>">
 					    </div>
 					  </div>
+
+					  <div class="form-group hidden">
+					    <label for="inputEmail3" class="col-sm-2 control-label">Image Url:</label>
+					    <div class="col-sm-8">
+					      <input type="email" class="form-control" id="inputEmail3" placeholder="<%= @vendor.image_url %>">
+					    </div>
+					  </div>
+
 					</form>
 					<br>
 				<%= link_to 'Edit', edit_vendor_path(@vendor) %> |
