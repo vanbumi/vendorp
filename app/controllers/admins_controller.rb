@@ -7,7 +7,17 @@ class AdminsController < ApplicationController
   # GET /admins
   # GET /admins.json
   def index
+    
+    unless current_admin.superadmin?
+      redirect_to admins_noaccess_path
+    end
+
     @admins = Admin.all
+  
+  end
+
+  def noaccess
+    render layout: false
   end
 
   # GET /admins/1
