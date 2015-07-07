@@ -20,6 +20,10 @@ class VendorsController < ApplicationController
      
   end
 
+  def frontview
+    render layout: 'application'
+  end
+
   # GET /vendors/1
   # GET /vendors/1.json
   def show

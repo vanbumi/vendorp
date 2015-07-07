@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   resources :home
 
   get 'vendors/page'
+  
+  get 'vendors/frontview'
+
   # resources :vendors do
   #   member do
   #     get :vendors, :as => 'admin/vendors'
@@ -21,6 +24,7 @@ Rails.application.routes.draw do
   devise_for :admins
   
   get 'home/index'
+
 
   get 'admins/noaccess'
 
