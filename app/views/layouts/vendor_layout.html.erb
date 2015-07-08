@@ -96,19 +96,19 @@
                   <div class="panel-heading" role="tab" id="headingOne">
                     <h4 class="panel-title">
                       <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Menu 1
+                        My Profile
                       </a>
                     </h4>
                   </div>
                   <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                     <div class="panel-body">
-                      <%= link_to "Sub Menu 1" %>
+                      <%= link_to "Show" %>
                     </div>
                     <div class="panel-body">
-                      <%= link_to "Sub Menu 2" %>
+                      <%= link_to "Edit" %>
                     </div>
                     <div class="panel-body">
-                      <%= link_to "Sub Menu 3" %>
+                      <%= link_to "Vendor Page" %>
                     </div>
                   </div>
                 </div>
@@ -116,16 +116,16 @@
                   <div class="panel-heading" role="tab" id="headingTwo">
                     <h4 class="panel-title">
                       <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Menu 2
+                        Member Paid
                       </a>
                     </h4>
                   </div>
                   <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                     <div class="panel-body">
-                      <%= link_to "Sub Menu 1" %>
+                      <%= link_to "Register" %>
                     </div>
                     <div class="panel-body">
-                      <%= link_to "Sub Menu 2" %>
+                      <%= link_to "Price List" %>
                     </div>
                     <div class="panel-body">
                       <%= link_to "Sub Menu 3" %>
@@ -136,16 +136,18 @@
                   <div class="panel-heading" role="tab" id="headingThree">
                     <h4 class="panel-title">
                       <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        Menu 3
+                        My Post
                       </a>
                     </h4>
                   </div>
                   <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                     <div class="panel-body">
-                      <%= link_to "Sub Menu 1" %>
+                      <% if current_vendor %>
+                        <%= link_to "All Post", posts_path %>
+                      <% end %>
                     </div>
                     <div class="panel-body">
-                      <%= link_to "Sub Menu 2" %>
+                      <%= link_to "All Gallery" %>
                     </div>
                   </div>
                 </div>

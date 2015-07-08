@@ -29,9 +29,14 @@
         <%= f.text_area :body, class: 'form-control' %>
     </div>
 
-    <div class="form-group">   
+    <!-- <div class="form-group">   
         <%= f.label :image_url %><br>
         <%= f.text_field :image_url, class: 'form-control' %>
+    </div> -->
+
+    <div class="form-group">
+      <%= f.label :upload_image_ukuran_gambar_Lebar_200_x_Tinggi_211 %><br>
+      <%= f.file_field :image_url %>
     </div>
 
     <div class="form-group">  

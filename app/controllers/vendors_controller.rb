@@ -1,7 +1,7 @@
 class VendorsController < ApplicationController
   
   layout 'vendor_layout'
-  before_action :authenticate_vendor!
+  before_action :authenticate_vendor!, :except => [:frontview]
 
   before_action :set_vendor, only: [:show, :edit, :update, :destroy]
 

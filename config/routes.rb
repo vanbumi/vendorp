@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :posts, path: 'admin/posts'
   resources :categories, path: 'admin/categories'
   devise_for :vendors
   get 'undev/index'
@@ -9,7 +10,11 @@ Rails.application.routes.draw do
   
   resources :vendors, path: 'admin/vendors'
 
-  resources :home
+  resources :homes do
+    collection do
+      get 'about'
+    end
+  end
 
   get 'vendors/page'
   
@@ -23,7 +28,8 @@ Rails.application.routes.draw do
 
   devise_for :admins
   
-  get 'home/index'
+  get 'homes/index'
+  get 'homes/about'
 
 
   get 'admins/noaccess'

@@ -1,0 +1,47 @@
+<%= form_for(@post) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title, class: 'label-control' %><br>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :body %><br>
+    <%= f.text_area :body, class: 'form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :business %><br>
+    <%= f.select(:business) do %>
+      <%  [
+            # ['Catering', 1], ['Photographer', 2]
+            ['Catering', 'Catering'], ['Photographer', 'Photographer']
+          ].each do |c| -%>
+        <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image_url %><br>
+    <%= f.text_field :image_url, class: 'form-control' %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit class: 'btn btn-danger' %>
+  </div>
+<% end %>
+<br>

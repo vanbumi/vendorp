@@ -9,4 +9,6 @@ class Vendor < ActiveRecord::Base
 # mount_uploader :field, Class
 mount_uploader :image_url, ImageUploader
 
+	has_many :posts
+
 end

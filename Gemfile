@@ -12,6 +12,7 @@ gem 'mysql2'
 gem 'devise', '~> 3.5.1'
 
 gem 'carrierwave', '~> 0.10.0'
+gem 'mini_magick', '~> 4.2.7'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
