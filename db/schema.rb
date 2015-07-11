@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150707181156) do
+ActiveRecord::Schema.define(version: 20150711065756) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "",    null: false
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20150707181156) do
     t.string   "image_url",  limit: 255
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.integer  "vendor_id",  limit: 4
   end
 
   create_table "vendors", force: :cascade do |t|
