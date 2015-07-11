@@ -7,8 +7,12 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all.order("created_at DESC")
-    @posts = Post.where(:vendor_id => current_vendor.id).order("created_at DESC")
+    if current_vendor.supervendor
+      @posts = Post.all.order("created_at DESC")
+    else  
+      @posts = Post.where(:vendor_id => current_vendor.id).order("created_at DESC")
+    end
+    
   end
 
   # GET /posts/1
@@ -30,7 +34,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-    @post = current_vendor.posts.build
+    @post = current_vendor.posts.build(post_params)
 
     respond_to do |format|
       if @post.save
