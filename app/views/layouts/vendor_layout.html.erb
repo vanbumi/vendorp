@@ -50,16 +50,11 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
 
-            <!-- <li><a href="#">Dashboard</a></li>-->
-            <% if current_vendor.supervendor? %>
-            <li><%= link_to 'Halaman Admin', admins_path %></li>
-            <% end %>
-
             <% if vendor_signed_in? %>
+            <li><%= link_to "Hello!" %></li>
             <li><%= link_to current_vendor.name, current_vendor %></li>
-            <li><%= link_to 'My Profile', current_vendor %></li>
             <% end %>
-            <li><%= link_to 'Sign Out', destroy_admin_session_path, method: :delete %></li>
+            
 
             <!-- <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -97,19 +92,46 @@
                   <div class="panel-heading" role="tab" id="headingOne">
                     <h4 class="panel-title">
                       <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        My Profile
+                        Main Menu
                       </a>
                     </h4>
                   </div>
                   <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    <% if current_vendor.supervendor %>
                     <div class="panel-body">
-                      <%= link_to "Show" %>
+                        <%= link_to 'Admin Area', admins_path %>
+                    </div>
+                    <% end %>
+                    <div class="panel-body">
+                      <%= link_to "Vendor Area", vendors_page_path %>
                     </div>
                     <div class="panel-body">
-                      <%= link_to "Edit" %>
+                      <%= link_to "Sub menu" %>
                     </div>
                     <div class="panel-body">
-                      <%= link_to "Vendor Page" %>
+                      <%= link_to "Sub menu" %>
+                    </div>
+                    <div class="panel-body">
+                      <%= link_to 'Sign Out', destroy_admin_session_path, method: :delete %>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Profile
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body"> 
+                    <% if vendor_signed_in? %> 
+                      <%= link_to "My Profile", current_vendor %>
+                    <% end %>  
+                    </div>
+                    <div class="panel-body">
+                      <%= link_to 'Sub menu' %>
                     </div>
                   </div>
                 </div>

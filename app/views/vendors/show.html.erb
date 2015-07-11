@@ -18,6 +18,12 @@
 							<label class="col-sm-2 control-label">	
 								<%= image_tag(@vendor.image_url, :alt => 'foto-vendor', :height => '120', :width => '120', class: 'img-circle') %>
 							</label>
+							<!-- <div class="col-sm-8 col-sm-offset-1">
+								<%= form_for(@vendor, multipart: true) do |f| %>
+						      <%= f.label :Edit_profile %><br>
+						      <%= f.file_field :image_url %>
+								<% end %>
+							</div> -->
 						</div>
 
 					  <div class="form-group">
@@ -43,8 +49,8 @@
 
 					</form>
 					<br>
-				<%= link_to 'Edit', edit_vendor_path(@vendor) %> |
-				<%= link_to 'Back', vendors_page_path %>
+				<%= link_to 'Edit', edit_vendor_path(@vendor), class: 'btn btn-danger' %> 
+				<%= link_to 'Back', vendors_page_path, class: 'btn btn-danger pull-right' %>
 				</div>	
 
 			</div>
