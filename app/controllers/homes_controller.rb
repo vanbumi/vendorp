@@ -11,8 +11,28 @@ class HomesController < ApplicationController
   	@articles = Article.find(params[:id])
   end
 
-  def about
+  def guest
   	
+  end
+
+  def artikel
+    
+  end
+
+  def Wedding
+    
+  end
+
+  def event
+    
+  end
+
+  def coupon
+    
+  end
+
+  def contact
+    
   end
 
 end

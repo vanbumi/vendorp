@@ -12,7 +12,12 @@ Rails.application.routes.draw do
 
   resources :homes do
     collection do
-      get 'about'
+      get 'guest'
+      get 'artikel'
+      get 'wedding'
+      get 'event'
+      get 'coupon'
+      get 'contact'
     end
   end
 
