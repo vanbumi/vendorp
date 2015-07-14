@@ -19,7 +19,8 @@
     <br>
     <div class="field">
       <%= f.label :vcategory, 'Vendor Category' %><br>
-      <%= f.text_field :name, class: 'form-control' %>
+      <%= f.collection_select :business_id, Business.all, :id, :category, :multiple => true, :size => 5, :prompt => "Please select", class: 'form-control' %>
+      <br>
     </div>
     <br>
     <div class="field">

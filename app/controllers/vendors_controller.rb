@@ -32,10 +32,13 @@ class VendorsController < ApplicationController
   # GET /vendors/new
   def new
     @vendor = Vendor.new
+    @businesses = Business.all
   end
 
   # GET /vendors/1/edit
   def edit
+    @businesses = Business.all
+    @business = Business.new
   end
 
   # POST /vendors
@@ -86,6 +89,7 @@ class VendorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vendor_params
-      params[:vendor].permit(:name, :image_url, :contactp, :address, :city)
+      params.require(:vendor).permit(:name, :image_url, :business, :business_id, :contactp, :address, :city)
     end
+    
 end
