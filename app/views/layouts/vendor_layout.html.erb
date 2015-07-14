@@ -45,32 +45,32 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <%= link_to "Dashboard-Vendor", vendors_page_path, class: 'navbar-brand' %>
+          <%= link_to "Vendor Area", vendors_page_path, class: 'navbar-brand' %>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
 
             <% if vendor_signed_in? %>
             <li><%= link_to "Hello!" %></li>
-            <li><%= link_to current_vendor.name, current_vendor %></li>
-            <% end %>
-            
-
-            <!-- <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+            <li style="padding-top:8px"><%= image_tag(current_vendor.image_url, :alt => "test", :height => '35', :width => '35', class: "img-circle") %></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_vendor.name %><span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
+                <li><%= link_to 'Home', root_path %></li>
+                <li role="separator" class="divider"></li>
+                <li><%= link_to 'My Profile', current_vendor %></li>
+                <li role="separator" class="divider"></li>
                 <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
+                <li><a href="#">Another action</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="#">One more separated link</a></li>
+                <li><a href="#">Another action</a></li>
+                <li role="separator" class="divider"></li>
+                <li><%= link_to 'Sign Out', destroy_vendor_session_path, method: :delete %></li>
               </ul>
-            </li> -->
-          <!-- <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
-          </form> -->
+            <% end %>
+            </li>
+
           </ul>
 
         </div>
