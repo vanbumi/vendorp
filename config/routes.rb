@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'contacts/new'
+
+  get 'contacts/create'
+
   resources :posts, path: 'admin/posts'
   resources :categories, path: 'admin/categories'
   devise_for :vendors
@@ -24,6 +28,10 @@ Rails.application.routes.draw do
   get 'vendors/page'
   
   get 'vendors/frontview'
+
+  match '/contacts', to: 'contacts#new', via: 'get'
+  
+  resources "contacts", only: [:new, :create]
 
   # resources :vendors do
   #   member do
