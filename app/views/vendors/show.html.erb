@@ -15,7 +15,7 @@
 					<form class="form-horizontal">
 						<div class="form-group">
 							<% %>
-							<label class="col-sm-2 control-label">	
+							<label class="col-sm-3 control-label">	
 								<%= image_tag(@vendor.image_url, :alt => 'foto-vendor', :height => '120', :width => '120', class: 'img-circle') %>
 							</label>
 							<!-- <div class="col-sm-8 col-sm-offset-1">
@@ -27,21 +27,35 @@
 						</div>
 
 					  <div class="form-group">
-					    <label for="inputName3" class="col-sm-2 control-label">Name:</label>
+					    <label for="inputName3" class="col-sm-3 control-label">Contact Person:</label>
 					    <div class="col-sm-8">
-					      <input type="name" class="form-control" id="inputEmail3" placeholder="<%= @vendor.name %>">
+					      <input type="contactp" class="form-control" id="inputEmail3" placeholder="<%= @vendor.contactp %>">
 					    </div>
 					  </div>
 
 					  <div class="form-group">
-					    <label for="inputEmail3" class="col-sm-2 control-label">Email:</label>
+					    <label for="inputEmail3" class="col-sm-3 control-label">Email:</label>
 					    <div class="col-sm-8">
 					      <input type="email" class="form-control" id="inputEmail3" placeholder="<%= @vendor.email %>">
 					    </div>
 					  </div>
 
+					  <div class="form-group">
+					    <label for="inputAddress" class="col-sm-3 control-label">Address:</label>
+					    <div class="col-sm-8">
+					      <textarea class="form-control" rows="3" id="inputAddress" placeholder="<%= @vendor.address %>"></textarea>
+					    </div>
+					  </div>
+
+					  <div class="form-group">
+					    <label for="inputCity" class="col-sm-3 control-label">City:</label>
+					    <div class="col-sm-8">
+					      <input type="city" class="form-control" id="inputCity" placeholder="<%= @vendor.city %>">
+					    </div>
+					  </div>
+
 					  <div class="form-group hidden">
-					    <label for="inputEmail3" class="col-sm-2 control-label">Image Url:</label>
+					    <label for="inputEmail3" class="col-sm-3 control-label">Image Url:</label>
 					    <div class="col-sm-8">
 					      <input type="email" class="form-control" id="inputEmail3" placeholder="<%= @vendor.image_url %>">
 					    </div>
