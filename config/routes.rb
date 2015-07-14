@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :businesses, path: 'admin/businesses'
+
   get 'contacts/new'
 
   get 'contacts/create'
