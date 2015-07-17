@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150714140729) do
+ActiveRecord::Schema.define(version: 20150715192433) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "",    null: false
@@ -41,12 +41,6 @@ ActiveRecord::Schema.define(version: 20150714140729) do
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
     t.integer  "category_id", limit: 4
-  end
-
-  create_table "businesses", force: :cascade do |t|
-    t.string   "category",   limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
   end
 
   create_table "categories", force: :cascade do |t|
@@ -95,7 +89,7 @@ ActiveRecord::Schema.define(version: 20150714140729) do
     t.string   "contactp",               limit: 255
     t.text     "address",                limit: 65535
     t.string   "city",                   limit: 255
-    t.integer  "business_id",            limit: 4
+    t.string   "vendor_category",        limit: 255
   end
 
   add_index "vendors", ["email"], name: "index_vendors_on_email", unique: true, using: :btree

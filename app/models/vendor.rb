@@ -11,8 +11,8 @@ mount_uploader :image_url, ImageUploader
 
 	has_many   :posts, dependent: :destroy
 	# has_many   :businesses, dependent: :destroy
-	belongs_to :business
-	validates  :business, presence: true
+	# belongs_to :business
+	# validates  :business, presence: true
 	# validates_associated :businesses
 
 

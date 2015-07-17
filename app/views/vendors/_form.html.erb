@@ -19,7 +19,11 @@
     <br>
     <div class="field">
       <%= f.label :vcategory, 'Vendor Category' %><br>
-      <%= f.collection_select :business_id, Business.all, :id, :category, :multiple => true, :size => 5, :prompt => "Please select", class: 'form-control' %>
+      <%= f.select(:vendor_category, [
+            ['Catering', 'Catering'], ['Baju Penganten', 'Baju Penganten'],
+            ['Photograper', 'Photograper'], ['Hotel Restaurant', 'Hotel Restaurant'],
+          ], class: 'form-control'
+        ) %>  
       <br>
     </div>
     <br>
