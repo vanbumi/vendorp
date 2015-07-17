@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150715192433) do
+ActiveRecord::Schema.define(version: 20150717080057) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "",    null: false
@@ -90,6 +90,9 @@ ActiveRecord::Schema.define(version: 20150715192433) do
     t.text     "address",                limit: 65535
     t.string   "city",                   limit: 255
     t.string   "vendor_category",        limit: 255
+    t.string   "website",                limit: 255
+    t.string   "social",                 limit: 255
+    t.text     "description",            limit: 65535
   end
 
   add_index "vendors", ["email"], name: "index_vendors_on_email", unique: true, using: :btree
