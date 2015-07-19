@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :albums, path: 'admin/albums'
   resources :businesses, path: 'admin/businesses'
 
   get 'contacts/new'

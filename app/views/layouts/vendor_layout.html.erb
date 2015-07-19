@@ -153,6 +153,8 @@
                     <div class="panel-body">
                       <%= link_to "Sub Menu 3" %>
                     </div>
+                    <a href="#" onclick="this.style.backgroundColor='#990000'">Paint it red</a>
+                    <a href="#" onclick="this.style.backgroundColor='#009900';this.style.color='#FFFFFF';">Paint it green</a>
                   </div>
                 </div>
                 <div class="panel panel-default">
@@ -175,6 +177,11 @@
                     <div class="panel-body">
                       <% if current_vendor %>
                         <%= link_to "My Gallery" %>
+                      <% end %>
+                    </div>
+                    <div class="panel-body">
+                      <% if current_vendor %>
+                        <%= link_to "My Album", albums_path %>
                       <% end %>
                     </div>
                     <div class="panel-body">

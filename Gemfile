@@ -16,6 +16,7 @@ gem 'mini_magick', '~> 4.2.7'
 
 gem 'mail_form'
 gem 'simple_form'
+gem 'bootstrap-modal-rails'
 
 gem 'jquery-turbolinks'
 
