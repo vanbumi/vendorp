@@ -29,6 +29,12 @@ Rails.application.routes.draw do
   end
 
   get 'vendors/page'
+
+  get 'vendors/member'
+
+  get 'vendors/restrictarea'
+
+  get 'vendors/pricelist'
   
   get 'vendors/frontview'
 

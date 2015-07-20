@@ -15,7 +15,7 @@
   <tbody>
     <% @albums.each do |album| %>
       <tr>
-        <td><%= album.vendor_id %></td>
+        <td><%= album.vendor.name if album.vendor %></td>
         <td><%= album.title %></td>
         <td><%= album.description %></td>
         <td><%= link_to 'Show', album %></td>

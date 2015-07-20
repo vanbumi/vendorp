@@ -17,7 +17,20 @@ class VendorsController < ApplicationController
   end
 
   def page
-     
+  end
+
+  def member
+    unless current_vendor.statusta == 'Paid'
+      redirect_to vendors_restrictarea_path
+    end
+  end
+
+  def restrictarea
+    # render layout: false
+  end
+
+  def pricelist
+    
   end
 
   def frontview
