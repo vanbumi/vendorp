@@ -43,12 +43,7 @@
     </div>
     <br>
     <div class="field">
-      <%= f.label :social, 'Social Media' %><br>
-      <%= f.text_field :social, class: 'form-control' %>
-    </div>
-    <br>
-    <div class="field">
-      <%= f.label :website, 'Website (Jika ada)' %><br>
+      <%= f.label :website, 'Website' %><br>
       <%= f.text_field :website, class: 'form-control' %>
     </div>
     <br>
@@ -67,6 +62,29 @@
       <%= f.file_field :image_url %>
     </div>
     <br>
+    
+    <h2>Contact Social Media</h2>   
+    <div class="field">
+      <%= f.label :social, 'Facebook' %><br>
+      <%= f.text_field :social, class: 'form-control' %>
+    </div>
+    <br>
+    <div class="field">
+      <%= f.label :social2, 'Twitter' %><br>
+      <%= f.text_field :social2, class: 'form-control' %>
+    </div>
+    <br>
+    <div class="field">
+      <%= f.label :social3, 'Instagram' %><br>
+      <%= f.text_field :social3, class: 'form-control' %>
+    </div>
+    <br>
+    <div class="field">
+      <%= f.label :social4, 'Line' %><br>
+      <%= f.text_field :social4, class: 'form-control' %>
+    </div>
+    <br>
+
     <div class="actions">
       <%= f.submit class: 'btn btn-danger' %>
     </div>
