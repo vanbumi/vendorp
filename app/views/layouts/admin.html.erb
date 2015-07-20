@@ -52,6 +52,7 @@
           <ul class="nav navbar-nav navbar-right">
             <!-- <li><a href="#">Dashboard</a></li>-->
             <% if current_admin.superadmin? %>
+              <li><%= link_to 'MailBox!', contactus_path %></li>
               <li><%= link_to 'Superadmin : ' %></li>
             <% end %>
             

@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
   
+  resources :contactus do
+    collection do
+      get 'thankspage'
+    end
+  end
+
   resources :albums, path: 'admin/albums'
   resources :businesses, path: 'admin/businesses'
 
-  get 'contacts/new'
+  # get 'contacts/new'
 
-  get 'contacts/create'
+  # get 'contacts/create'
 
   resources :posts, path: 'admin/posts'
   resources :categories, path: 'admin/categories'
@@ -40,7 +46,7 @@ Rails.application.routes.draw do
 
   match '/contacts', to: 'contacts#new', via: 'get'
   
-  resources "contacts", only: [:new, :create]
+  # resources "contacts", only: [:new, :create]
 
   # resources :vendors do
   #   member do
