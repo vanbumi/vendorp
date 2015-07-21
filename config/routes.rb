@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :galleries, path: 'admin/galleries'
   resources :contactus do
     collection do
       get 'thankspage'
@@ -7,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :albums, path: 'admin/albums'
-  resources :businesses, path: 'admin/businesses'
+  # resources :businesses, path: 'admin/businesses'
 
   # get 'contacts/new'
 
