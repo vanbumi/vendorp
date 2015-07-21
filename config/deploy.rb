@@ -13,6 +13,9 @@ set :linked_files, %w{config/database.yml}
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 set :tmp_dir, "/home/deploy/tmp"
 set :bundle_binstubs, nil
+# Set :linked_dirs, %w{public/uploads}
+# set :linked_dirs, fetch(:linked_dirs) + %w{public/system public/uploads}
+set :shared_children, shared_children + %w{public/uploads}
 
 # Default value for :scm is :git
 # set :scm, :git

@@ -61,7 +61,6 @@
 #   }
 
 set :stage, :production
-set :shared_children, shared_children + %w{public/uploads}
 
 # Replace 127.0.0.1 with your server's IP address!
 server '167.114.207.147', user: 'deploy', roles: %w{web app}
