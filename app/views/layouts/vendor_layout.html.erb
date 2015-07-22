@@ -119,15 +119,16 @@
                     </div>
                   </div>
                 </div>
-                <div class="panel panel-default">
-                  <div class="panel-heading" role="tab" id="headingOne">
+
+                <!-- <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingOne2">
                     <h4 class="panel-title">
-                      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne2">
                         Profile
                       </a>
                     </h4>
                   </div>
-                  <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                  <div id="collapseOne2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne2">
                     <div class="panel-body"> 
                     <% if vendor_signed_in? %> 
                       <%= link_to "My Profile", current_vendor %>
@@ -137,7 +138,26 @@
                       <%= link_to 'Sub menu' %>
                     </div>
                   </div>
+                </div> -->
+
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingOne2">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne2" aria-expanded="false" aria-controls="collapseOne2">
+                        Vendor Profile
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseOne2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne2">
+                    <div class="panel-body">
+                      <%= link_to "My Profile", current_vendor %>
+                    </div>
+                    <div class="panel-body">
+                      <%= link_to "My Status" %>
+                    </div>  
+                  </div>
                 </div>
+
                 <div class="panel panel-default">
                   <div class="panel-heading" role="tab" id="headingTwo">
                     <h4 class="panel-title">
@@ -155,9 +175,7 @@
                     </div>
                     <div class="panel-body">
                       <%= link_to "Sub Menu 3" %>
-                    </div>
-                    
-                    
+                    </div>  
                   </div>
                 </div>
 

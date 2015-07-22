@@ -8,7 +8,11 @@ class AdminsController < ApplicationController
   # GET /admins.json
   def index
     
-    unless current_admin.superadmin?
+    # unless current_admin.superadmin?
+    #   redirect_to admins_noaccess_path
+    # end
+
+    unless current_admin.superadmin == true
       redirect_to admins_noaccess_path
     end
 
@@ -82,6 +86,6 @@ class AdminsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def admin_params
-      params.require(:admin).permit(:name, :email)
+      params.require(:admin).permit(:name, :email, :superadmin, :image_url)
     end
 end

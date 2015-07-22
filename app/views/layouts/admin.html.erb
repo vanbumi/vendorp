@@ -57,7 +57,7 @@
             <% end %>
             
             <% if admin_signed_in? %>
-            <li style="padding-top:10px"><%= image_tag("avatar1_small.jpg", :alt => "test", class: "img-circle") %></li>
+            <li style="padding-top:10px"><%= image_tag(current_admin.image_url, width: '35', height: '35', :alt => "foto", class: "img-circle") %></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_admin.name %><span class="caret"></span></a>
               <ul class="dropdown-menu">
@@ -139,6 +139,9 @@
                     </h4>
                   </div>
                   <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="panel-body">
+                      <%= link_to 'Vendor Area', vendors_page_path %>
+                    </div>
                     <div class="panel-body">
                       <%= link_to 'All Vendors', vendors_path %>
                     </div>
