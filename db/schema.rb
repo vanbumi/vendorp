@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150722082747) do
+ActiveRecord::Schema.define(version: 20150722195446) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "",    null: false
@@ -81,9 +81,10 @@ ActiveRecord::Schema.define(version: 20150722082747) do
     t.string   "name",       limit: 255
     t.string   "business",   limit: 255
     t.string   "image_url",  limit: 255
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
     t.integer  "vendor_id",  limit: 4
+    t.string   "active",     limit: 255,   default: "No"
   end
 
   create_table "vendors", force: :cascade do |t|

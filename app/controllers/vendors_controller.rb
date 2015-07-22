@@ -34,7 +34,12 @@ class VendorsController < ApplicationController
   end
 
   def frontview
+
+    # @posts = Post.all
+    @posts = Post.where('active = "Yes"').order('created_at DESC').limit('3')
+    
     render layout: 'application'
+    
   end
 
   # GET /vendors/1
