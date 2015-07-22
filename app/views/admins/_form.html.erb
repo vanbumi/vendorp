@@ -39,10 +39,15 @@
           <%= f.label :upload_image, 'Upload Picture' %><br />
           <%= f.file_field :image_url %>
         </div>
-        
         <br>
-        
-
+        <div class="field">
+          <%= f.label :superadmin, 'SuperAdmin' %>
+          <%= f.select(:superadmin, [
+              ['Yes', 1], ['No', 0]
+            ], class: 'form-control'
+          )%>
+        </div>
+        <br>
       <div class="actions">
         <%= f.submit 'Save!', class: 'btn btn-default' %>
       </div>
