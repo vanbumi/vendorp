@@ -33,6 +33,7 @@ Rails.application.routes.draw do
       get 'event'
       get 'coupon'
       get 'contact'
+      get 'show_post'
     end
   end
 

@@ -22,6 +22,10 @@ class HomesController < ApplicationController
     @postsrowsc3s = Post.where('active = "Yes" AND kolom = "3"').order('created_at DESC').limit('3,6')
   end
 
+  def show_post
+    @posts = Post.find(params[:id])
+  end
+
   def guest
   	
   end

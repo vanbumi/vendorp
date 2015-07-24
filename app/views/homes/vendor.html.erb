@@ -69,7 +69,7 @@
               <!-- PREV POST -->
               <h3>Baca Juga</h3>
               <% @postsrows.each do |postsrow| %>
-              <p style="border-bottom:1px #eee solid"><%= truncate(postsrow.title, length: 50) %></p>
+              <p style="border-bottom:1px #eee solid"><%= link_to truncate(postsrow.title, length: 50), post_path(postsrow) %></p>
               <% end %>
             </div><!--/.col-xs-6.col-lg-4-->
 
@@ -81,13 +81,13 @@
               <p>Vendor Name: <%= postscol2.vendor.name if postscol2.vendor %></p>
               <p>Business Category: <%= postscol2.business %></p>
               <p><%= truncate(postscol2.body, length: 100) %></p>
-              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+              <p><%= link_to 'View details', post_path(postscol2), class: "btn btn-default" %></p>
               <% end %>
               <br>
               <!-- PREV POST -->
               <h3>Baca Juga</h3>
               <% @postsrowsc2s.each do |postsrowsc2| %>
-              <p style="border-bottom:1px #eee solid"><%= truncate(postsrowsc2s.title, length: 50) %></p>
+              <p style="border-bottom:1px #eee solid"><%= link_to truncate(postsrowsc2s.title, length: 50), post_path(postsrowsc2) %></p>
               <% end %>
             </div><!--/.col-xs-6.col-lg-4-->
 
@@ -99,13 +99,13 @@
               <p>Vendor Name: <%= postscol3.vendor.name if postscol3.vendor %></p>
               <p>Business Category: <%= postscol3.business %></p>
               <p><%= truncate(postscol3.body, length: 100) %></p>
-              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+              <p><%= link_to 'View details', post_path(postscol3), class: "btn btn-default" %></p>
               <% end %>
               <br>
               <!-- PREV POST -->
               <h3>Baca Juga</h3>
               <% @postsrowsc3s.each do |postsrowsc3| %>
-              <p style="border-bottom:1px #eee solid"><%= truncate(postsrowsc3.title, length: 50) %></p>
+              <p style="border-bottom:1px #eee solid"><%= link_to truncate(postsrowsc3.title, length: 50), post_path(postsrowsc3) %></p>
               <% end %>
             </div><!--/.col-xs-6.col-lg-4-->
           </div><!--/row-->
