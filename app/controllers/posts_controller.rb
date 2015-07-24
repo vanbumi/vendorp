@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   layout 'vendor_layout'
-  before_action :authenticate_vendor!
+  before_action :authenticate_vendor!, except: [:show]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   # GET /posts
@@ -18,6 +18,13 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+  
+    if vendor_signed_in?
+      render layout: 'vendor_layout'
+    else
+      render layout: 'application'
+    end
+
   end
 
   # GET /posts/new
@@ -79,6 +86,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :body, :name, :business, :image_url, :active, :vendor, :vendor_id)
+      params.require(:post).permit(:title, :body, :name, :business, :image_url, :active, :vendor, :vendor_id, :kolom)
     end
 end

@@ -62,7 +62,7 @@
               <p>Vendor Name: <%= post.vendor.name if post.vendor %></p>
               <p>Business Category: <%= post.business %></p>
               <p><%= truncate(post.body, length: 100) %></p>
-              <p><%= link_to 'View details', vendors_singlepost_path(post), class: 'btn btn-default' %></p>
+              <p><%= link_to 'View details', post_path(post), class: 'btn btn-default' %></p>
               
               <% end %>
               <br>
@@ -108,11 +108,6 @@
               <p style="border-bottom:1px #eee solid"><%= truncate(postsrowsc3.title, length: 50) %></p>
               <% end %>
             </div><!--/.col-xs-6.col-lg-4-->
-
-
-            
-
-            
           </div><!--/row-->
         </div><!--/.col-xs-12.col-sm-9-->
 

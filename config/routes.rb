@@ -26,6 +26,7 @@ Rails.application.routes.draw do
 
   resources :homes do
     collection do
+      get 'vendor'
       get 'guest'
       get 'artikel'
       get 'wedding'
@@ -36,14 +37,11 @@ Rails.application.routes.draw do
   end
 
   get 'vendors/page'
-
   get 'vendors/member'
-
   get 'vendors/restrictarea'
-
   get 'vendors/pricelist'
-  
   get 'vendors/frontview'
+
 
   match '/contacts', to: 'contacts#new', via: 'get'
   

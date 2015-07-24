@@ -3,7 +3,7 @@ class VendorsController < ApplicationController
   layout 'vendor_layout'
   before_action :authenticate_vendor!, :except => [:frontview]
 
-  before_action :set_vendor, only: [:show, :edit, :update, :destroy]
+  before_action :set_vendor, only: [:show, :edit, :update, :destroy, :singlepost]
 
   # GET /vendors
   # GET /vendors.json
@@ -36,15 +36,30 @@ class VendorsController < ApplicationController
   def frontview
 
     # @posts = Post.all
-    @posts = Post.where('active = "Yes"').order('created_at DESC').limit('3')
+    @posts        = Post.where('active = "Yes" AND kolom = "1"').order('created_at DESC').limit('3')
+    @postsrows    = Post.where('active = "Yes" AND kolom = "1"').order('created_at DESC').limit('3,6')
     
+    @postscol2s   = Post.where('active = "Yes" AND kolom = "2"').order('created_at DESC').limit('3')
+    @postsrowsc2s = Post.where('active = "Yes" AND kolom = "2"').order('created_at DESC').limit('3,6')
+
+    @postscol3s   = Post.where('active = "Yes" AND kolom = "3"').order('created_at DESC').limit('3')
+    @postsrowsc3s = Post.where('active = "Yes" AND kolom = "3"').order('created_at DESC').limit('3,6')
+        
     render layout: 'application'
     
+  end
+
+  def singlepost
+    # @posts = Post.all
+    # @posts = Post.find(params[:id])
+
+    render layout: 'application'
   end
 
   # GET /vendors/1
   # GET /vendors/1.json
   def show
+
   end
 
   # GET /vendors/new
@@ -101,6 +116,7 @@ class VendorsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_vendor
       @vendor = Vendor.find(params[:id])
+      @posts  = Post.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
