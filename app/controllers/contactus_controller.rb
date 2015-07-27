@@ -14,6 +14,10 @@ class ContactusController < ApplicationController
     
   end
 
+  def company_info
+    
+  end
+
   # GET /contactus/1
   # GET /contactus/1.json
   def show
