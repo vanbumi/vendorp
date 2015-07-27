@@ -1,4 +1,4 @@
-# config valid only for current version of Capistrano
+  # config valid only for current version of Capistrano
 lock '3.4.0'
 
 set :application, 'vendorp'
@@ -15,6 +15,8 @@ set :tmp_dir, "/home/deploy/tmp"
 set :bundle_binstubs, nil
 # Set :linked_dirs, %w{public/uploads}
 set :linked_dirs, fetch(:linked_dirs) + %w{public/system public/uploads}
+
+set :log_level, :debug
 # set :shared_children, shared_children + %w{public/uploads}
 
 # Default value for :scm is :git
