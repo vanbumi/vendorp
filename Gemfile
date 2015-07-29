@@ -20,6 +20,8 @@ gem 'bootstrap-modal-rails'
 
 gem 'jquery-turbolinks'
 
+gem 'tinymce-rails'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
