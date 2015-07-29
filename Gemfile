@@ -20,7 +20,8 @@ gem 'bootstrap-modal-rails'
 
 gem 'jquery-turbolinks'
 
-gem 'tinymce-rails'
+# gem 'tinymce-rails'
+gem 'tinymce-rails', '~> 4.1.6'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
