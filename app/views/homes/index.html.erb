@@ -22,7 +22,8 @@
                 <h4><%= truncate(article.title, length: 21) %></h4>
               </div>
               <p>Category: <%= article.category.title %></p>              
-              <p><%= truncate(article.body, length: 30) %></p>
+              <p><%= truncate(strip_tags(article.body.html_safe), length: 30) %></p>
+              
               <p><%= link_to 'Read Detail', home_path(article) %></p>
             </li>
             <% end %>
