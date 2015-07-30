@@ -15,5 +15,4 @@ has_many   :galleries, dependent: :destroy
 belongs_to :article
 
 
-
 end

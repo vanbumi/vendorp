@@ -1,6 +1,6 @@
 class Album < ActiveRecord::Base
-	belongs_to :vendor
+	belongs_to 	:vendor
 
-	has_many :gallery
+	has_many 	:gallery
 	
 end

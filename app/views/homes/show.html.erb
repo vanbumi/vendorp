@@ -15,6 +15,15 @@
         <div class="page-header">      
           <h1><%= @articles.title %></h1>
           <small>Category: <%= @articles.category.title %> | Author: <%= @articles.author %></small>
+
+          <!-- unless current_vendor.statusta == 'Paid' -->
+          
+          <% unless @articles.category.title == 'coupon' %>
+
+          <p>Vendor Name: <%= @articles.vendor.name if @articles.vendor %></p>
+       
+          <% end %>     
+
         </div>
         <p></p>
         <p><%= sanitize @articles.body %></p>

@@ -47,7 +47,7 @@
 
 <p>
   <strong>Nama Vendor:</strong>
-  <%= @article.vendor.name %>
+  <%= @article.vendor.name if @article.vendor %>
 </p>
 
 <p>
@@ -59,9 +59,9 @@
   <strong>Info Vendor:</strong>
   <%= @article.info_vendor %>
 </p>
-
-
-
-
+<br>
+<br>
 <%= link_to 'Edit', edit_article_path(@article), 'data-no-turbolink' => true %> |
 <%= link_to 'Back', articles_path %>
+<br>
+<br>
