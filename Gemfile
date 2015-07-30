@@ -20,6 +20,9 @@ gem 'bootstrap-modal-rails'
 
 gem 'jquery-turbolinks'
 
+gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
+                                  :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
+
 # gem 'tinymce-rails'
 gem 'tinymce-rails', '~> 4.1.6'
 

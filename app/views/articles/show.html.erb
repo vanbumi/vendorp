@@ -20,5 +20,48 @@
   <%= @article.author %>
 </p>
 
+<p>
+  <strong>Harga Awal:</strong>
+  <%= @article.harga_awal %>
+</p>
+
+<p>
+  <strong>Discount:</strong>
+  <%= @article.discount %>
+</p>
+
+<p>
+  <strong>Harga Sesudah:</strong>
+  <%= @article.harga_sesudah %>
+</p>
+
+<p>
+  <strong>Periode Awal:</strong>
+  <%= @article.time_awal %>
+</p>
+
+<p>
+  <strong>Periode Akhir:</strong>
+  <%= @article.time_akhir %>
+</p>
+
+<p>
+  <strong>Nama Vendor:</strong>
+  <%= @article.vendor.name %>
+</p>
+
+<p>
+  <strong>Syarat & Ketentuan:</strong>
+  <%= @article.syarat %>
+</p>
+
+<p>
+  <strong>Info Vendor:</strong>
+  <%= @article.info_vendor %>
+</p>
+
+
+
+
 <%= link_to 'Edit', edit_article_path(@article), 'data-no-turbolink' => true %> |
 <%= link_to 'Back', articles_path %>

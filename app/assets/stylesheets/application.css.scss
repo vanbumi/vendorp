@@ -5,4 +5,9 @@
 @import "utilities";
 @import "home";
 
+// *= require bootstrap-datepicker
+// # Or if using bootstrap v3:
+// *= require bootstrap-datepicker3
 
+@import "bootstrap-datepicker";
+@import "bootstrap-datepicker3";
