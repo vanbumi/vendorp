@@ -1,7 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <div class="container-fluid">
-  <h1>Listing Articles</h1>
+  <div class="row bg-primary">  
+    <div class="col-md-7 col-xs-12"> 
+      <h1>Listing Articles</h1>
+    </div>
+    <div class="col-md-5 col-xs-10 text-right" style="padding-top:20px"> 
+      <%= link_to 'New Article', new_article_path, 'data-no-turbolink' => true, class: 'btn btn-default' %>
+    </div>
+  </div>  
   <div class="table-responsive">
     <table class="table table-striped">
       <thead>
@@ -24,7 +31,7 @@
             <td><%= article.image_url %></td>
             <td><%= article.author %></td>
             <td><%= link_to 'Show', article %></td>
-            <td><%= link_to 'Edit', edit_article_path(article) %></td>
+            <td><%= link_to 'Edit', edit_article_path(article), 'data-no-turbolink' => true %></td>
             <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>

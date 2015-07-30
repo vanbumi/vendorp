@@ -106,7 +106,8 @@
                       <%= link_to "All Articles", articles_path %>
                     </div>
                     <div class="panel-body">
-                      <%= link_to "Add New", new_article_path %>
+                      <!-- disable turbolink -->
+                      <%= link_to "Add New", new_article_path, 'data-no-turbolink' => true %>
                     </div>
                     <div class="panel-body">
                       <%= link_to "Articles Category", categories_path %>
