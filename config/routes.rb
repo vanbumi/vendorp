@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :sidebars, path: 'admin/sidebars' 
   resources :galleries, path: 'admin/galleries'
   resources :contactus do
     collection do

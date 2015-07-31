@@ -5,6 +5,9 @@ class HomesController < ApplicationController
   	@articles = Article.where("category_id = '1'").order('created_at DESC').limit(3)
   	@articles2 = Article.where("category_id = '2'").order('created_at DESC').limit(3)
   	@articles3 = Article.where("category_id = '3'").order('created_at DESC').limit(3)
+
+    @sidebars = Sidebar.where("active = 'Y'").order('created_at DESC').limit(3)
+
   end
 
   def show

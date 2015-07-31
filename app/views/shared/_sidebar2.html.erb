@@ -1,0 +1,26 @@
+<!-- <div class="list-group" style="padding-top:20px">
+  <a href="#" class="list-group-item active">Last Article</a>
+  <a href="#" class="list-group-item">Category 2</a>
+  <a href="#" class="list-group-item">Category 3</a>
+</div> -->
+
+<ul class="list-group" style="padding-top:20px">
+	<% @sidebars.each do |sidebar| %>	
+  <li class="list-group-item text-center">
+  	<%= link_to image_tag(sidebar.image_url), sidebar_path(sidebar) %><br>
+  	<%= sidebar.description %>
+  </li>
+  <!-- <li class="list-group-item">Dapibus ac facilisis in</li>
+  <li class="list-group-item">Morbi leo risus</li>
+  <li class="list-group-item">Porta ac consectetur ac</li>
+  <li class="list-group-item">Vestibulum at eros</li> -->
+  <% end %>
+</ul>
+
+<!-- <ul class="list-group" style="padding-top:20px">
+  <li class="list-group-item active text-center"><h5>Latest Articles</h5></li>
+  <li class="list-group-item">Dapibus ac facilisis in</li>
+  <li class="list-group-item">Morbi leo risus</li>
+  <li class="list-group-item">Porta ac consectetur ac</li>
+  <li class="list-group-item">Vestibulum at eros</li>
+</ul> -->

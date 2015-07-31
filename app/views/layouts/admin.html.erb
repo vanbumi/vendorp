@@ -175,11 +175,28 @@
                   <div class="panel-heading" role="tab" id="headingFour">
                     <h4 class="panel-title">
                       <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                        Admin
+                        Sidebar
                       </a>
                     </h4>
                   </div>
                   <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                    <div class="panel-body">
+                      <%= link_to "All Sidebar", sidebars_path %>
+                    </div>
+                    <div class="panel-body">
+                      <%= link_to 'New Sidebar', new_sidebar_path %>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingFive">
+                    <h4 class="panel-title">
+                      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Admin
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
                     <div class="panel-body">
                       <%= link_to "All Admins", admins_path %>
                     </div>

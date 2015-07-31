@@ -1,0 +1,38 @@
+<%= form_for(@sidebar) do |f| %>
+  <% if @sidebar.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sidebar.errors.count, "error") %> prohibited this sidebar from being saved:</h2>
+
+      <ul>
+      <% @sidebar.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title, class: 'label-control' %><br>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :image_url, 'Upload', class: 'label-control' %><br>
+    <%= f.file_field :image_url %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :description, 'Description (optional)', class: 'label-control' %><br>
+    <%= f.text_field :description, class: 'form-control' %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :active, 'Make it active?', class: 'label-control' %> -
+    <%= f.select(:active, [['Yes', 'Y'], ['No', 'N']]) %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit 'Save', class: 'btn btn-default' %>
+  </div>
+<% end %>
+<br>
