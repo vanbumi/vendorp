@@ -81,9 +81,12 @@
           <div class="thumbnail">
             <%= image_tag article2.image_url.url(:thumb), :alt => 'article2.title', class: 'img-responsive' %>
               <div class="caption">
-                <h4 class="pull-right">$24.99</h4>
-                  <h4><a href="#">First Product</a></h4>
-                    <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+              
+                <h4 class="pull-right"><span class='label label-primary'>New</span></h4>
+                  <h4><%= link_to truncate(article2.title, length: 21), home_path(article2) %></h4>
+                <p class="pull-right"><%= article2.author %></p>
+                  <p>Author</p>  
+                    <p><%= truncate(strip_tags(article2.body), length: 80) %></p>
               </div>
               <div class="ratings">
                 <p class="pull-right">15 reviews</p>
@@ -111,9 +114,11 @@
           <div class="thumbnail">
             <%= image_tag article3.image_url.url(:thumb), :alt => 'article3.title', class: 'img-responsive' %>
               <div class="caption">
-                <h4 class="pull-right">$24.99</h4>
-                  <h4><a href="#">First Product</a></h4>
-                    <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                <h4 class="pull-right"><span class='label label-primary'>New</span></h4>
+                  <h4><%= link_to truncate(article3.title, length: 21), home_path(article3) %></h4>
+                <p class="pull-right"><%= article3.author %></p>
+                  <p>Author</p>  
+                    <p><%= truncate(strip_tags(article3.body), length: 80) %></p>
               </div>
               <div class="ratings">
                 <p class="pull-right">15 reviews</p>
@@ -230,13 +235,9 @@
 
     </div><!-- col-md-9 -->
 
+    <!-- sidebar -->
     <div class="col-md-3">
-      <!-- <p class="lead">Shop Name</p> -->
-      <div class="list-group">
-        <a href="#" class="list-group-item">Category 1</a>
-        <a href="#" class="list-group-item">Category 2</a>
-        <a href="#" class="list-group-item">Category 3</a>
-      </div>
+      <%= render 'shared/sidebar2' %>
     </div>
 
   </div> <!-- #row -->
