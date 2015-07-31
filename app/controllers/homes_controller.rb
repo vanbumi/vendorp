@@ -2,9 +2,9 @@ class HomesController < ApplicationController
 
   def index
   	# @articles = Article.all
-  	@articles = Article.where("category_id = '1'").order('created_at DESC').limit(4)
-  	@articles2 = Article.where("category_id = '2'").order('created_at DESC').limit(4)
-  	@articles3 = Article.where("category_id = '3'").order('created_at DESC').limit(4)
+  	@articles = Article.where("category_id = '1'").order('created_at DESC').limit(3)
+  	@articles2 = Article.where("category_id = '2'").order('created_at DESC').limit(3)
+  	@articles3 = Article.where("category_id = '3'").order('created_at DESC').limit(3)
   end
 
   def show
@@ -24,10 +24,6 @@ class HomesController < ApplicationController
 
   def show_post
     @posts = Post.find(params[:id])
-  end
-
-  def guest
-  	
   end
 
   def artikel
