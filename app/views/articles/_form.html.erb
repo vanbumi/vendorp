@@ -42,53 +42,58 @@
     </div>
 
   <!-- khusus Coupons -->
-  
-    <h3>*Khusus Category Coupons</h3>
-    <div class="form-group">  
+
+  <a class="btn btn-primary btn-sm" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Khusus Category Coupon
+  </a> <span class="text-danger">Klik it!</span>
+
+  <div class="collapse" id="collapseExample">
+    <div class="well">
+      <div class="form-group">  
         <%= f.label :harga_awal %><br>
         <%= f.text_field :harga_awal, class: 'form-control' %>
-    </div>    
-    
-    <div class="form-group">  
+      </div>
+      <div class="form-group">  
         <%= f.label :Discount %><br>
         <%= f.text_field :discount, class: 'form-control' %>
-    </div>
+      </div>
 
-    <div class="form-group">  
-        <%= f.label :Harga_sesudah %><br>
-        <%= f.text_field :harga_sesudah, class: 'form-control' %>
-    </div>    
-    
-    <div class="form-group">  
+      <div class="form-group">  
+          <%= f.label :Harga_sesudah %><br>
+          <%= f.text_field :harga_sesudah, class: 'form-control' %>
+      </div>
+      <div class="form-group">  
         <%= f.label :Periode_awal %><br>
         <%= f.text_field :time_awal, 'data-provide' => 'datepicker' %>  
-    </div>
+      </div>
 
-    <div class="form-group">  
-        <%= f.label :Periode_akhir %><br>
-        <%= f.text_field :time_akhir, 'data-provide' => 'datepicker' %>
-    </div>
+      <div class="form-group">  
+          <%= f.label :Periode_akhir %><br>
+          <%= f.text_field :time_akhir, 'data-provide' => 'datepicker' %>
+      </div>
 
-    <div class="form-group">  
+      <div class="form-group">  
         <%= f.label :Nama_vendor %><br>
         <%= f.collection_select :vendor_id, Vendor.all, :id, :name, :multiple => true, :prompt => 'Pilih Vendor', :size => 5 %>
-    </div>
+      </div>
 
-    <div class="form-group">  
-        <%= f.label :Syarat_ketentuan, "Syarat & Ketentuan" %><br>
-        <%= f.text_area :syarat, class: 'form-control' %>
-    </div>
+      <div class="form-group">  
+          <%= f.label :Syarat_ketentuan, "Syarat & Ketentuan" %><br>
+          <%= f.text_area :syarat, class: 'form-control' %>
+      </div>
 
-    <div class="form-group">  
-        <%= f.label :Info_vendor %><br>
-        <%= f.text_area :info_vendor, class: 'form-control' %>
-        
+      <div class="form-group">  
+          <%= f.label :Info_vendor %><br>
+          <%= f.text_area :info_vendor, class: 'form-control' %>        
+      </div>
+
     </div>
-  
+  </div>
     
-    <div class="form-group">  
-        <%= f.submit 'Save', class: 'btn btn-primary btn-lg' %>
-    </div> 
+  <div class="form-group" style="padding-top:20px">  
+      <%= f.submit 'Save', class: 'btn btn-primary btn-lg' %>
+  </div> 
+
     <br> 
     <% end %>
   </form>
