@@ -6,7 +6,7 @@ class HomesController < ApplicationController
   	@articles2 = Article.where("category_id = '2'").order('created_at DESC').limit(3)
   	@articles3 = Article.where("category_id = '3'").order('created_at DESC').limit(3)
 
-    @sidebars = Sidebar.where("active = 'Y'").order('created_at DESC').limit(3)
+    @sidebars = Sidebar.where("active = 'Y'").order('created_at DESC').limit(6)
 
   end
 
@@ -30,7 +30,11 @@ class HomesController < ApplicationController
   end
 
   def artikel
-    
+    @articles = Article.where("category_id = '1'").order('created_at DESC').limit('3,3')
+    @articles2 = Article.where("category_id = '2'").order('created_at DESC').limit('3,3')
+    @articles3 = Article.where("category_id = '3'").order('created_at DESC').limit('3,3') 
+
+    @sidebars = Sidebar.where("active = 'Y'").order('created_at DESC').limit(6) 
   end
 
   def Wedding
