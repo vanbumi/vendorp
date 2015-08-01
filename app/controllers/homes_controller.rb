@@ -23,6 +23,9 @@ class HomesController < ApplicationController
 
     @postscol3s   = Post.where('active = "Yes" AND kolom = "3"').order('created_at DESC').limit('3')
     @postsrowsc3s = Post.where('active = "Yes" AND kolom = "3"').order('created_at DESC').limit('3,6')
+
+    @sidebars = Sidebar.where("active = 'Y'").order('created_at DESC').limit(6)
+        
   end
 
   def show_post
@@ -38,14 +41,32 @@ class HomesController < ApplicationController
   end
 
   def Wedding
+
+    @articles = Article.where("category_id = '1'").order('created_at DESC').limit(3)
+    @articles2 = Article.where("category_id = '2'").order('created_at DESC').limit(3)
+    @articles3 = Article.where("category_id = '3'").order('created_at DESC').limit(3)
+
+    @sidebars = Sidebar.where("active = 'Y'").order('created_at DESC').limit(6)
     
   end
 
   def event
+
+    @articles = Article.where("category_id = '1'").order('created_at DESC').limit(3)
+    @articles2 = Article.where("category_id = '2'").order('created_at DESC').limit(3)
+    @articles3 = Article.where("category_id = '3'").order('created_at DESC').limit(3)
+
+    @sidebars = Sidebar.where("active = 'Y'").order('created_at DESC').limit(6)
     
   end
 
   def coupon
+
+    @articles = Article.where("category_id = '1'").order('created_at DESC').limit(3)
+    @articles2 = Article.where("category_id = '2'").order('created_at DESC').limit(3)
+    @articles3 = Article.where("category_id = '3'").order('created_at DESC').limit(3)
+
+    @sidebars = Sidebar.where("active = 'Y'").order('created_at DESC').limit(6)
     
   end
 
