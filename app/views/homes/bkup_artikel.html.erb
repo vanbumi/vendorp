@@ -1,0 +1,56 @@
+<!-- this wedding template -->
+<div class="container">
+
+  <div class="row row-offcanvas row-offcanvas-right">
+
+    <div class="col-xs-12 col-md-9">
+      <!-- <p class="pull-right visible-xs">
+        <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+      </p> -->
+      <div class="jumbotron">
+        <div class="row">
+          <h1>Artikel Wedding</h1>
+        </div>  
+      </div>
+
+      <div class="row">
+
+        <!-- kolom 1 -->
+        <div class="col-xs-6 col-md-6">
+          <% @articles2.each do |article2| %>
+          <div class="thumbnail">
+          <%= image_tag article2.image_url, :alt => 'article2.title', class: 'img-responsive' %>
+            <div class="caption">
+              <h3><%= link_to truncate(article2.title, length: 21), home_path(article2) %></h3>
+              <p class="pull-right"><%= article2.author %></p>
+              <p>Author</p>  
+              <p><%= truncate(strip_tags(article2.body), length: 80) %></p>
+              <p><%= link_to 'View details', home_path(article2), class: 'btn btn-default' %></p>
+            </div>  
+          </div>
+          <% end %> 
+          <br>
+          <!-- PREV POST -->
+          <h3><i class="fa fa-chevron-circle-down"></i> Baca Juga</h3>
+          <% @articles2rows.each do |articles2row| %>
+            <p style="border-bottom:1px #eee solid"><%= link_to truncate(articles2row.title, length: 50), home_path(articles2row) %></p>
+          <% end %> 
+        </div><!--/.col-xs-6.col-lg-4-->
+
+        <!-- kolom 2 -->
+        
+
+      </div><!--/row-->
+
+      <br>
+
+    </div><!--/.col-xs-12.col-sm-9-->
+
+    <!-- sidebar -->
+    <div class="col-md-3">
+      <%= render 'shared/sidebar2' %>
+    </div>
+    
+
+  </div><!--/row-->
+</div>

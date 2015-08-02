@@ -1,67 +1,83 @@
-<p id="notice"><%= notice %></p>
+<div class="container"> 
 
-<h1><%= @article.title %></h1>
+  <div class="col-md-8 col-sm-9 col-xs-12 col-sm-offset-2">
+    
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <%= image_tag(@article.image_url, :alt => @article.title, :width => '200', :height => '211') %>
-</p>
-  
-<p>
-  <strong>Category:</strong>
-  <%= @article.category.title %>
-</p>
+    <div class="thumbnail">  
+      
+      <p align="center">
+        <%= image_tag(@article.image_url, :alt => @article.title, class: 'img-responsive') %>
+      </p>
+      
+      <div class="caption">
+        <h1><%= @article.title %></h1>  
+        <p>
+          <strong>Category:</strong>
+          <%= @article.category.title %> |
+          <strong>Author:</strong> 
+          <%= @article.author %> |
+          <strong>Date: </strong>
+          <%= @article.created_at.strftime("%d %B %Y") %> 
+        </p>
+        <br>  
+        <p>
+          <%= sanitize @article.body %>
+        </p>
 
-<p>
-  <%= sanitize @article.body %>
-</p>
+        <% if @article.category.title == 'Coupon' %>
+          <p>
+            <strong>Harga Awal:</strong>
+            <%= @article.harga_awal %>
+          </p>
 
-<p>
-  <strong>Author:</strong>
-  <%= @article.author %>
-</p>
+          <p>
+            <strong>Discount:</strong>
+            <%= @article.discount %>
+          </p>
 
-<p>
-  <strong>Harga Awal:</strong>
-  <%= @article.harga_awal %>
-</p>
+          <p>
+            <strong>Harga Sesudah:</strong>
+            <%= @article.harga_sesudah %>
+          </p>
 
-<p>
-  <strong>Discount:</strong>
-  <%= @article.discount %>
-</p>
+          <p>
+            <strong>Periode Awal:</strong>
+            <%= @article.time_awal %>
+          </p>
 
-<p>
-  <strong>Harga Sesudah:</strong>
-  <%= @article.harga_sesudah %>
-</p>
+          <p>
+            <strong>Periode Akhir:</strong>
+            <%= @article.time_akhir %>
+          </p>
 
-<p>
-  <strong>Periode Awal:</strong>
-  <%= @article.time_awal %>
-</p>
+          <p>
+            <strong>Nama Vendor:</strong>
+            <%= @article.vendor.name if @article.vendor %>
+          </p>
 
-<p>
-  <strong>Periode Akhir:</strong>
-  <%= @article.time_akhir %>
-</p>
+          <p>
+            <strong>Syarat & Ketentuan:</strong>
+            <%= @article.syarat %>
+          </p>
 
-<p>
-  <strong>Nama Vendor:</strong>
-  <%= @article.vendor.name if @article.vendor %>
-</p>
+          <p>
+            <strong>Info Vendor:</strong>
+            <%= @article.info_vendor %>
+          </p>
+        <% end %>
+      </div>  
+    </div>  
+        
+      <br>
+      <br>
 
-<p>
-  <strong>Syarat & Ketentuan:</strong>
-  <%= @article.syarat %>
-</p>
+      <% if admin_signed_in? %>
+        <%= link_to 'Edit', edit_article_path(@article), 'data-no-turbolink' => true %> |
+        <%= link_to 'Back', articles_path %>
+      <% end %>  
+      <br>
+      <br>
 
-<p>
-  <strong>Info Vendor:</strong>
-  <%= @article.info_vendor %>
-</p>
-<br>
-<br>
-<%= link_to 'Edit', edit_article_path(@article), 'data-no-turbolink' => true %> |
-<%= link_to 'Back', articles_path %>
-<br>
-<br>
+    </div>  
+</div>  

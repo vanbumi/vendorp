@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   
   layout 'admin'
 
-  before_action :authenticate_admin!
+  before_action :authenticate_admin!, except: [:show]
 
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
@@ -11,6 +11,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    render layout: 'application'
   end
 
   def new
@@ -65,9 +66,16 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :category, :category_id, :body, :image_url, :author, :harga_awal, :discount, :harga_sesudah, :time_awal, :time_akhir, :name,:vendor, :vendor_id, :description, :syarat, :info_vendor)
+      params.require(:article).permit(:title, :category, :category_id, :body, :image_url, :author, :harga_awal, :discount, :harga_sesudah, :time_awal, :time_akhir, :name,:vendor, :vendor_id, :description, :syarat, :info_vendor, :kolom)
     end
 
+  # Membuat tanggal Indonesia
+
+  def to_tanggal(mydate)
+    # current_time = Time.now  
+    # current_time.strftime("%B %d, %Y")  
+    # => "March 13, 2014"
     
+  end  
 
 end

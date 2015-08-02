@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150731193221) do
+ActiveRecord::Schema.define(version: 20150802174756) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "",    null: false
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20150731193221) do
     t.integer  "vendor_id",     limit: 4
     t.string   "syarat",        limit: 255
     t.text     "info_vendor",   limit: 65535
+    t.integer  "kolom",         limit: 4
   end
 
   create_table "categories", force: :cascade do |t|

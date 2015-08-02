@@ -5,6 +5,7 @@ class HomesController < ApplicationController
   	@articles = Article.where("category_id = '1'").order('created_at DESC').limit(3)
   	@articles2 = Article.where("category_id = '2'").order('created_at DESC').limit(3)
   	@articles3 = Article.where("category_id = '3'").order('created_at DESC').limit(3)
+    @articles2sb = Article.where("category_id = '2'").order('created_at DESC').limit('2,3')
 
     @sidebars = Sidebar.where("active = 'Y'").order('created_at DESC').limit(6)
 
@@ -12,6 +13,9 @@ class HomesController < ApplicationController
 
   def show
   	@articles = Article.find(params[:id])
+
+    @articles2sb = Article.where("category_id = '2'").order('created_at DESC').limit('3,3')
+    @sidebars = Sidebar.where("active = 'Y'").order('created_at DESC').limit(6)    
   end
 
   def vendor
@@ -24,8 +28,10 @@ class HomesController < ApplicationController
     @postscol3s   = Post.where('active = "Yes" AND kolom = "3"').order('created_at DESC').limit('3')
     @postsrowsc3s = Post.where('active = "Yes" AND kolom = "3"').order('created_at DESC').limit('3,6')
 
+    # sidebar
     @sidebars = Sidebar.where("active = 'Y'").order('created_at DESC').limit(6)
-        
+    @articles2sb = Article.where("category_id = '2'").order('created_at DESC').limit('3,3')
+   
   end
 
   def show_post
@@ -33,11 +39,14 @@ class HomesController < ApplicationController
   end
 
   def artikel
-    @articles = Article.where("category_id = '1'").order('created_at DESC').limit('3,3')
     @articles2 = Article.where("category_id = '2'").order('created_at DESC').limit('3,3')
-    @articles3 = Article.where("category_id = '3'").order('created_at DESC').limit('3,3') 
+    @articles2sb = Article.where("category_id = '2'").order('created_at DESC').limit('3,3')
+    # artike baris
+    @articles2rows = Article.where("category_id = '2' AND kolom = '1'").order('created_at DESC').limit('3,3')
 
+    # sidebar
     @sidebars = Sidebar.where("active = 'Y'").order('created_at DESC').limit(6) 
+    @articles2sb = Article.where("category_id = '2'").order('created_at DESC').limit('3,3')
   end
 
   def Wedding
@@ -56,8 +65,10 @@ class HomesController < ApplicationController
     @articles2 = Article.where("category_id = '2'").order('created_at DESC').limit(3)
     @articles3 = Article.where("category_id = '3'").order('created_at DESC').limit(3)
 
+    # sidebar
     @sidebars = Sidebar.where("active = 'Y'").order('created_at DESC').limit(6)
-    
+    @articles2sb = Article.where("category_id = '2'").order('created_at DESC').limit('3,3')
+
   end
 
   def coupon
@@ -67,7 +78,8 @@ class HomesController < ApplicationController
     @articles3 = Article.where("category_id = '3'").order('created_at DESC').limit(3)
 
     @sidebars = Sidebar.where("active = 'Y'").order('created_at DESC').limit(6)
-    
+    @articles2sb = Article.where("category_id = '2'").order('created_at DESC').limit('3,3')
+
   end
 
   def contact

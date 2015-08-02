@@ -10,17 +10,22 @@
   	<%= link_to image_tag(sidebar.image_url), sidebar_path(sidebar) %><br>
   	<%= sidebar.description %>
   </li>
-  <!-- <li class="list-group-item">Dapibus ac facilisis in</li>
-  <li class="list-group-item">Morbi leo risus</li>
-  <li class="list-group-item">Porta ac consectetur ac</li>
-  <li class="list-group-item">Vestibulum at eros</li> -->
   <% end %>
 </ul>
 
-<!-- <ul class="list-group" style="padding-top:20px">
-  <li class="list-group-item active text-center"><h5>Latest Articles</h5></li>
-  <li class="list-group-item">Dapibus ac facilisis in</li>
-  <li class="list-group-item">Morbi leo risus</li>
-  <li class="list-group-item">Porta ac consectetur ac</li>
-  <li class="list-group-item">Vestibulum at eros</li>
-</ul> -->
+<ul class="list-group" style="padding-top:20px">
+  <li class="list-group-item active text-center lead">Previous Article</li>
+  <% @articles2sb.each do |article2sb| %>
+    <li class="list-group-item">
+      <div class="media">
+        <div class="media-left col-xs-4 col-md-4">
+          <%= image_tag article2sb.image_url.url(:thumb), :alt => 'article2sb.title', class: 'img-responsive' %>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading"><%= link_to truncate(article2sb.title, length: 21), home_path(article2sb) %></h4>
+          <p><%= truncate(strip_tags(article2sb.body), length: 40) %></p>
+        </div>
+      </div>
+    </li>
+  <% end %>
+</ul>

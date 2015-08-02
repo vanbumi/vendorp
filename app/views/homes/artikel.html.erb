@@ -3,51 +3,18 @@
   <div class="row row-offcanvas row-offcanvas-right">
 
     <div class="col-xs-9 col-md-9">
-          <p class="pull-right visible-xs">
+          <!-- <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
-          </p>
+          </p> -->
           <div class="jumbotron">
               <div class="row">
-                <h1>Artikel Seputar Wedding</h1>
+                <h1>Artikel Wedding</h1>
               </div>  
           </div>
 
           <!-- main body -->
           <div class="row">
                  
-            <!-- <div class="col-sm-4 col-lg-4 col-md-4">
-              <div class="lead text-center bg-primary">Coupon</div>                
-              <ul class="list-unstyled list-inline"> 
-                <% @articles.each do |article| %>     
-                <li>  
-                  
-                    <div class="thumbnail">
-                      <%= image_tag article.image_url.url(:thumb), :alt => 'article.title', class: 'img-responsive' %>
-                        <div class="caption">
-                          <h4 class="pull-right"><span class='label label-danger'>Rp.<%= article.harga_sesudah %></span></h4>
-                            <h4><%= link_to truncate(article.title, length: 21), home_path(article) %></h4>
-                          <p class="pull-right"><s>Rp. <%= article.harga_awal %></s></p>
-                            <p>Harga Awal</p>  
-                              
-                              <p><%= truncate(strip_tags(article.body.html_safe), length: 80) %></p>
-                        </div>
-                        <div class="ratings">
-                          <p class="pull-right">15 reviews</p>
-                          <p>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                          </p>
-                        </div>
-                    </div>
-                
-                </li>
-                <% end %> 
-              </ul>
-            </div> -->
-
             <div class="col-sm-6 col-lg-6 col-md-6">
               <div class="lead text-center bg-primary">Articles</div>  
               <ul class="list-unstyled list-inline"> 
@@ -59,10 +26,10 @@
                         <div class="caption">
                         
                           <h4 class="pull-right"><span class='label label-primary'>New</span></h4>
-                            <h4><%= link_to truncate(article2.title, length: 21), home_path(article2) %></h4>
+                            <h4><%= link_to truncate(article2.title, length: 21), article_path(article2) %></h4>
                           <p class="pull-right"><%= article2.author %></p>
                             <p>Author</p>  
-                              <p><%= truncate(strip_tags(article2.body), length: 80) %></p>
+                          <p><%= truncate(strip_tags(article2.body), length: 80) %></p>
                         </div>
                         <div class="ratings">
                           <p class="pull-right">15 reviews</p>
@@ -81,44 +48,13 @@
               </ul>
             </div>
 
-            <!-- <div class="col-sm-4 col-lg-4 col-md-4">
-              <div class="lead text-center bg-primary">Events</div>  
-              <ul class="list-unstyled list-inline"> 
-                <% @articles3.each do |article3| %>     
-                <li>  
-                  
-                    <div class="thumbnail">
-                      <%= image_tag article3.image_url.url(:thumb), :alt => 'article3.title', class: 'img-responsive' %>
-                        <div class="caption">
-                          <h4 class="pull-right"><span class='label label-primary'>New</span></h4>
-                            <h4><%= link_to truncate(article3.title, length: 21), home_path(article3) %></h4>
-                          <p class="pull-right"><%= article3.author %></p>
-                            <p>Author</p>  
-                              <p><%= truncate(strip_tags(article3.body), length: 80) %></p>
-                        </div>
-                        <div class="ratings">
-                          <p class="pull-right">15 reviews</p>
-                          <p>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                            <span class="glyphicon glyphicon-star"></span>
-                          </p>
-                        </div>
-                    </div>
-                  
-                </li>
-                <% end %> 
-              </ul>
-            </div> -->
           </div><!-- row --><!-- main body -->
         </div><!--/.col-xs-12.col-sm-9-->
         <!-- sidebar -->
         <div class="col-md-3">
           <%= render 'shared/sidebar2' %>
         </div>
-
-        
   </div><!--/row-->
 </div>  
+  
+
