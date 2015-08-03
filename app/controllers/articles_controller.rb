@@ -75,6 +75,8 @@ class ArticlesController < ApplicationController
     # current_time = Time.now  
     # current_time.strftime("%B %d, %Y")  
     # => "March 13, 2014"
+
+    
     
   end  
 
