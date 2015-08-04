@@ -8,7 +8,7 @@ class HomesController < ApplicationController
     @articles2sb = Article.where("category_id = '2'").order('created_at DESC').limit('2,3')
 
     @sidebars = Sidebar.where("active = 'Y'").order('created_at DESC').limit(6)
-
+    @vendors = Vendor.all
   end
 
   def show
@@ -83,6 +83,14 @@ class HomesController < ApplicationController
   end
 
   def contact
+    
+  end
+
+  def vendor_search
+    @vendor = Vendor.all
+  end
+
+  def brides
     
   end
 

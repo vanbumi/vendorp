@@ -102,20 +102,22 @@
                   <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                     <% if current_vendor.supervendor %>
                     <div class="panel-body">
-                        <%= link_to 'Admin Area', admins_path %>
+                        <%= link_to 'Admin Area', admins_path %> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                     </div>
                     <% end %>
                     <div class="panel-body">
-                      <%= link_to "Vendor Area", vendors_page_path %>
+                      <%= link_to "Vendor Area", vendors_page_path %> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                     </div>
-                    <div class="panel-body">
+                    <% if current_vendor.supervendor? %>
+                      <div class="panel-body">
+                        <%= link_to "Vendor List", vendors_path %> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                      </div>
+                    <% end %>
+                    <!-- <div class="panel-body">
                       <%= link_to "Sub menu" %>
-                    </div>
+                    </div> -->
                     <div class="panel-body">
-                      <%= link_to "Sub menu" %>
-                    </div>
-                    <div class="panel-body">
-                      <%= link_to 'Sign Out', destroy_admin_session_path, method: :delete %>
+                      <%= link_to 'Sign Out', destroy_admin_session_path, method: :delete %> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                     </div>
                   </div>
                 </div>

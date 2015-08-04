@@ -13,6 +13,13 @@ class VendorsController < ApplicationController
     end
 
     @vendors = Vendor.all
+
+    @vendors = Vendor.all
+      if params[:search]
+        @vendors = Vendor.search(params[:search]).order("created_at DESC")
+      else
+        @vendors = Vendor.all.order('created_at DESC')
+    end
     
   end
 
@@ -121,7 +128,7 @@ class VendorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vendor_params
-      params.require(:vendor).permit(:name, :vendor_category, :image_url, :contactp, :address, :city, :website, :social, :social2, :social3, :social4, :description, :supervendor)
+      params.require(:vendor).permit(:name, :vendor_category, :image_url, :contactp, :address, :city, :website, :social, :social2, :social3, :social4, :description, :supervendor, :vencat_id, :section_id)
     end
     
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150802174756) do
+ActiveRecord::Schema.define(version: 20150804132912) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "",    null: false
@@ -99,6 +99,13 @@ ActiveRecord::Schema.define(version: 20150802174756) do
     t.string   "kolom",      limit: 255
   end
 
+  create_table "sections", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.text     "content",    limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
   create_table "sidebars", force: :cascade do |t|
     t.string   "title",       limit: 255
     t.string   "image_url",   limit: 255
@@ -127,7 +134,6 @@ ActiveRecord::Schema.define(version: 20150802174756) do
     t.string   "contactp",               limit: 255
     t.text     "address",                limit: 65535
     t.string   "city",                   limit: 255
-    t.string   "vendor_category",        limit: 255
     t.string   "website",                limit: 255
     t.string   "social",                 limit: 255
     t.text     "description",            limit: 65535
@@ -135,6 +141,7 @@ ActiveRecord::Schema.define(version: 20150802174756) do
     t.string   "social2",                limit: 255
     t.string   "social3",                limit: 255
     t.string   "social4",                limit: 255
+    t.integer  "section_id",             limit: 4
   end
 
   add_index "vendors", ["email"], name: "index_vendors_on_email", unique: true, using: :btree

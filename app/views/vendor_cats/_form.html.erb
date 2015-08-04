@@ -1,0 +1,24 @@
+<%= form_for(@vendor_cat) do |f| %>
+  <% if @vendor_cat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@vendor_cat.errors.count, "error") %> prohibited this vendor_cat from being saved:</h2>
+
+      <ul>
+      <% @vendor_cat.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit 'Create New Category', class: 'btn btn-primary'%>
+  </div>
+  <br>
+<% end %>
+<br>

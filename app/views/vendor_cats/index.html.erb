@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>List Vendor Category</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vendor_cats.each do |vendor_cat| %>
+      <tr>
+        <td><%= vendor_cat.title %></td>
+        <td><%= link_to 'Show', vendor_cat %></td>
+        <td><%= link_to 'Edit', edit_vendor_cat_path(vendor_cat) %></td>
+        <td><%= link_to 'Destroy', vendor_cat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vendor Category', new_vendor_cat_path, class: 'btn btn-default' %>

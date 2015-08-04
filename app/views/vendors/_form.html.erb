@@ -17,13 +17,10 @@
       <%= f.text_field :name, class: 'form-control' %>
     </div>
     <br>
+    <br>
     <div class="field">
-      <%= f.label :vcategory, 'Vendor Category' %><br>
-      <%= f.select(:vendor_category, [
-            ['Catering', 'Catering'], ['Baju Penganten', 'Baju Penganten'],
-            ['Photograper', 'Photograper'], ['Hotel Restaurant', 'Hotel Restaurant'],
-          ], class: 'form-control'
-        ) %>  
+      <%= f.label :section, 'Section (Jenis Usaha)' %>
+      <%= f.collection_select :section_id, Section.all, :id, :name, :multiple => true, :prompt => 'Pilih Section', :size => 5 %> 
       <br>
     </div>
     <br>

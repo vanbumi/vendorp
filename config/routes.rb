@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :sections, path: 'admin/sections'
+  resources :vendor_cats, path: 'admin/vendor_cats'
   resources :sidebars, path: 'admin/sidebars' 
   resources :galleries, path: 'admin/galleries'
   resources :contactus do
@@ -35,6 +37,8 @@ Rails.application.routes.draw do
       get 'coupon'
       get 'contact'
       get 'show_post'
+      get 'vendor_search'
+      get 'brides'
     end
   end
 

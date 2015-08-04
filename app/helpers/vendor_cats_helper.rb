@@ -1,0 +1,2 @@
+module VendorCatsHelper
+end

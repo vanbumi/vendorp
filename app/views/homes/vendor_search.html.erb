@@ -2,21 +2,12 @@
 
 <h1>Listing Vendors</h1>
 
-<%= form_tag(vendors_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search Name" %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search City" %>
-  <%= submit_tag "Search" %>
-  <%= link_to 'Refresh', vendors_path %>
-<% end %>
-
-
 <table class="table table-hover">
   <thead>
     <tr>
       <th>Name</th>
       <th>Email</th>
       <th>City</th>
-      <th>Section</th>
       <th>Supervendor</th>
       <th>Actions</th>
     </tr>
@@ -28,7 +19,6 @@
         <td><%= vendor.name %></td>
         <td><%= vendor.email %></td>
         <td><%= vendor.city %></td>
-        <td><%= vendor.section.name if vendor.section %></td>
         <% if vendor.supervendor == true %>
           <td><%= 'Yes' %></td>
         <% else %>

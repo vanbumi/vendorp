@@ -1,0 +1,1551 @@
+<!DOCTYPE HTML>
+<html ng-app="bridestoryApp">
+	<head>
+		<meta charset="UTF-8">
+		<meta property="og:type" content="website" />
+                <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+        
+					<meta name="keywords" content="wedding bridal" />
+		
+					<meta name="description" content="The gorgeous wedding dresses are waiting for the right Bride. Our bridal vendors are all set with the best wedding packages to help you locate the gown of your dreams." />
+		
+		
+		
+		
+		
+		
+		
+		
+		
+														<link rel="next" href="http://www.bridestory.com/all-countries/all-cities/bridal?page=3">
+													<link rel="prev" href="http://www.bridestory.com/all-countries/all-cities/bridal?page=1">
+									
+    
+		<title>Bridal Vendors in All Countries | Bridestory.com</title>
+		<link rel="shortcut icon" href="http://www.bridestory.com/assets/images/favicon.ico" type="image/x-icon" />
+		<link rel="apple-touch-icon" href="http://www.bridestory.com/assets/images/apple-touch-icon.png" />
+		<link rel="apple-touch-icon-precomposed" href="http://www.bridestory.com/assets/images/apple-touch-icon.png" />
+		<link rel="alternate" media="only screen and (max-width: 640px)" href="m.bridestory.com/all-countries/all-cities/bridal?page=2" >
+
+    		  <link href="http://static.bridestory.com/raw/upload/static-production/desktop-1438584496/assets/member/application.css" version="desktop" method="normal" rel="stylesheet" type="text/css">
+    
+		<!-- Facebook Remarketing Pixel -->
+		<script>(function() {
+			var _fbq = window._fbq || (window._fbq = []);
+			if (!_fbq.loaded) {
+				var fbds = document.createElement('script');
+				fbds.async = true;
+				fbds.src = 'https://connect.facebook.net/en_US/fbds.js';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(fbds, s);
+				_fbq.loaded = true;
+			}
+			_fbq.push(['addPixelId', '1620957541475942']);
+			_fbq.push(['addPixelId', '821503154611370']);
+			_fbq.push(['addPixelId', '459714000826476']);
+			})();
+			window._fbq = window._fbq || [];
+			window._fbq.push(['track', 'PixelInitialized', {}]);
+		</script>
+		<noscript>
+			<img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=1620957541475942&ev=PixelInitialized" />
+			<img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=821503154611370&ev=PixelInitialized" />
+			<img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=459714000826476&amp;ev=PixelInitialized" />
+		</noscript>
+		<!-- End of Facebook Remarketing Pixel -->
+
+        <script src="https://www.google.com/recaptcha/api.js?render=explicit&onload=vcRecaptchaApiLoaded" async defer></script>
+        			</head>
+	<body class="thick-top
+" ng-controller="AnalyticController as analyticCtrl">
+		<div id="fb-root"></div>
+
+							<header id="header2" class="l-header pos-fixed">
+    <div class="box2 p2-0 m2-auto wrapper2 relative " ng-controller="MenuController as menuCtrl">
+        <nav id="main-menu" class="left">
+            <a target="_top" class="bs_beta nohover left-none" href="http://www.bridestory.com" title=""></a>
+            <a target="_top" href="http://www.bridestory.com/all-countries">All Vendors</a>
+            <a target="_top" href="http://www.bridestory.com/diamond">Diamond Vendors</a>
+            <a target="_top" href="http://www.bridestory.com/blog">Blog</a>
+                            <a  ng-hide="menuCtrl.is_vendor && menuCtrl.is_login" target="_top" class="is-vendor" href="http://www.bridestory.com/vendors-home"><i class="icon-star"></i>Are you a vendor?</a>
+            
+                    </nav>
+        <nav ng-cloak id="sub-menu-not-login" class="right f-brandon f-td-n">
+	<a ng-if="!menuCtrl.isLogged()" ng-click="menuCtrl.naviLogin()" class="register">Register</a>
+	<a ng-if="!menuCtrl.isLogged()" ng-click="menuCtrl.naviLogin()">Login</a>
+	<ul id="sub-menu2">
+		<li class="search_down_off">
+			<a><span class="bs-icon-search"></span></a>
+		</li>
+		<li>
+			<form id="formSearchMember" ng-controller="SearchVendorController as searchCtrl" name="formSearchVendor" action="http://www.bridestory.com/search-results" method="POST" autocomplete="off">
+				<p class="search_down">
+					<input type="text" name="keywords"
+						ng-model="searchCtrl.selected"
+						placeholder="Type vendor name here..."
+						class="form-control"
+						typeahead="vendor as vendors.title for vendors in searchCtrl.searchVendor($viewValue)"
+						typeahead-focus-first="false"
+						typeahead-on-select="searchCtrl.onSelectVendor($item, $model, $label, $element)"
+						typeahead-template-url="search-result.html" required>
+					<input class="ng-hide" type="submit" id="search" value="search" ng-disabled="formSearchVendor.$invalid">
+				</p>
+			</form>
+		</li>
+	</ul>
+</nav>
+
+<ul ng-cloak id="sub-menu" class="right" ng-if="menuCtrl.isLogged()">
+	<li class="pic">
+		<img ng-src="[[ menuCtrl.photo() ]]">
+	</li>
+	<li class="dropdown" ng-cloak>
+		<a ng-href="[[ menuCtrl.isVendor() ? 'http://www.bridestory.com/dashboard/edit' : 'http://www.bridestory.com/members' ]]" target="_self" class="profile dropdown-toggle" id="profile"><span>[[ menuCtrl.userName() ]]</span> <b class="bs-icon-down"></b></a>
+		<ul class="dropdown-menu2" role="menu" aria-labelledby="profile">
+			<div ng-if="menuCtrl.isVendor()">
+				<li><a rel="nofollow" href="http://www.bridestory.com/dashboard" target="_self"><span class="bs-icon-menu-dashboard"></span>My Dashboard</a></li>
+				<li><a ng-href="[[ menuCtrl.vendorUrl() ]]" target="_blank"><span class="bs-icon-menu-profile"></span>View My Profile</a></li>
+				<li><a rel="nofollow" href="http://www.bridestory.com/dashboard/add-project" target="_self"><span class="bs-icon-menu-upload-project"></span>Upload New Project</a></li>
+				<li><a rel="nofollow" href="http://www.bridestory.com/dashboard/reviews" target="_self"><span class="bs-icon-menu-review"></span>Request Reviews</a></li>
+				<li><a rel="nofollow" href="http://www.bridestory.com/dashboard/projects#/wedding-submission" target="_self"><span class="bs-icon-wedding-submission"></span>Wedding Blog Submission(s)</a></li>
+			</div>
+
+			<div ng-if="!menuCtrl.isVendor()">
+                <li><a rel="nofollow" href="http://www.bridestory.com/members/saved-vendors" target="_self"><span class="bs-icon-menu-project"></span>My Saved Vendor</a></li>
+                <li><a rel="nofollow" href="http://www.bridestory.com/members/submissions" target="_self"><span class="bs-icon-menu-review"></span>My Submissions <span class="notification hidden"></span></a></li>
+                <li><a rel="nofollow" href="http://www.bridestory.com/members/messages" target="_self"><span class="bs-icon-menu-message"></span>Messages <span class="notification hidden"></span></a></li>
+                <li><a rel="nofollow" href="http://www.bridestory.com/members/reviews" target="_self"><span class="bs-icon-menu-review"></span>My Reviews <span class="notification hidden"></span></a></li>
+				<li><a rel="nofollow" href="http://www.bridestory.com/members" target="_self"><span class="bs-icon-menu-profile"></span>User setting</a></li>
+			</div>
+
+			<li class="divider"></li>
+						<li><a rel="nofollow" ng-click="menuCtrl.naviLogout()" href="http://www.bridestory.com/logout?redirect_uri=all-countries/all-cities/bridal" target="_self"><span class="bs-icon-menu-logout2"></span>Logout</a></li>
+					</ul>
+	</li>
+	<li>
+		<a rel="nofollow" ng-href="[[ menuCtrl.isVendor() ? 'http://www.bridestory.com/dashboard/messages' : 'http://www.bridestory.com/members/messages' ]]" target="_self"><span class="bs-icon-message"></span></a>
+	</li>
+</ul>    </div>
+</header>				  
+<header id="subheader" class="l-header" ng-controller="vendorSearchController as vendorSearch">
+<div ng-init="vendorSearch.init(58, '', '', '');" ></div>
+  
+  <div class="box no-sidepadding thin wrapper">
+    <h5 class="w-170 left sub">Search For Vendors</h5>
+    <div class="box-select search w-220">
+    <select id="service" class="select-service divider" name="category" ng-model="vendorSearch.categoryId">
+          <option value="">All Categories</option>
+                      <option value="58">Bridal</option>
+                      <option value="9">Catering</option>
+                      <option value="7">Decoration & Lighting</option>
+                      <option value="10">Dress & Attire</option>
+                      <option value="69">Entertainment (DJ)</option>
+                      <option value="161">Entertainment (MC)</option>
+                      <option value="8">Entertainment (Music)</option>
+                      <option value="57">Event Rentals</option>
+                      <option value="12">Favors & Gifts</option>
+                      <option value="52">Flowers</option>
+                      <option value="61">Hair & Makeup</option>
+                      <option value="169">Health & Beauty</option>
+                      <option value="204">Honeymoon</option>
+                      <option value="5">Invitations</option>
+                      <option value="54">Jewelry</option>
+                      <option value="55">Men's Formal Wear</option>
+                      <option value="165">Other</option>
+                      <option value="2">Photography</option>
+                      <option value="6">Venue</option>
+                      <option value="3">Videography</option>
+                      <option value="11">Wedding Cake</option>
+                      <option value="56">Wedding Planning</option>
+                  </select>
+    </div>
+        <div class="box-select search w-165">
+        <select id="service" class="select-service divider select-country" name="country" ng-model="vendorSearch.countryId" ng-change="vendorSearch.refreshCity()">
+          <option value="">All Countries</option>
+                          <option value="2">Albania</option>
+                          <option value="13">Australia</option>
+                          <option value="14">Austria</option>
+                          <option value="30">Brazil</option>
+                          <option value="32">Brunei Darussalam</option>
+                          <option value="38">Canada</option>
+                          <option value="47">Colombia</option>
+                          <option value="58">Denmark</option>
+                          <option value="61">Dominican Republic</option>
+                          <option value="73">France</option>
+                          <option value="96">Hong Kong</option>
+                          <option value="100">Indonesia</option>
+                          <option value="104">Israel</option>
+                          <option value="105">Italy</option>
+                          <option value="107">Japan</option>
+                          <option value="113">South Korea</option>
+                          <option value="126">Macedonia</option>
+                          <option value="129">Malaysia</option>
+                          <option value="150">Netherlands</option>
+                          <option value="162">Pakistan</option>
+                          <option value="165">Panama</option>
+                          <option value="169">Philippines</option>
+                          <option value="177">Russia</option>
+                          <option value="187">Saudi Arabia</option>
+                          <option value="192">Singapore</option>
+                          <option value="197">South Africa</option>
+                          <option value="199">Spain</option>
+                          <option value="205">Sweden</option>
+                          <option value="208">Taiwan</option>
+                          <option value="211">Thailand</option>
+                          <option value="225">United Kingdom</option>
+                          <option value="226">United States</option>
+                          <option value="232">Vietnam</option>
+                    </select>
+    </div>
+    
+    <div class="box-select search w-165">
+      <ng-switch on="cityLoad">
+        <select id="service" class="select-service divider" name="city" ng-model="vendorSearch.cityId" ng-switch-when="false">
+          <option value="">All Cities</option>
+                      </select>
+        <select id="service" ng-model="vendorSearch.cityId" name="city" ng-switch-when="true" ng-options="city.id as city.name for city in cities" ng-change="vendorSearch.setCityId(vendorSearch.cityId)">
+          <option value="">All Cities</option>
+        </select>
+      </ng-switch>
+    </div>
+
+    <div class="box-select search w-150">
+        <select id="service" class="select-service divider" name="budget" ng-model="vendorSearch.budgetId">
+          <option value="">All Budgets</option>
+                      <option value="48">$</option>
+                      <option value="49">$$</option>
+                      <option value="50">$$$</option>
+                  </select>
+    </div>
+    <button class="btn btn-stronk with-border right w-93 btn-no-sidepadding btn-loader" ng-class="{'is-loading-ajax' : isSearching}" ng-click="vendorSearch.search(vendorSearch.cityId)">SEARCH</button>
+  </div>
+</header>		
+
+  <div class="bs_breadcrumb">
+    <div class="breadcrumb-container wrapper box no-padding">
+      <div itemscope itemtype="http://schema.org/BreadcrumbList" class="box no-padding inner-bc">
+    <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        <a itemprop="item" href='http://www.bridestory.com' target="_self">
+            <span itemprop="name">HOME</span>
+        </a>
+        <meta itemprop="position" content="1" />
+    </span>
+    <span class="ico-bs-arrow-right"></span>
+    <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                    <a itemprop="item" href="http://www.bridestory.com/all-countries" target="_self">
+                <span itemprop="name">Vendor List</span>
+            </a>
+                
+        <meta itemprop="position" content="2" />
+    </span>
+            <span class="ico-bs-arrow-right"></span>
+        <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                            <a itemprop="item" href="http://www.bridestory.com/all-countries" target="_self">
+                            <span itemprop="name" class="">All Countries</span>
+            </a>
+            <meta itemprop="position" content="3" />
+        </span>
+            <span class="ico-bs-arrow-right"></span>
+        <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                            <a itemprop="item" href="http://www.bridestory.com/all-countries" target="_self">
+                            <span itemprop="name" class="">All Cities</span>
+            </a>
+            <meta itemprop="position" content="4" />
+        </span>
+            <span class="ico-bs-arrow-right"></span>
+        <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                            <a itemprop="item" style="cursor:default">
+                            <span itemprop="name" class="active">Bridal</span>
+            </a>
+            <meta itemprop="position" content="5" />
+        </span>
+    </div>      <!-- vendor categories -->
+      <div class="vendor-drop-head">
+          <a class="link">
+              <span>Vendor Categories</span>
+              <span class="icon-up-categories"></span>
+          </a>
+      </div>
+    </div>
+  </div>
+
+
+
+    <div class="vendor-drop">
+    <div class="box no-padding wrapper">
+      <div class="category">
+        <p class="change_color">
+                      <a href="http://www.bridestory.com/all-countries" target="_self">All Categories</a>
+                  </p>
+                          <p class="change_color">
+                          <a href="http://www.bridestory.com/all-countries/all-cities/bridal" target="_self">Bridal</a>
+                      </p>
+                  <p class="change_color">
+                          <a href="http://www.bridestory.com/all-countries/all-cities/catering" target="_self">Catering</a>
+                      </p>
+                  <p class="change_color">
+                          <a href="http://www.bridestory.com/all-countries/all-cities/decoration" target="_self">Decoration & Lighting</a>
+                      </p>
+                  <p class="change_color">
+                          <a href="http://www.bridestory.com/all-countries/all-cities/wedding-dress" target="_self">Dress & Attire</a>
+                      </p>
+              </div>
+            <div class="category">
+                  <p class="change_color">
+                          <a href="http://www.bridestory.com/all-countries/all-cities/entertainment-dj" target="_self">Entertainment (DJ)</a>
+                      </p>
+          
+                  <p class="change_color">
+                          <a href="http://www.bridestory.com/all-countries/all-cities/entertainment-mc" target="_self">Entertainment (MC)</a>
+                      </p>
+          
+                  <p class="change_color">
+                          <a href="http://www.bridestory.com/all-countries/all-cities/entertainment-music" target="_self">Entertainment (Music)</a>
+                      </p>
+          
+                  <p class="change_color">
+                          <a href="http://www.bridestory.com/all-countries/all-cities/event-rentals" target="_self">Event Rentals</a>
+                      </p>
+          
+                  <p class="change_color">
+                          <a href="http://www.bridestory.com/all-countries/all-cities/wedding-gifts" target="_self">Favors & Gifts</a>
+                      </p>
+                      </div>
+            <div class="category">
+          
+                  <p class="change_color">
+                          <a href="http://www.bridestory.com/all-countries/all-cities/wedding-flowers" target="_self">Flowers</a>
+                      </p>
+          
+                  <p class="change_color">
+                          <a href="http://www.bridestory.com/all-countries/all-cities/hair-makeup" target="_self">Hair & Makeup</a>
+                      </p>
+          
+                  <p class="change_color">
+                          <a href="http://www.bridestory.com/all-countries/all-cities/health-beauty" target="_self">Health & Beauty</a>
+                      </p>
+          
+                  <p class="change_color">
+                          <a href="http://www.bridestory.com/all-countries/all-cities/honeymoon" target="_self">Honeymoon</a>
+                      </p>
+          
+                  <p class="change_color">
+                          <a href="http://www.bridestory.com/all-countries/all-cities/invitations" target="_self">Invitations</a>
+                      </p>
+                      </div>
+            <div class="category">
+          
+                  <p class="change_color">
+                          <a href="http://www.bridestory.com/all-countries/all-cities/jewelry" target="_self">Jewelry</a>
+                      </p>
+          
+                  <p class="change_color">
+                          <a href="http://www.bridestory.com/all-countries/all-cities/mens-formal-wear" target="_self">Men's Formal Wear</a>
+                      </p>
+          
+                  <p class="change_color">
+                          <a href="http://www.bridestory.com/all-countries/all-cities/other" target="_self">Other</a>
+                      </p>
+          
+                  <p class="change_color">
+                          <a href="http://www.bridestory.com/all-countries/all-cities/photography" target="_self">Photography</a>
+                      </p>
+          
+                  <p class="change_color">
+                          <a href="http://www.bridestory.com/all-countries/all-cities/wedding-venue" target="_self">Venue</a>
+                      </p>
+                      </div>
+            <div class="category">
+          
+                  <p class="change_color">
+                          <a href="http://www.bridestory.com/all-countries/all-cities/videography" target="_self">Videography</a>
+                      </p>
+          
+                  <p class="change_color">
+                          <a href="http://www.bridestory.com/all-countries/all-cities/wedding-cake" target="_self">Wedding Cake</a>
+                      </p>
+          
+                  <p class="change_color">
+                          <a href="http://www.bridestory.com/all-countries/all-cities/wedding-planning" target="_self">Wedding Planning</a>
+                      </p>
+          
+              </div>
+    </div>
+  </div>
+
+  <div class="box wrapper no-padding mt-30 mb-50" ng-controller="vendorListControllers as vendorList" infinite-scroll="vendorList.nextPage()" infinite-scroll-immediate-check="false" infinite-scroll-distance="1" infinite-scroll-disabled="fetching || end" ng-init="vendorList.initUser()">
+    <div class="vendor-head">
+        <div class="text">
+                      Showing
+                          <span>
+                                                      Bridal
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </span>
+            
+            Vendors
+
+                          in <span>all cities,</span>
+                              <span>all countries</span>
+                          
+                          with <span>all budget range</span>
+                              </div>
+
+        <div class="view-grid">
+            <span class="mr-15">View as</span>
+
+<a class="click" href="http://www.bridestory.com/all-countries/all-cities/bridal?page=2" target="_self">
+    <span class="ico-bs-grid is-active"></span>
+</a>
+<a class="click" href="http://www.bridestory.com/list/all-countries/all-cities/bridal?page=2" target="_self">
+    <span class="ico-bs-list " ></span>
+</a>
+
+            <div class="box-select small ml-15" ng-init="sort='featured';direction='';">
+              <select ng-cloak id="subject"  name="subject" ng-model="sortParam" ng-change="vendorList.sort()">
+                <option value="featured" selected>Featured</option>
+                <option value="popularity" >Most Popular</option>
+                <option value="rate" >Highest Rated</option>
+                <option value="alphabetical_asc" >Alphabetical (A-Z)</option>
+                <option value="alphabetical_desc" >Alphabetical (Z-A)</option>
+              </select>
+            </div>
+        </div>
+    </div>
+
+                        <div class="vendor-category-description box no-padding mt-20">
+                <p class="italic small">The gorgeous wedding dresses are waiting for the right Bride. Our bridal vendors are all set with the best wedding packages to help you locate the gown of your dreams.</p>
+            </div>
+            <div class="clear mb-30"></div>
+            
+    
+    <div class="vendor-grid mt-20 box no-padding" ng-init='vendorList.setResetFilter([])'>
+              <div class="box-grid" >
+    <div class="view_share">
+      <span class="ico-bs-love-nolink" ng-init="love_784304=44;">
+        <span ng-cloak>[[love_784304 | abbreviate]]</span>
+      </span>
+      <span class="ico-bs-view" ng-init="view_784304=3530;">
+        <span ng-cloak>[[view_784304 | abbreviate]]</span>
+      </span>
+    </div>
+
+    <span class="ico-bs-gold"></span>
+    
+    <div class="pic">
+      <a ng-href="http://www.bridestory.com/rubens-wedding-planner" target="_self">
+          <img src="http://images.bridestory.com/images/fl_progressive,f_auto,c_fill,q_100,w_213,h_213/assets/69da7bd3484dd1bb5777a1f9d7eb8e46c4dfc259/rubens-wedding-planner.jpg" alt="Rubens Wedding Planner" title="Rubens Wedding Planner">
+      </a>
+    </div>
+
+    <a class="name" href="http://www.bridestory.com/rubens-wedding-planner" target="_self">Rubens Wedding Planner</a>
+
+    <span class="cat_city">
+      <a href="http://www.bridestory.com/indonesia/tangerang/bridal" target="_self">Bridal</a>
+    </span>
+    
+    <span class="cat_city">
+      <a href="http://www.bridestory.com/indonesia/tangerang" target="_self">Tangerang</a>
+    </span>
+    <div class="rev">
+      <span>$ </span>
+        <span>|</span>
+        <rating ng-model="rate_784304" readonly="true" max="5" state-on="'ico-rate-on-small'" state-off="'ico-rate-off-small'"></rating>
+        <a ng-init="rate_784304 = 4.2;" class="rating" href="http://www.bridestory.com/rubens-wedding-planner/reviews" target="_self">
+          (8 reviews)
+        </a>
+    </div>
+
+    <a class="btn btn-stronker btn-block" ng-click="vendorList.viewPricelist('rubens-wedding-planner')">
+      <i class="icon-price"></i>View Pricelist
+    </a>
+    
+  </div>
+  <div class="box-grid" >
+    <div class="view_share">
+      <span class="ico-bs-love-nolink" ng-init="love_373749=366;">
+        <span ng-cloak>[[love_373749 | abbreviate]]</span>
+      </span>
+      <span class="ico-bs-view" ng-init="view_373749=11202;">
+        <span ng-cloak>[[view_373749 | abbreviate]]</span>
+      </span>
+    </div>
+
+                                      <span class="ico-bs-gold"></span>
+    
+    <div class="pic">
+              <a ng-href="http://www.bridestory.com/luminous-bridal" target="_self">
+          <img src="http://images.bridestory.com/images/fl_progressive,f_auto,c_fill,q_100,w_213,h_213/assets/naomipp_cswicx/luminous-bridal.jpg" alt="Luminous Bridal" title="Luminous Bridal">
+        </a>
+          </div>
+
+    <a class="name" href="http://www.bridestory.com/luminous-bridal" target="_self">Luminous Bridal</a>
+
+                                                                      <span class="cat_city">
+                  <a href="http://www.bridestory.com/indonesia/jakarta/bridal" target="_self">Bridal</a>
+                </span>
+                <span class="cat_city">
+                  <a href="http://www.bridestory.com/indonesia/jakarta" target="_self">Jakarta</a>
+                </span>
+                                                 <div class="rev">
+        <span>
+                                                    $$                  </span>
+        <span>|</span>
+        <rating ng-model="rate_373749" readonly="true" max="5" state-on="'ico-rate-on-small'" state-off="'ico-rate-off-small'"></rating>
+        <a ng-init="rate_373749 = 4.1;" class="rating" href="http://www.bridestory.com/luminous-bridal/reviews" target="_self">
+          (7 reviews)
+        </a>
+    </div>
+
+              <a class="btn btn-stronker btn-block" ng-click="vendorList.viewPricelist('luminous-bridal')">
+        <i class="icon-price"></i>View Pricelist
+      </a>
+    
+  </div>
+  <div class="box-grid" >
+    <div class="view_share">
+      <span class="ico-bs-love-nolink" ng-init="love_668454=10;">
+        <span ng-cloak>[[love_668454 | abbreviate]]</span>
+      </span>
+      <span class="ico-bs-view" ng-init="view_668454=2244;">
+        <span ng-cloak>[[view_668454 | abbreviate]]</span>
+      </span>
+    </div>
+
+                            <span class="ico-bs-gold"></span>
+    
+    <div class="pic">
+              <a ng-href="http://www.bridestory.com/joli-kay" target="_self">
+          <img src="http://images.bridestory.com/images/fl_progressive,f_auto,c_fill,q_100,w_213,h_213/assets/153873d81a988583648db64600c3fb0bd685cff9/joli-kay.jpg" alt="Joli Kay" title="Joli Kay">
+        </a>
+          </div>
+
+    <a class="name" href="http://www.bridestory.com/joli-kay" target="_self">Joli Kay</a>
+
+                                                                                                <span class="cat_city">
+                  <a href="http://www.bridestory.com/indonesia/jakarta/bridal" target="_self">Bridal</a>
+                </span>
+                <span class="cat_city">
+                  <a href="http://www.bridestory.com/indonesia/jakarta" target="_self">Jakarta</a>
+                </span>
+                                                 <div class="rev">
+        <span>
+                                                                              $$                  </span>
+        <span>|</span>
+        <rating ng-model="rate_668454" readonly="true" max="5" state-on="'ico-rate-on-small'" state-off="'ico-rate-off-small'"></rating>
+        <a ng-init="rate_668454 = 4.0;" class="rating" href="http://www.bridestory.com/joli-kay/reviews" target="_self">
+          (1 reviews)
+        </a>
+    </div>
+
+              <a class="btn btn-stronker btn-block" ng-click="vendorList.viewPricelist('joli-kay')">
+        <i class="icon-price"></i>View Pricelist
+      </a>
+    
+  </div>
+  <div class="box-grid" >
+    <div class="view_share">
+      <span class="ico-bs-love-nolink" ng-init="love_212887=995;">
+        <span ng-cloak>[[love_212887 | abbreviate]]</span>
+      </span>
+      <span class="ico-bs-view" ng-init="view_212887=37753;">
+        <span ng-cloak>[[view_212887 | abbreviate]]</span>
+      </span>
+    </div>
+
+                            <span class="ico-bs-gold"></span>
+    
+    <div class="pic">
+              <a ng-href="http://www.bridestory.com/bramanta-wijaya-sposa" target="_self">
+          <img src="http://images.bridestory.com/images/fl_progressive,f_auto,c_fill,q_100,w_213,h_213/assets/001359-r1-e012e/bramanta-wijaya-sposa.jpg" alt="Bramanta Wijaya Sposa" title="Bramanta Wijaya Sposa">
+        </a>
+          </div>
+
+    <a class="name" href="http://www.bridestory.com/bramanta-wijaya-sposa" target="_self">Bramanta Wijaya Sposa</a>
+
+                                                                      <span class="cat_city">
+                  <a href="http://www.bridestory.com/indonesia/jakarta/bridal" target="_self">Bridal</a>
+                </span>
+                <span class="cat_city">
+                  <a href="http://www.bridestory.com/indonesia/jakarta" target="_self">Jakarta</a>
+                </span>
+                                                 <div class="rev">
+        <span>
+                                                    $$$                  </span>
+        <span>|</span>
+        <rating ng-model="rate_212887" readonly="true" max="5" state-on="'ico-rate-on-small'" state-off="'ico-rate-off-small'"></rating>
+        <a ng-init="rate_212887 = 0;" class="rating" href="http://www.bridestory.com/bramanta-wijaya-sposa/reviews" target="_self">
+          (0 reviews)
+        </a>
+    </div>
+
+              <a class="btn btn-stronker btn-block" ng-click="vendorList.viewPricelist('bramanta-wijaya-sposa')">
+        <i class="icon-price"></i>View Pricelist
+      </a>
+    
+  </div>
+  <div class="box-grid" >
+    <div class="view_share">
+      <span class="ico-bs-love-nolink" ng-init="love_138703=353;">
+        <span ng-cloak>[[love_138703 | abbreviate]]</span>
+      </span>
+      <span class="ico-bs-view" ng-init="view_138703=32447;">
+        <span ng-cloak>[[view_138703 | abbreviate]]</span>
+      </span>
+    </div>
+
+                            <span class="ico-bs-gold"></span>
+    
+    <div class="pic">
+              <a ng-href="http://www.bridestory.com/soireegown" target="_self">
+          <img src="http://images.bridestory.com/images/fl_progressive,f_auto,c_fill,q_100,w_213,h_213/assets/img_2059_2_0/soireegown.jpg" alt="SOIREEGOWN" title="SOIREEGOWN">
+        </a>
+          </div>
+
+    <a class="name" href="http://www.bridestory.com/soireegown" target="_self">SOIREEGOWN</a>
+
+                                                                                                <span class="cat_city">
+                  <a href="http://www.bridestory.com/indonesia/surabaya/bridal" target="_self">Bridal</a>
+                </span>
+                <span class="cat_city">
+                  <a href="http://www.bridestory.com/indonesia/surabaya" target="_self">Surabaya</a>
+                </span>
+                                                 <div class="rev">
+        <span>
+                                                                              $$                  </span>
+        <span>|</span>
+        <rating ng-model="rate_138703" readonly="true" max="5" state-on="'ico-rate-on-small'" state-off="'ico-rate-off-small'"></rating>
+        <a ng-init="rate_138703 = 0;" class="rating" href="http://www.bridestory.com/soireegown/reviews" target="_self">
+          (0 reviews)
+        </a>
+    </div>
+
+              <a class="btn btn-stronker btn-block" ng-click="vendorList.viewPricelist('soireegown')">
+        <i class="icon-price"></i>View Pricelist
+      </a>
+    
+  </div>
+  <div class="box-grid" >
+    <div class="view_share">
+      <span class="ico-bs-love-nolink" ng-init="love_118162=567;">
+        <span ng-cloak>[[love_118162 | abbreviate]]</span>
+      </span>
+      <span class="ico-bs-view" ng-init="view_118162=29430;">
+        <span ng-cloak>[[view_118162 | abbreviate]]</span>
+      </span>
+    </div>
+
+                            <span class="ico-bs-gold"></span>
+    
+    <div class="pic">
+              <a ng-href="http://www.bridestory.com/lamiik-bridal" target="_self">
+          <img src="http://images.bridestory.com/images/fl_progressive,f_auto,c_fill,q_100,w_213,h_213/assets/DSC00643_ak_endx6f/lamiik-bridal.jpg" alt="LAMIIK BRIDAL" title="LAMIIK BRIDAL">
+        </a>
+          </div>
+
+    <a class="name" href="http://www.bridestory.com/lamiik-bridal" target="_self">LAMIIK BRIDAL</a>
+
+                                                                                                <span class="cat_city">
+                  <a href="http://www.bridestory.com/indonesia/jakarta/bridal" target="_self">Bridal</a>
+                </span>
+                <span class="cat_city">
+                  <a href="http://www.bridestory.com/indonesia/jakarta" target="_self">Jakarta</a>
+                </span>
+                                                 <div class="rev">
+        <span>
+                                                                              $$$                  </span>
+        <span>|</span>
+        <rating ng-model="rate_118162" readonly="true" max="5" state-on="'ico-rate-on-small'" state-off="'ico-rate-off-small'"></rating>
+        <a ng-init="rate_118162 = 0;" class="rating" href="http://www.bridestory.com/lamiik-bridal/reviews" target="_self">
+          (0 reviews)
+        </a>
+    </div>
+
+              <a class="btn btn-stronker btn-block" ng-click="vendorList.viewPricelist('lamiik-bridal')">
+        <i class="icon-price"></i>View Pricelist
+      </a>
+    
+  </div>
+  <div class="box-grid" >
+    <div class="view_share">
+      <span class="ico-bs-love-nolink" ng-init="love_69221=700;">
+        <span ng-cloak>[[love_69221 | abbreviate]]</span>
+      </span>
+      <span class="ico-bs-view" ng-init="view_69221=28431;">
+        <span ng-cloak>[[view_69221 | abbreviate]]</span>
+      </span>
+    </div>
+
+                            <span class="ico-bs-gold"></span>
+    
+    <div class="pic">
+              <a ng-href="http://www.bridestory.com/verena-mia" target="_self">
+          <img src="http://images.bridestory.com/images/fl_progressive,f_auto,c_fill,q_100,w_213,h_213/assets/IMG_0396-alt1/verena-mia.jpg" alt="Verena Mia" title="Verena Mia">
+        </a>
+          </div>
+
+    <a class="name" href="http://www.bridestory.com/verena-mia" target="_self">Verena Mia</a>
+
+                                                                      <span class="cat_city">
+                  <a href="http://www.bridestory.com/indonesia/bandung/bridal" target="_self">Bridal</a>
+                </span>
+                <span class="cat_city">
+                  <a href="http://www.bridestory.com/indonesia/bandung" target="_self">Bandung</a>
+                </span>
+                                                 <div class="rev">
+        <span>
+                                                    $$                  </span>
+        <span>|</span>
+        <rating ng-model="rate_69221" readonly="true" max="5" state-on="'ico-rate-on-small'" state-off="'ico-rate-off-small'"></rating>
+        <a ng-init="rate_69221 = 0;" class="rating" href="http://www.bridestory.com/verena-mia/reviews" target="_self">
+          (0 reviews)
+        </a>
+    </div>
+
+              <a class="btn btn-stronker btn-block" ng-click="vendorList.viewPricelist('verena-mia')">
+        <i class="icon-price"></i>View Pricelist
+      </a>
+    
+  </div>
+  <div class="box-grid" >
+    <div class="view_share">
+      <span class="ico-bs-love-nolink" ng-init="love_38944=776;">
+        <span ng-cloak>[[love_38944 | abbreviate]]</span>
+      </span>
+      <span class="ico-bs-view" ng-init="view_38944=26464;">
+        <span ng-cloak>[[view_38944 | abbreviate]]</span>
+      </span>
+    </div>
+
+                                      <span class="ico-bs-gold"></span>
+    
+    <div class="pic">
+              <a ng-href="http://www.bridestory.com/de-reina-bridal" target="_self">
+          <img src="http://images.bridestory.com/images/fl_progressive,f_auto,c_fill,q_100,w_213,h_213/assets/image_208/de-reina-bridal.jpg" alt="De Reina Bridal" title="De Reina Bridal">
+        </a>
+          </div>
+
+    <a class="name" href="http://www.bridestory.com/de-reina-bridal" target="_self">De Reina Bridal</a>
+
+                                                                      <span class="cat_city">
+                  <a href="http://www.bridestory.com/indonesia/jakarta/bridal" target="_self">Bridal</a>
+                </span>
+                <span class="cat_city">
+                  <a href="http://www.bridestory.com/indonesia/jakarta" target="_self">Jakarta</a>
+                </span>
+                                                 <div class="rev">
+        <span>
+                                                    $$$                  </span>
+        <span>|</span>
+        <rating ng-model="rate_38944" readonly="true" max="5" state-on="'ico-rate-on-small'" state-off="'ico-rate-off-small'"></rating>
+        <a ng-init="rate_38944 = 0;" class="rating" href="http://www.bridestory.com/de-reina-bridal/reviews" target="_self">
+          (0 reviews)
+        </a>
+    </div>
+
+              <a class="btn btn-stronker btn-block" ng-click="vendorList.viewPricelist('de-reina-bridal')">
+        <i class="icon-price"></i>View Pricelist
+      </a>
+    
+  </div>
+  <div class="box-grid" >
+    <div class="view_share">
+      <span class="ico-bs-love-nolink" ng-init="love_65865=171;">
+        <span ng-cloak>[[love_65865 | abbreviate]]</span>
+      </span>
+      <span class="ico-bs-view" ng-init="view_65865=20721;">
+        <span ng-cloak>[[view_65865 | abbreviate]]</span>
+      </span>
+    </div>
+
+                            <span class="ico-bs-gold"></span>
+    
+    <div class="pic">
+              <a ng-href="http://www.bridestory.com/three-w" target="_self">
+          <img src="http://images.bridestory.com/images/fl_progressive,f_auto,c_fill,q_100,w_213,h_213/assets/photo_56/three-w.jpg" alt="THREE W" title="THREE W">
+        </a>
+          </div>
+
+    <a class="name" href="http://www.bridestory.com/three-w" target="_self">THREE W</a>
+
+                                                                                                <span class="cat_city">
+                  <a href="http://www.bridestory.com/indonesia/jakarta/bridal" target="_self">Bridal</a>
+                </span>
+                <span class="cat_city">
+                  <a href="http://www.bridestory.com/indonesia/jakarta" target="_self">Jakarta</a>
+                </span>
+                                                 <div class="rev">
+        <span>
+                                                                              $$                  </span>
+        <span>|</span>
+        <rating ng-model="rate_65865" readonly="true" max="5" state-on="'ico-rate-on-small'" state-off="'ico-rate-off-small'"></rating>
+        <a ng-init="rate_65865 = 0;" class="rating" href="http://www.bridestory.com/three-w/reviews" target="_self">
+          (0 reviews)
+        </a>
+    </div>
+
+              <a class="btn btn-stronker btn-block" ng-click="vendorList.viewPricelist('three-w')">
+        <i class="icon-price"></i>View Pricelist
+      </a>
+    
+  </div>
+  <div class="box-grid" >
+    <div class="view_share">
+      <span class="ico-bs-love-nolink" ng-init="love_22145=59;">
+        <span ng-cloak>[[love_22145 | abbreviate]]</span>
+      </span>
+      <span class="ico-bs-view" ng-init="view_22145=15751;">
+        <span ng-cloak>[[view_22145 | abbreviate]]</span>
+      </span>
+    </div>
+
+                            <span class="ico-bs-gold"></span>
+    
+    <div class="pic">
+              <a ng-href="http://www.bridestory.com/dartanto-design" target="_self">
+          <img src="http://images.bridestory.com/images/fl_progressive,f_auto,c_fill,q_100,w_213,h_213/assets/31c4cd8fd4b359e457e59d8d3ee05d18897f5a84/dartanto-design.jpg" alt="Dartanto Design" title="Dartanto Design">
+        </a>
+          </div>
+
+    <a class="name" href="http://www.bridestory.com/dartanto-design" target="_self">Dartanto Design</a>
+
+                                                                                                                          <span class="cat_city">
+                  <a href="http://www.bridestory.com/indonesia/jakarta/bridal" target="_self">Bridal</a>
+                </span>
+                <span class="cat_city">
+                  <a href="http://www.bridestory.com/indonesia/jakarta" target="_self">Jakarta</a>
+                </span>
+                                                 <div class="rev">
+        <span>
+                                                                                                        $$                  </span>
+        <span>|</span>
+        <rating ng-model="rate_22145" readonly="true" max="5" state-on="'ico-rate-on-small'" state-off="'ico-rate-off-small'"></rating>
+        <a ng-init="rate_22145 = 0;" class="rating" href="http://www.bridestory.com/dartanto-design/reviews" target="_self">
+          (0 reviews)
+        </a>
+    </div>
+
+              <a class="btn btn-stronker btn-block" ng-click="vendorList.viewPricelist('dartanto-design')">
+        <i class="icon-price"></i>View Pricelist
+      </a>
+    
+  </div>
+  <div class="box-grid" >
+    <div class="view_share">
+      <span class="ico-bs-love-nolink" ng-init="love_28080=91;">
+        <span ng-cloak>[[love_28080 | abbreviate]]</span>
+      </span>
+      <span class="ico-bs-view" ng-init="view_28080=9575;">
+        <span ng-cloak>[[view_28080 | abbreviate]]</span>
+      </span>
+    </div>
+
+                                      <span class="ico-bs-gold"></span>
+    
+    <div class="pic">
+              <a ng-href="http://www.bridestory.com/kyria-house-bride" target="_self">
+          <img src="http://images.bridestory.com/images/fl_progressive,f_auto,c_fill,q_100,w_213,h_213/assets/5a0837ea7a34e34bef2dc21c61cab609364e84af/kyria-house-bride.jpg" alt="Kyria House Of Bride" title="Kyria House Of Bride">
+        </a>
+          </div>
+
+    <a class="name" href="http://www.bridestory.com/kyria-house-bride" target="_self">Kyria House of Bride</a>
+
+                                                                      <span class="cat_city">
+                  <a href="http://www.bridestory.com/indonesia/jakarta/bridal" target="_self">Bridal</a>
+                </span>
+                <span class="cat_city">
+                  <a href="http://www.bridestory.com/indonesia/jakarta" target="_self">Jakarta</a>
+                </span>
+                                                 <div class="rev">
+        <span>
+                                                    $$                  </span>
+        <span>|</span>
+        <rating ng-model="rate_28080" readonly="true" max="5" state-on="'ico-rate-on-small'" state-off="'ico-rate-off-small'"></rating>
+        <a ng-init="rate_28080 = 0;" class="rating" href="http://www.bridestory.com/kyria-house-bride/reviews" target="_self">
+          (0 reviews)
+        </a>
+    </div>
+
+              <a class="btn btn-stronker btn-block" ng-click="vendorList.viewPricelist('kyria-house-bride')">
+        <i class="icon-price"></i>View Pricelist
+      </a>
+    
+  </div>
+  <div class="box-grid" >
+    <div class="view_share">
+      <span class="ico-bs-love-nolink" ng-init="love_402547=164;">
+        <span ng-cloak>[[love_402547 | abbreviate]]</span>
+      </span>
+      <span class="ico-bs-view" ng-init="view_402547=6991;">
+        <span ng-cloak>[[view_402547 | abbreviate]]</span>
+      </span>
+    </div>
+
+                                                          <span class="ico-bs-gold"></span>
+    
+    <div class="pic">
+              <a ng-href="http://www.bridestory.com/annare-bride" target="_self">
+          <img src="http://images.bridestory.com/images/fl_progressive,f_auto,c_fill,q_100,w_213,h_213/assets/92753e560f294894c8cdc51bb724dc640d29cc36/annare-bride.jpg" alt="Annare Bride" title="Annare Bride">
+        </a>
+          </div>
+
+    <a class="name" href="http://www.bridestory.com/annare-bride" target="_self">Annare Bride</a>
+
+                                                                      <span class="cat_city">
+                  <a href="http://www.bridestory.com/indonesia/yogyakarta/bridal" target="_self">Bridal</a>
+                </span>
+                <span class="cat_city">
+                  <a href="http://www.bridestory.com/indonesia/yogyakarta" target="_self">Yogyakarta</a>
+                </span>
+                                                 <div class="rev">
+        <span>
+                                                    $$$                  </span>
+        <span>|</span>
+        <rating ng-model="rate_402547" readonly="true" max="5" state-on="'ico-rate-on-small'" state-off="'ico-rate-off-small'"></rating>
+        <a ng-init="rate_402547 = 0;" class="rating" href="http://www.bridestory.com/annare-bride/reviews" target="_self">
+          (0 reviews)
+        </a>
+    </div>
+
+              <a class="btn btn-stronker btn-block" ng-click="vendorList.viewPricelist('annare-bride')">
+        <i class="icon-price"></i>View Pricelist
+      </a>
+    
+  </div>
+      
+      <div class="box-grid" ng-repeat="vendor in vendors" ng-show="vendors.length" class="ng-hide" ng-cloak>
+        <div class="view_share">
+            <span class="ico-bs-love-nolink">[[ vendor.love | abbreviate]]</span>
+            <span class="ico-bs-view"> [[ vendor.view | abbreviate ]]</span>
+        </div>
+
+        <div ng-if="vendor.selectedMembership">
+          <ng-switch on="vendor.selectedMembership.membershipType.data.name">
+            <span ng-switch-when="Diamond" class="ico-bs-diamond"></span>
+            <span ng-switch-when="Gold" class="ico-bs-gold"></span>
+            <span ng-switch-when="Silver" class="ico-bs-silver"></span>
+          </ng-switch>
+        </div>
+
+        <div class="pic">
+            <a ng-href="http://www.bridestory.com/[[ vendor.slug ]]" target="_self">
+              <img ng-if="vendor.account.data.cover!=null" ng-src="[[vendor.account.data.cover]]" alt="[[ vendor.name ]]" title="[[ vendor.name ]]">
+              <img ng-if="vendor.account.data.cover==null" ng-src="http://www.bridestory.com/assets/samples/profile_default.gif">
+            </a>
+        </div>
+
+        <a ng-cloak class="name" ng-href="http://www.bridestory.com/[[ vendor.slug ]]" target="_self">[[ vendor.name ]]</a>
+        <span class="cat_city" >
+          <a ng-href="http://www.bridestory.com/[[vendor.selectedService.city.data.country.data.slug]]/[[vendor.selectedService.city.data.slug]]/[[ vendor.selectedService.category.data.slug ]]" target="_self">[[ vendor.selectedService.categoryName ]]</a>
+        </span>
+        <span class="cat_city" >
+          <a ng-href="http://www.bridestory.com/[[vendor.selectedService.city.data.country.data.slug]]/[[vendor.selectedService.city.data.slug]]" target="_self">[[ vendor.selectedService.cityName ]]</a>
+        </span>
+
+        <div class="rev">
+            <span> [[ '$' | repeat: vendor.selectedService.budgetName: '' ]] </span>
+            <span>|</span>
+            <rating ng-model="vendor.rating" readonly="true" max="5" state-on="'ico-rate-on-small'" state-off="'ico-rate-off-small'"></rating>
+            <a ng-cloak class="rating" href="http://www.bridestory.com/[[ vendor.slug ]]/reviews" target="_self">
+                ([[ vendor.totalReviews ]] reviews)
+            </a>
+        </div>
+        <div ng-if="vendor.contactCredit > 0 || vendor.hasActiveMembership">
+        <ng-switch on="vendor.totalPricelist">
+          <a ng-switch-default class="btn btn-stronker btn-block" ng-click="vendorList.viewPricelist([[vendor.slug]])">
+            <i class="icon-price"></i>View Pricelist
+          </a>
+          <a ng-switch-when="0" class="btn btn-subtle btn-block" ng-click="vendorList.askPricelist(vendor.account.data.id, vendor.slug)">
+              <span class="icon-ask"></span>Ask For Pricelist
+          </a>
+        </ng-switch>
+        </div>
+        <a ng-if="vendor.contactCredit <= 0 && !vendor.hasActiveMembership" class="btn btn-subtle btn-block" ng-click="vendorList.askPricelist(vendor.account.data.id, vendor.slug)">
+          <span class="icon-ask"></span>Ask For Pricelist
+        </a>
+      </div>
+    </div>
+
+    <div class="box is-loading-hz" ng-show="fetching">
+    </div>
+  </div>
+
+    <div class="widget-box">
+	<span class="bs-submit-sticky">
+		<a class="icon-dot-widget"></a>
+	</span>	
+	<span class="bs-helpcenter">
+		<a class="icon-help"></a>
+	</span>
+</div>
+<div class="help-box">
+	<p>Need help with something?<br>Check our Help Center.</p>
+	<a href="http://www.bridestory.com/support" target="_blank" class="btn btn-stronk btn-small btn-shorter with-border thin-padding w-150">visit help center</a>
+</div>
+
+<div class="submit-box">
+	<!--<p>Share images and stories of your<br>beautiful wedding to our blog</p>
+	<a href="http://www.bridestory.com/real-weddings" target="_blank" class="btn btn-stronk btn-small btn-shorter with-border thin-padding w-150">submit a wedding</a> -->
+	<ul>
+		<li><a href="http://www.bridestory.com/contact-us" target="_self"><span class="icon-msg-widget"></span><p class="sbt-widget mt-15">Contact Us</p></a></li>
+		<li><a href="http://careers.bridestory.com/" target="_self"><span class="icon-join-widget"></span><p class="sbt-widget mt-13">Join Bridestory Team</p></a></li>
+		<li><a href="http://www.bridestory.com/real-weddings" target="_self"><span class="icon-submit-widget"></span><p class="sbt-widget mt-10">Submit A Wedding <br> to blog</p></a></li>
+	</ul>	
+</div>
+						
+					<footer class="footer">
+    <div class="box wrapper no-padding">
+        <div class="left footer-left">
+            <p class="copyright pull-left">&copy; 2015 Bridestory</p>
+        </div>
+        <div class="center footer-center">
+            <ul>
+                <li><a href="http://www.bridestory.com/about-us" target="_self">About</a></li>
+                <li class="ml-10"><a href="http://www.bridestory.com/contact-us" target="_self">Contact</a></li>
+                <li class="ml-10"><a href="http://careers.bridestory.com/" target="_self">Careers</a></li>
+                <li class="ml-10"><a href="http://www.bridestory.com/sitemap" target="_self">Sitemap</a></li>
+                <li class="ml-10"><a href="http://support.bridestory.com" target="_self">Help Center</a></li>
+                <li class="ml-10"><a href="http://www.bridestory.com/privacy-policy" target="_self">Privacy Policy</a></li>
+                <li class="ml-10"><a href="http://www.bridestory.com/terms-conditions" target="_self">Terms &amp; conditions</a></li>
+            </ul>
+        </div>
+        <div class="right footer-right">
+            <ul class="footer-link">
+                <li><a class="facebook-footer" href="http://www.facebook.com/thebridestory" target="_blank"></a></li>
+                <li><a class="twitter-footer" href="http://twitter.com/TheBrideStory" target="_blank"></a></li>
+                <li><a class="instagram-footer" href="http://instagram.com/thebridestory" target="_blank"></a></li>
+                <li><a class="pinterest-footer" href="http://pinterest.com/thebridestory" target="_blank"></a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+		
+		
+		
+  <div ng-controller="pageCounterController as PageCtrl" ng-init="PageCtrl.addCount()"></div>
+  <div ng-controller="suddenPopupController"></div>
+
+		<!-- Google Code for Remarketing Tag -->
+				<script type="text/javascript">
+		/* <![CDATA[ */
+		var google_conversion_id = 972177812;
+		var google_remarketing_only = true;
+		var google_custom_params = window.google_tag_params;
+		/* ]]> */
+		</script>
+				<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+		</script>
+		<noscript>
+		<div style="display:inline;">
+				<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/972177812/?value=0&guid=ON&script=0"/>
+				</div>
+		</noscript>
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+	<script src="/bridestory.js"></script>
+          <script src="http://static.bridestory.com/raw/upload/static-production/desktop-1438584496/assets/vendor.grid/application.js" version="desktop" method="normal"></script>
+    
+
+		<script type="text/ng-template" id="modal-authenticate-user.html">
+	<div class="popup-box box no-padding w-460">
+		<a class="popup-close" ng-click="loginAuthCtrl.cancel()"><i class="icon-close-big"></i></a>
+		<div class="center">
+			<ng-switch on="loginAuthCtrl.selection">
+				<section ng-switch-default>
+					<div class="box thin popup-header center border-b">
+						<h5 class="mt-15">You Need to Log In to Continue</h5>
+					</div>
+					<div class="box w-400 wrapper">
+						<p class="georgia italic gray mb-15">It only takes 30 seconds to join Bridestory.<br>
+						You can create an account or login with:
+						</p>
+						<div class="sosmed-log clear-after">
+							<a class="btn btn-subtle btn-short facebook" ng-click="loginAuthCtrl.facebook_login()">Facebook</a>
+							<a class="btn btn-subtle btn-short gplus" ng-click="loginAuthCtrl.google_login()">Google<span>&#43;</span></a>
+							<a class="btn btn-subtle btn-short yahoo" ng-click="loginAuthCtrl.yahoo_login()">Yahoo&#33;</a>
+						</div>
+						<hr class="solid-gray" />
+						<span class="classic or brandon">or</span>
+
+						<div class="error" ng-show="login_error">[[login_error]]</div>
+						<div class="error" ng-show="login_submitted && !form_login.$valid">Please insert your email and password!</div>
+
+						<form check-dirty name="form_login" class="box no-top" ng-submit="loginAuthCtrl.login_register(form_login)" novalidate>
+							<div class="input-login-new">
+								<div class="input-style" ng-cloak>
+									<span class="bs-warn" ng-show="loginAuthCtrl.error_no_email"></span>
+									<span class="warn_error" ng-show="loginAuthCtrl.error_no_email">
+										Looks like you forgot to enter your e-mail address!									</span>
+									<span class="bs-warn" ng-show="loginAuthCtrl.error_wrong_email"></span>
+									<span class="warn_error" ng-show="loginAuthCtrl.error_wrong_email">
+										Oopsie! you might have mispelled your e-mail address.									</span>
+									<input placeholder="E-mail address" input-dirty tabindex="1" type="email" name="email" ng-model="loginAuthCtrl.login.email" required>
+								</div>
+
+								<div class="input-style" ng-cloak>
+									<span class="bs-warn" ng-show="loginAuthCtrl.error_password_to_short"></span>
+									<span class="warn_error" ng-show="loginAuthCtrl.error_password_to_short">
+										Your password is to short! You need at least 6+ characters.									</span>
+									<span class="bs-warn" ng-show="loginAuthCtrl.error_wrong_password"></span>
+									<span class="warn_error" ng-show="loginAuthCtrl.error_wrong_password">
+										Your e-mail and password doesn't match.										<a href="" ng-click="loginAuthCtrl.change_section('forgot', $event)">Forgot Password</a>
+									</span>
+									<input placeholder="Password" input-dirty tabindex="2" type="password" name="password" ng-model="loginAuthCtrl.login.password" required ng-minlength="6">
+								</div>
+							</div>
+							<button class="btn btn-stronk with-border w-235" tabindex="3" type="submit" ng-click="loginAuthCtrl.login_submitted=true">create account <span>or</span> login</button>
+							<div class="clearfix"></div>
+						</form>
+
+						<h6 class="underline"><a href="" target="_self" ng-click="loginAuthCtrl.change_section('forgot')">i FORGOT my PASSWORD</a></h6>
+
+
+					</div>
+					<p class="georgia italic gray mb-5 small">Creating an account means you’re okay with <a class="gray underline" href="http://www.bridestory.com/terms-conditions/user" target="_blank">our terms and conditions</a></p>
+					<div class="line-top box thin">
+						<h5 class="mt-5 mb-15 brandon"><span>If you have a wedding business,</span> <a class="underline" href="http://www.bridestory.com/vendors-home" target="_self">sign up here</a></h5>
+						<!--<a href="javascript:;" class="bs-icon-facebook-connect" ng-click="loginAuthCtrl.intent_login()" title="We will not post anything on your timeline without your permission">Facebook login</a>-->
+
+						<!--<div class="stripped-border"></div>-->
+
+						<!--<div class="center create-new">
+							<span style="font-size: 10px;">Don’t Have an Account?</span>
+							<a ng-click="loginAuthCtrl.change_section('register')">Create New Account</a>
+							<a ng-click="loginAuthCtrl.change_section('forgot')">Forgot Password</a>
+						</div>-->
+					</div>
+				</section>
+				<section ng-switch-when="register">
+					<div class="box thin popup-header center border-b">
+						<h5 class="mt-15">Create Your Account</h5>
+					</div>
+					<div class="box w-400 wrapper">
+						<p class="italic mb-5">One last thing, what should we call you?</p>
+						<form name="form_register" class="form-horizontal form-register" ng-submit="loginAuthCtrl.process_register(form_register)" novalidate>
+							<div class="input-login-new">
+								<div class="input-style">
+									<span class="bs-warn" ng-show="loginAuthCtrl.error_no_full_name"></span>
+									<span class="warn_error" ng-show="loginAuthCtrl.error_no_full_name">
+										Looks like you forgot to enter your name!									</span>
+									<input placeholder="Your name" input-dirty tabindex="1" type="text" name="full_name" ng-model="loginAuthCtrl.login.full_name" required>
+								</div>
+							</div>
+							<button class="btn btn-stronk with-border w-235" tabindex="3" type="submit" ng-click="loginAuthCtrl.register_submitted=true">Create My Account&#33;</button>
+							<div class="classic small box mt-20 mb-20">
+							  	<p class="classic small">Creating an account means you’re okay with our <a href="http://www.bridestory.com/terms-conditions/user" target="_blank">terms and conditions</a></p>
+							  	<input type="checkbox" id="chkPromotional" ng-model="loginAuthCtrl.promotional_newsletter" class="ng-pristine ng-valid">
+								<label for="chkPromotional">
+									<p class="georgia box capital"><span></span>I&#39;d like to receive promotional mails and newsletters from Bridestory Inc. and its affiliates</p>
+								</label>
+							</div>
+						</form>
+					</div>
+					<div class="line-top box thin">
+						<h6 class="mt-5 mb-10">I want to <a class="underline" href="http://www.bridestory.com/vendors-home/register">CREATE ACCOUNT AS A VENDOR</a></h6>
+					</div>
+				</section>
+				<section ng-switch-when="forgot">
+					<div class="box thin popup-header center border-b">
+						<h5>Forgot Password</h5>
+					</div>
+					<div class="box w-400 wrapper">
+						<p class="classic mb-15">No worries&#33; Let&apos;s reset your password</p>
+
+						<form name="form_forgot" class="form-horizontal form-register" ng-submit="loginAuthCtrl.forgot_process(form_forgot)" novalidate>
+							<div class="input-login-new">
+								<div class="input-style" ng-cloak>
+									<span class="bs-warn" ng-show="loginAuthCtrl.error_forgot_email_empty"></span>
+									<span class="warn_error" ng-show="loginAuthCtrl.error_forgot_email_empty">
+										Looks like you forgot to enter your e-mail address!									</span>
+									<span class="bs-warn" ng-show="loginAuthCtrl.error_forgot_email_wrong"></span>
+									<span class="warn_error" ng-show="loginAuthCtrl.error_forgot_email_wrong">
+										Oopsie! you might have mispelled your e-mail address.									</span>
+									<span class="bs-warn" ng-show="loginAuthCtrl.error_forgot_email_not_found"></span>
+									<span class="warn_error" ng-show="loginAuthCtrl.error_forgot_email_not_found">
+										Check your spelling. This e-mail doesn't seem familiar to us.									</span>
+									<input placeholder="E-mail address" input-dirty tabindex="1" type="email" name="email" ng-model="loginAuthCtrl.login.email" required>
+								</div>
+							</div>
+							<button class="btn btn-stronk with-border mb-15 w-235" tabindex="3" type="submit" ng-click="loginAuthCtrl.forgot_submitted=true">Reset Password</button>
+							<h6>back to <a class="underline" href="" ng-click="loginAuthCtrl.change_section('login')">login or create an account</a></h6>
+						</form>
+					</div>
+				</section>
+				<section ng-switch-when="forgot_success">
+					<div class="box thin popup-header center border-b">
+						<h5>an e-mail is headed your way</h5>
+					</div>
+					<div class="box">
+						<p class="italic">We sent a message to your e-mail.</a>
+						<p class="intros">Check your inbox so you can pick your<br>new password. If you didn&apos;t get any e-mail<br>from us, it might slip into your spam inbox</p>
+					</div>
+
+					<!--
+					<form name="form_register" class="form-horizontal form-register" ng-submit="loginAuthCtrl.process_register(form_register)" novalidate>
+						<button class="btn-okay" tabindex="3" type="submit" ng-click="loginAuthCtrl.close()">Okay&#33;</button>
+					</form>-->
+				</section>
+				<section ng-switch-when="facebook_not_found">
+					<div class="box thin popup-header center border-b">
+						<h5>Email Facebook Not Found</h5>
+					</div>
+
+					<div class="box w-400 wrapper">
+						<p class="classic mb-15">Please fill your email address</p>
+
+						<form name="form_register_facebook" class="form-horizontal form-register" ng-submit="loginAuthCtrl.process_register_facebook(form_register_facebook)" novalidate>
+							<div class="input-login-new">
+								<div class="input-style" ng-cloak>
+									<span class="bs-warn" ng-show="loginAuthCtrl.error_no_email"></span>
+									<span class="warn_error" ng-show="loginAuthCtrl.error_no_email">
+										Looks like you forgot to enter your e-mail address!									</span>
+									<input placeholder="E-mail address" input-dirty tabindex="1" type="email" name="email" ng-model="loginAuthCtrl.facebook.email" required>
+								</div>
+							</div>
+							<button class="btn btn-stronk with-border mb-15 w-235" tabindex="3" type="submit" ng-click="loginAuthCtrl.facebook_register_manual=true">Submit</button>
+							<div class="box small italic">
+								<input type="checkbox" id="chkPromotional" ng-model="loginAuthCtrl.promotional_newsletter" class="ng-pristine ng-valid">
+								<label for="chkPromotional">
+									<p class="georgia box capital"><span></span>I&#39;d like to receive promotional mails and newsletters from Bridestory Inc. and its affiliates</p>
+								</label>
+							</div>
+							<h6>back to <a href="#" class="underline" target="_self" ng-click="loginAuthCtrl.change_section('login')">login or create an account</a></h6>
+						</form>
+					</div>
+				</section>
+				<section ng-switch-when="yahoo_not_found">
+					<div class="box thin popup-header center border-b">
+						<h5>Email Yahoo Not Found</h5>
+					</div>
+
+					<div class="box w-400 wrapper">
+						<p class="classic mb-15">Please fill your email address</p>
+
+						<form name="form_register_facebook" class="form-horizontal form-register" ng-submit="loginAuthCtrl.process_register_yahoo(form_register_facebook)" novalidate>
+							<div class="input-login-new">
+								<div class="input-style" ng-cloak>
+									<span class="bs-warn" ng-show="loginAuthCtrl.error_no_email"></span>
+									<span class="warn_error" ng-show="loginAuthCtrl.error_no_email">
+										Looks like you forgot to enter your e-mail address!									</span>
+									<input placeholder="E-mail address" input-dirty tabindex="1" type="email" name="email" ng-model="loginAuthCtrl.facebook.email" required>
+								</div>
+							</div>
+							<button class="btn btn-stronk with-border mb-15 w-235" tabindex="3" type="submit" ng-click="loginAuthCtrl.facebook_register_manual=true">Submit</button>
+							<div class="box small italic">
+								<input type="checkbox" id="chkPromotional" ng-model="loginAuthCtrl.promotional_newsletter" class="ng-pristine ng-valid">
+								<label for="chkPromotional">
+									<p class="georgia box capital"><span></span>I&#39;d like to receive promotional mails and newsletters from Bridestory Inc. and its affiliates</p>
+								</label>
+							</div>
+							<h6>back to <a class="underline" href="#" target="_self" ng-click="loginAuthCtrl.change_section('login')">login or create an account</a></h6>
+						</form>
+					</div>
+				</section>
+				<section ng-switch-when="full_name_not_found">
+					<h3 class="register-bg-header">Full Name Not Found</h3>
+					<hr class="solid-new" />
+					<p class="intros">Please fill your full name</p>
+
+					<form name="form_register_google" class="form-horizontal form-register" ng-submit="loginAuthCtrl.process_register_google(form_register_google)" novalidate>
+						<div class="input-login-new">
+							<div class="input-style" ng-cloak>
+								<span class="bs-warn" ng-show="loginAuthCtrl.error_no_full_name"></span>
+								<span class="warn_error" ng-show="loginAuthCtrl.error_no_full_name">
+									Looks like you forgot to enter your name!								</span>
+								<input placeholder="Your name" input-dirty tabindex="1" type="text" name="full_name" ng-model="loginAuthCtrl.google.full_name" required>
+							</div>
+						</div>
+						<button class="btn-come" tabindex="3" type="submit" ng-click="loginAuthCtrl.google_register_manual=true">Submit</button>
+						<div class="box small italic">
+							<input type="checkbox" id="chkPromotional" ng-model="loginAuthCtrl.promotional_newsletter" class="ng-pristine ng-valid">
+							<label for="chkPromotional">
+								<p class="georgia box capital"><span></span>I&#39;d like to receive promotional mails and newsletters from Bridestory Inc. and its affiliates</p>
+							</label>
+						</div>
+						<h4 class="forgot">back to <a href="#" target="_self" ng-click="loginAuthCtrl.change_section('login')">login or create an account</a></h4>
+					</form>
+				</section>
+
+				<section ng-switch-when="newsletter_confirmation">
+					<div class="box thick">
+						<h3 class="register-bg-header">Create an Account</h3>
+						<hr class="solid-new" />
+						<p class="intros">You are now registered to Bridestory.com. Would like to receive promotional mails and newsletters from Bridestory Inc. and its affiliates?</p>
+
+						<div class="mt-20 mb-20">
+							<button ng-click="loginAuthCtrl.newsletterConfirm(true, [[loginAuthCtrl.socmedType]])" class="btn btn-stronk with-border submit">Yes, Please</button>
+							<button ng-click="loginAuthCtrl.newsletterConfirm(false, [[loginAuthCtrl.socmedType]])" class="btn btn-stronk with-border submit">No, Thanks!</button>
+						</div>
+					</div>
+				</section>
+			</ng-switch>
+		</div>
+		<div ng-show="loginAuthCtrl.is_loading" class="popup-loading-overlay is-loading">
+			<p class="hold_on">hold on a second</p>
+		</div>
+	</div>
+</script>		<script type="text/ng-template" id="search-result.html">
+    <a ng-href="[[ match.model.url ]]" target="_self" class="bridestory-row" style="margin:0px !important">
+			<img ng-show="match.model.photo" ng-src="[[ match.model.photo ]]" class="bridestory-image"/>
+			<img ng-hide="match.model.photo" src="http://www.bridestory.com/assets/samples/profile_default.gif" class="bridestory-image">
+        <div class="bridestory-title">
+            <span class="upper" bind-html-unsafe="match.label | typeaheadHighlight:query"></span>
+        </div>
+        <div class="bridestory-category">[[ match.model.category ]]</div>
+        <div class="bridestory-description">[[ match.model.location ]]</div>
+    </a>
+</script>
+
+<script type="text/ng-template" id="auto-complete.html">
+	<p class="ac-simple" bind-html-unsafe="match.label | typeaheadHighlight:query"></p>
+</script>		<script type="text/ng-template" id="modal-ask-priceslist.html">
+    <form id="Ask_Pricelist_Form" class="popup-box box no-padding w-500" name="ask_pricelist" ng-submit="askVendorCtrl.sendMessage()" novalidate>
+        <a class="popup-close" ng-click="close()"><i class="icon-close-big"></i></a>
+        <section class="box thin popup-header center border-b">
+            <h4 class="mt-10">Send a Message</h4>
+        </section>
+        <section class="box popup-content center form w-400 wrapper">
+            <div class="row" ng-class="{'form-error': !ask_pricelist.$valid && submitted && !ask_pricelist.subject.$valid}">
+                <div class="select">
+                    <select ng-model="subject" name="subject" required id="service">
+                        <option value="">Select Subject</option>
+                        <option value="appointment">Appointment</option>
+                        <option value="availability">Availability</option>
+                        <option value="pricelist">Pricelist</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <p class="form-msg" ng-show="!ask_pricelist.$valid && submitted && !ask_pricelist.subject.$valid">Please choose a subject</p>
+            </div>
+            <div class="row" ng-class="{'form-error': !ask_pricelist.$valid && submitted && !ask_pricelist.message.$valid}">
+                <textarea name="message" placeholder="Write your message here" ng-model="message" required></textarea>
+                <p class="form-msg" ng-show="!ask_pricelist.$valid && submitted && !ask_pricelist.message.$valid">
+                    Message cannot be empty
+                </p>
+            </div>
+
+            <button class="btn btn-stronk with-border mt-10 w-210" type="submit" ng-click="submitted=true" ng-if="!askVendorCtrl.disableSendButton">SEND Message</button>
+            <div class="btn btn-stronk with-border mt-10 w-210 is-disabled" ng-click="submitted=false" ng-if="askVendorCtrl.disableSendButton">SEND Message</div>
+        </section>
+    </form>
+</script>		<script type="text/ng-template" id="modal-remove-save-vendor.html">
+    <div class="popup-box box no-padding w-500">
+        <a class="popup-close" ng-click="close()"><i class="icon-close-big"></i></a>
+        <div class="box thin popup-header center border-b">
+            <h4>Delete Vendor</h4>
+        </div>
+        <div class="box popup-content center">
+            <h6 class="mb-20">Are you sure want to delete this vendor?</h6>
+            <button class="btn btn-light-gray with-border w-210" ng-click="close()">DON&apos;T DELETE</button>
+            <button class="btn btn-stronk with-border w-210" ng-click="remove()">DELETE VENDOR</button>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="modal-warning-alert.html">
+    <div class="popup-box box no-padding w-500">
+        <a class="popup-close" ng-click="dismiss()"><i class="icon-close-big"></i></a>
+        <div class="box popup-header center border-b">
+            <h4 class="mt-15">[[ title ]]</h4>
+        </div>
+        <div class="box popup-content center">
+            <h6>[[message]]</h6>
+            <div class="mt-20 mb-10">
+                <button class="btn btn-light-gray with-border w-210" ng-click="close()">[[noButtonText]]</button>
+                <button class="btn btn-stronk with-border w-210" ng-click="proceed()">[[yesButtonText]]</button>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" >
+    <div class="popup-box box no-padding w-500" id="">
+        <a class="popup-close"><i class="icon-close-big"></i></a>
+        <ng-switch on="selection">
+            <section ng-switch-when="UNTAGSELF">
+                <div class="box thin popup-header center border-b">
+                    <h4 class="mt-10">Remove Yourself from project</h4>
+                </div>
+                <div class="box popup-content center">
+                    <p class="classic mb-20">Are you sure you want to untag yourself from this project?<br>This project will not appear in your project dashboard and<br>your tags in photos belonging to this project will be removed.</p>
+                    <button class="btn btn-light-gray with-border w-210">CANCEL</button>
+                    <button class="btn btn-stronk with-border w-210">YES</button>
+                </div>
+            </section>
+            <section ng-switch-when="SUBMITWEDDING">
+                <div class="box thin popup-header center border-b">
+                    <h4 class="mt-10">Submit This Wedding</h4>
+                </div>
+                <div class="box popup-content center">
+                    <p class="classic mb-20">Would you like to submit this wedding for a chance to be featured in our blog?</p>
+                    <button class="btn btn-light-gray with-border w-210">MAYBE LATER</button>
+                    <button class="btn btn-stronk with-border w-210">YES</button>
+                </div>
+            </section>
+            <section ng-switch-when="TAGVENDOR">
+                <div class="box popup-header center border-b">
+                    <h5 class="mt-20">Thank you for listing<br>Fellow Vendors in this project!</h5>
+                </div>
+                <div class="box popup-content center">
+                    <p class="classic">Oh, and one more thing, please tag them in the images where their works appear!</p>
+                    <button class="btn btn-stronk with-border mt-20 w-210">Continue</button>
+                </div>
+            </section>
+            <section ng-switch-when="ADDPHOTOS">
+                <div class="box thin popup-header center border-b">
+                    <h4 class="mt-20">Add Photos</h4>
+                </div>
+                <div class="box popup-content center">
+                    <p><a class="btn btn-stronk with-border w-210">Browse Device</a></p>
+                    <p><a class="btn btn-stronk with-border w-210">Add From Facebook</a></p>
+                </div>
+            </section>
+            <section ng-switch-when="UPLOADEXISTING">
+                <div class="box popup-content center">
+                    <h4 class="center">Would you like to upload your existing project?</h4>
+                    <button class="btn btn-link">Skip</button><button class="btn btn-stronk with-border">Yes</button>
+                </div>
+            </section>
+            <section ng-switch-when="DELETESUBMISSION">
+                <div class="box thin popup-header center border-b">
+                    <h4 class="pink">Delete Submission</h4>
+                </div>
+                <div class="box popup-content center">
+                    <p class="classic mb-20">Are you sure want to delete the selected submission?</p>
+                    <button class="btn btn-light-gray with-border">Don&apos;t Delete</button>
+                    <button class="btn btn-stronk with-border">Delete Submission</button>
+                </div>
+            </section>
+        </ng-switch>
+    </div>
+</script>		<script type="text/ng-template" id="notification-message.html">
+    <div class="alert-notifications">
+        <span class="icon-warn">[[ $message ]]!</span>
+        <a class="icon-close-gray" ng-click="close()"></a>
+    
+</script>
+
+<script type="text/ng-template" id="notification-alert.html">
+	<div class="alert-notifications" ng-class="{'notification-warn' : messagetype == status.error}">
+    	<a class="close icon-close-gray" ng-click="close()"></a>
+    	[[ message ]]
+    </div>
+</script>		<script type="text/ng-template" id="modal-send-code.html">
+<div class="popup">
+    <div class="popup-box theme-green w-500">
+        <a class="popup-close" ng-click="close()"><i class="icon-close-big"></i></a>
+        <section class="box border-b popup-header center">
+            <h4>Add A New Email</h4>
+        </section>
+        <div class="popup-content center box thick wrapper w-500">
+            <p class="georgia_small big">Send code to your web administrator, programmer or developer.<br>
+            Or you can also send it to yourself!</p>
+            <div class="form mt-20">
+                <label>
+                    <input type="text" placeholder="Recipient's Email address" ng-model="emailRecipient">
+                    <p class="warn-error min" ng-cloak ng-show="emptyEmailBadge">Looks like you forgot to enter your e-mail address!</p>
+                    <p class="warn-error min" ng-cloak ng-show="wrongFormatEmailBadge">Oopsie! you might have mispelled your e-mail address.</p>
+                </label>
+                <label>
+                  <textarea ng-model="badgeMessage" placeholder="Add message or notes, i.e. Please help me to put his code in the about section of our website">[[code]]</textarea>
+                </label>
+            </div>
+            <button class="btn btn-gray mt-20 mr-10" ng-click="close()">Cancel</button>
+            <button class="btn with-border mt-20" ng-click="sendEmail(emailRecipient, badgeMessage)">Send Email</button>
+        </div>
+    </div>
+</div>
+</script>		<script type="text/ng-template" id="modal-verify-mobile.html">
+  <div class="popup-box w-430" id="">
+    <a class="popup-close" ng-click="dismissModal();"><i class="icon-close-big"></i></a>
+    <section class="box thin border-b popup-header center">
+        <h4>Verify Phone Number</h4>
+    </section>
+
+    <div ng-if="!codeSent" class="popup-content box form">
+        <div class="classic center small ml-20 mr-20 mb-20">
+            You’ve entered two numbers in the registration form. Choose which one you’d like to verify and click ‘Send Code’ to get a 6-digit verification code sent to your phone.
+        </div>
+        <div class="w-320 wrapper">
+          <div class="row fixed">
+            <form name="requestVerification" ng-submit="requestCode(requestVerification)" novalidate>
+              <label>
+                  <span class="form-title">Choose Number (Mobile)</span>
+                  <div class="select fixed-l fixed-l-thin w-210">
+                      <select name="area_code" ng-model="mobileList" ng-options="option.detail for option in contactDetail"></select>
+                  </div>
+              </label>
+              <button type="submit" class="btn with-border fixed-r btn-small">Send Code</button>
+            </form>
+          </div>
+        </div>
+        <p class="classic small center mb-15 mt-15">Having problem verifying your phone number?<br><a href="http://www.bridestory.com/contact-us">Contact our support team</a></p>
+    </div>
+    <div ng-if="codeSent" class="popup-content box thin form">
+      <div class="w-320 wrapper">
+        <div  class="row fixed mt-20">
+          <form name="verifyCode" ng-submit="verifyConfirmationCode(verifyCode)" novalidate>
+            <p class="classic center mb-20 mr-30">Enter the verification code you received on <strong class="moregapspacing">[[ number ]]</strong> to verify your account instantly.</p>
+            <label>
+                <span class="form-title">VERIFICATION CODE</span>
+                <input type="text" ng-model="verificationCode" name="verificationCode" class="w-210 fixed-l fixed-l-thin">
+            </label>
+            <button type="submit" class="btn with-border fixed-r w-100 btn-small" ng-if="!submitted">CONFIRM</button>
+            <div class="btn with-border fixed-r w-100 btn-small is-disabled" ng-if="submitted">CONFIRM</div>
+            <p class="classic small center clear">Haven&#39;t got your verification code? <a ng-click="resendCode()">Resend Code</a></p>
+          </form>
+        </div>
+      </div>
+      <p class="classic small center mb-30">Having problem verifying your phone number?<br><a href="http://www.bridestory.com/contact-us">Contact our support team</a></p>
+    </div>
+  </div>
+</script>
+
+<script type="text/ng-template" id="modal-verify-call.html">
+    <div class="popup-box w-430" id="">
+        <a class="popup-close" ng-click="dismissModal();"><i class="icon-close-big"></i></a>
+        <section class="box border-b popup-header center">
+            <h4>Verify By Phone Call</h4>
+        </section>
+
+        <div class="popup-content box form center">
+            <div class="classic small ml-20 mr-20 mb-20">
+                Our team will call you within 24 working hours to help verify your contact number.
+            </div>
+            <div class="w-210 wrapper">
+                <div class="row">
+                    <label>
+                        <span class="form-title gapspacing">Choose your number</span>
+                        <div class="select">
+                            <select>
+                                <option value="">+62 818509689</option>
+                            </select>
+                        </div>
+                    </label>
+                </div>
+                <button class="btn with-border w-100">OK</button>
+            </div>
+        </div>
+    </div>
+</script>		<script type="text/ng-template" id="modal-upload-file.html">
+    <div class="popup-box box no-padding w-500">
+        <a class="popup-close" ng-click="fileUploadCtrl.dismissModal();"><i class="icon-close-big"></i></a>
+        <section class="box thin popup-header center border-b">
+            <h5 class="mt-20">Upload File</h5>
+        </section>
+        <div class="center pb-30">
+            <div class="wrapper-login mt-10 form">
+                <div class="row">
+                <a class="btn btn-stronk w-250" 
+                        ng-file-select ng-multiple="true" ng-model="files"
+                        ng-file-change="fileUploadCtrl.upload(files)">Choose photos</a>
+                </div>
+                <div class="row">
+                    <button class="btn btn-stronk w-250" ng-click="fileUploadCtrl.uploadFacebook()">IMPORT FROM FACEBOOK</button>
+                </div>
+                <div class="row">
+                    <button ng-hide="uploadType=='realWedding'" class="btn btn-stronk w-250" ng-click="fileUploadCtrl.uploadInstagram()">IMPORT FROM INSTAGRAM</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>	</body>
+</html>
