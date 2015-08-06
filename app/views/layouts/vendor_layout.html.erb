@@ -52,10 +52,15 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
+            <% if current_vendor.supervendor? %>
+              <li style="font-size:15px; font-weight:bold"><%= link_to "You are Supervendor!" %></li>
+            <% else %>  
+              <li><%= link_to "Hello Vendor!" %></li>
+            <% end %>  
 
             <% if vendor_signed_in? %>
-            <li><%= link_to "Hello!" %></li>
-            <li style="padding-top:8px"><%= image_tag(current_vendor.image_url, :alt => "test", :height => '35', :width => '35', class: "img-circle") %></li>
+            <li style="padding-top:8px"><%= image_tag(current_vendor.image_url, :alt => "test", :height => '35', :width => '35', class: "img-circle") %>
+            </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_vendor.name %><span class="caret"></span></a>
               <ul class="dropdown-menu">
@@ -70,6 +75,7 @@
                 <li><a href="#">Another action</a></li>
                 <li role="separator" class="divider"></li>
                 <li><%= link_to 'Sign Out', destroy_vendor_session_path, method: :delete %></li>
+
               </ul>
             <% end %>
             </li>

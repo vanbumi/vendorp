@@ -22,7 +22,7 @@
           <%= image_tag article2sb.image_url.url(:thumb), :alt => 'article2sb.title', class: 'img-responsive' %>
         </div>
         <div class="media-body">
-          <h4 class="media-heading"><%= link_to truncate(article2sb.title, length: 21), home_path(article2sb) %></h4>
+          <h4 class="media-heading"><%= link_to truncate(article2sb.title, length: 21), article_path(article2sb) %></h4>
           <p><%= truncate(strip_tags(article2sb.body), length: 40) %></p>
         </div>
       </div>
