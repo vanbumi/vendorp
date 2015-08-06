@@ -38,8 +38,7 @@
 
     <div class="form-group">  
         <%= f.label :name, 'Author' %><br>
-        <%= f.text_field :name, value: @article.admin.name, class: 'form-control disabled', disabled: 'disabled' %>
-        
+        <%= f.collection_select :admin_id, Admin.all, :id, :name, :multiple => true, :prompt => 'Pilih Admin - Author', :size => 5 %>
     </div>
 
   <!-- khusus Coupons -->
