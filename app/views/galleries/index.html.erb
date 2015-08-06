@@ -7,7 +7,9 @@
     <tr>
       <th>Title</th>
       <th>Description</th>
-      <th>Image url</th>
+      <th>Album</th>
+      <th>Vendor Name</th>
+      <!-- <th>Image url</th> -->
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,7 +19,9 @@
       <tr>
         <td><%= gallery.title %></td>
         <td><%= gallery.description %></td>
-        <td><%= gallery.image_url %></td>
+        <td><%= gallery.album.title %></td>
+        <td><%= gallery.vendor.name %></td>
+        <!-- <td><%= gallery.image_url %></td> -->
         <td><%= link_to 'Show', gallery %></td>
         <td><%= link_to 'Edit', edit_gallery_path(gallery) %></td>
         <td><%= link_to 'Destroy', gallery, method: :delete, data: { confirm: 'Are you sure?' } %></td>

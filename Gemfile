@@ -26,6 +26,8 @@ gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
 # gem 'tinymce-rails'
 gem 'tinymce-rails', '~> 4.1.6'
 
+
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

@@ -37,8 +37,9 @@
     </div>
 
     <div class="form-group">  
-        <%= f.label :author %><br>
-        <%= f.text_field :author, class: 'form-control' %>
+        <%= f.label :name, 'Author' %><br>
+        <%= f.text_field :name, value: @article.admin.name, class: 'form-control disabled', disabled: 'disabled' %>
+        
     </div>
 
   <!-- khusus Coupons -->

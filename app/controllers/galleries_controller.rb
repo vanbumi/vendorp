@@ -7,7 +7,12 @@ class GalleriesController < ApplicationController
   # GET /galleries
   # GET /galleries.json
   def index
-    @galleries = Gallery.all
+    if current_vendor.supervendor
+      @galleries = Gallery.all.order("created_at DESC")
+    else  
+      @galleries = Gallery.where(:vendor_id => current_vendor.id).order("created_at DESC")
+    end
+
   end
 
   # GET /galleries/1
@@ -18,6 +23,7 @@ class GalleriesController < ApplicationController
   # GET /galleries/new
   def new
     @gallery = Gallery.new
+    @gallery = current_vendor.galleries.build
   end
 
   # GET /galleries/1/edit
@@ -28,6 +34,7 @@ class GalleriesController < ApplicationController
   # POST /galleries.json
   def create
     @gallery = Gallery.new(gallery_params)
+    @gallery = current_vendor.galleries.build
 
     respond_to do |format|
       if @gallery.save

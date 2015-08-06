@@ -6,6 +6,6 @@ class Admin < ActiveRecord::Base
 
   mount_uploader :image_url, ImageUploader       
 
-  has_many :articles       
+  has_many :articles      
          
 end

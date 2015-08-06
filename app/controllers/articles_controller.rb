@@ -11,6 +11,10 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    # sidebar
+    @sidebars = Sidebar.where("active = 'Y'").order('created_at DESC').limit(6)
+    @articles2sb = Article.where("category_id = '2'").order('created_at DESC').limit('3,3')
+
     render layout: 'application'
   end
 
@@ -66,7 +70,7 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :category, :category_id, :body, :image_url, :author, :harga_awal, :discount, :harga_sesudah, :time_awal, :time_akhir, :name,:vendor, :vendor_id, :description, :syarat, :info_vendor, :kolom)
+      params.require(:article).permit(:title, :category, :category_id, :body, :image_url, :author, :harga_awal, :discount, :harga_sesudah, :time_awal, :time_akhir, :name, :vendor, :vendor_id, :description, :syarat, :info_vendor, :kolom, :admin_id)
     end
 
   # Membuat tanggal Indonesia

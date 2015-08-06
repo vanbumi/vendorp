@@ -1,7 +1,9 @@
 class Article < ActiveRecord::Base
+	
+	validates 	:category, presence: true
+
 	belongs_to 	:admin
 	belongs_to 	:category
-	validates 	:category, presence: true
 	has_many 	:vendor
 	belongs_to 	:vendor
 
