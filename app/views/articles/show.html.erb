@@ -33,9 +33,15 @@
               <%= sanitize @article.body %>
             </p>
 
-            <!-- condition -->
+            <!--+++ condition if category +++-->
+            <style type="text/css">
+              p.bg{ background-color: #eee;
+
+              }
+            </style>
+
             <% if @article.category.title == 'Coupon' %>
-              <p>
+              <p class="bg">
                 <strong>Harga Awal:</strong>
                 <%= @article.harga_awal %>
               </p>
@@ -45,7 +51,7 @@
                 <%= @article.discount %>
               </p>
 
-              <p>
+              <p class="bg">
                 <strong>Harga Sesudah:</strong>
                 <%= @article.harga_sesudah %>
               </p>
@@ -55,7 +61,7 @@
                 <%= @article.time_awal %>
               </p>
 
-              <p>
+              <p class="bg">
                 <strong>Periode Akhir:</strong>
                 <%= @article.time_akhir %>
               </p>
@@ -65,7 +71,7 @@
                 <%= @article.vendor.name if @article.vendor %>
               </p>
 
-              <p>
+              <p class="bg">
                 <strong>Syarat & Ketentuan:</strong>
                 <%= @article.syarat %>
               </p>
@@ -90,11 +96,20 @@
       <br>
       <br>
 
+      <!-- other story -->
+
+      <!-- comments -->
+
     </div>
 
     <!-- sidebar -->
     <div class="col-md-3">
       <%= render 'shared/sidebar2' %>
     </div>
+
+    <div class="row">
+      
+    </div>
+
 
 </div>  
