@@ -8,7 +8,6 @@
 	<% @sidebars.each do |sidebar| %>	
   <li class="list-group-item text-center">
   	<%= link_to image_tag(sidebar.cloud_url), sidebar_path(sidebar) %><br>
-  	<p style="background-color:#eee"><strong><%= sidebar.title %></strong></p>
   </li>
   <% end %>
 </ul>

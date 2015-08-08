@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @mainslide.title %>
+</p>
+
+<p>
+  <%= image_tag @mainslide.cloud_url %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @mainslide.descrip %>
+</p>
+<p>
+  <strong>Slide Number:</strong>
+  <%= @mainslide.slidenumber %>
+</p>
+<p>
+  <strong>Status Active:</strong>
+  <%= @mainslide.active %>
+</p>
+<br>
+
+<%= link_to 'Edit', edit_mainslide_path(@mainslide) %> |
+<%= link_to 'Back', mainslides_path %>
+<br>
+<br>
+<br>
+<br>

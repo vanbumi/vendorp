@@ -9,6 +9,11 @@ class HomesController < ApplicationController
 
     @sidebars = Sidebar.where("active = 'Y'").order('created_at DESC').limit(6)
     @vendors = Vendor.all
+
+    @mainslides1 = Mainslide.where("slidenumber = '1' AND active = 'Y' ").limit('1')
+    @mainslides2 = Mainslide.where("slidenumber = '2' AND active = 'Y' ").limit('1')
+    @mainslides3 = Mainslide.where("slidenumber = '3' AND active = 'Y' ").limit('1')
+    @mainslides4 = Mainslide.where("slidenumber = '4' AND active = 'Y' ").limit('1')
   end
 
   def show

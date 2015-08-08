@@ -7,16 +7,39 @@
         <li data-target="#carousel-example-generic" data-slide-to="2"></li>
       </ol>
       <div class="carousel-inner">
+        
         <div class="item active">
-          <%= image_tag("o-JLB-WEDDING-900.jpg", :alt => "slide1", class:"img-responsive") %>
+        <% @mainslides1.each do |mainslide1| %>
+          <%= image_tag(mainslide1.cloud_url, :alt => "slide1-from-cloud", class:"img-responsive") %>
+          <div class="carousel-caption">
+            <h3><%= mainslide1.title %></h3>
+            <p><%= mainslide1.descrip %></p>
+          </div>
+        <% end %>
         </div>
+        
         <div class="item">
-          <%= image_tag("tumblr_800.jpg", :alt => "slide2", class:"img-responsive") %>
+        <% @mainslides2.each do |mainslide2| %>
+          <%= image_tag(mainslide2.cloud_url, :alt => "slide2-form-cloud", class:"img-responsive") %>
+          <div class="carousel-caption">
+            <h3><%= mainslide2.title %></h3>
+            <p><%= mainslide2.descrip %></p>
+          </div>
+        <% end %>  
         </div>
+
         <div class="item">
-          <%= image_tag("tumblr_nh800.jpg", :alt => "slide3", class:"img-responsive") %>
+        <% @mainslides3.each do |mainslide3| %>
+          <%= image_tag(mainslide3.cloud_url, :alt => "slide3-form-cloud", class:"img-responsive") %>
+          <div class="carousel-caption">
+            <h3><%= mainslide3.title %></h3>
+            <p><%= mainslide3.descrip %></p>
+          </div>
+        <% end %>  
         </div>
+      
       </div>
+
       <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left"></span>
       </a>
