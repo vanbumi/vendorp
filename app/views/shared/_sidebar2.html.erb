@@ -7,12 +7,13 @@
 <ul class="list-group" style="padding-top:20px">
 	<% @sidebars.each do |sidebar| %>	
   <li class="list-group-item text-center">
-  	<%= link_to image_tag(sidebar.image_url), sidebar_path(sidebar) %><br>
+  	<%= link_to image_tag(sidebar.cloud_url), sidebar_path(sidebar) %><br>
   	<%= sidebar.description %>
   </li>
   <% end %>
 </ul>
 
+<!-- previous articles -->
 <ul class="list-group" style="padding-top:20px">
   <li class="list-group-item active text-center lead">Previous Article</li>
   <% @articles2sb.each do |article2sb| %>

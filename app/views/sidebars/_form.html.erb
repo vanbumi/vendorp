@@ -16,9 +16,14 @@
     <%= f.text_field :title, class: 'form-control' %>
   </div>
   <br>
-  <div class="field">
+  <!-- <div class="field">
     <%= f.label :image_url, 'Upload', class: 'label-control' %><br>
     <%= f.file_field :image_url %>
+  </div>
+  <h2>Or</h2> -->
+  <div class="field">
+    <%= f.label :cloud_url, 'Upload to Cloudinary', class: 'label-control' %> <%= link_to 'disini', "http://cloudinary.com", target: "_blank" %>, *setelah itu input url nya di bawah ini:<br>
+    <%= f.text_field :cloud_url, class: 'form-control' %>
   </div>
   <br>
   <div class="field">

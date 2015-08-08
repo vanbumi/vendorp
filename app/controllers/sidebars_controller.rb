@@ -75,6 +75,6 @@ class SidebarsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sidebar_params
-      params.require(:sidebar).permit(:title, :image_url, :description, :active)
+      params.require(:sidebar).permit(:title, :image_url, :description, :active, :cloud_url)
     end
 end

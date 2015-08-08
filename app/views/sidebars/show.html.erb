@@ -10,10 +10,12 @@
 			  <h3><%= @sidebar.title %></h3>
 			</p>
 
-			<p>
-			  <!-- <strong>Banner:</strong><br> -->
-			  <%= image_tag @sidebar.image_url %>
-			</p>
+			<% if image_tag @sidebar.image_url == '' %>
+				
+			<p><img src="<%= @sidebar.cloud_url %>" alt="test" ></p>
+			<% else %>
+			<p><%= image_tag @sidebar.image_url %></p>
+			<% end %>
 
 			<p>
 			  <!-- <strong>Description:</strong> -->
