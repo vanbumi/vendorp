@@ -30,7 +30,7 @@
             <!-- <td><%= article.vendor.name if article.vendor %></td> -->
             <td><%= truncate(strip_tags(article.body), length: 100) %></td>
             <td><%= article.image_url %></td>
-            <td><%= article.author %></td>
+            <td><%= article.admin.name %></td>
             <td><%= link_to 'Show', article %></td>
             <td><%= link_to 'Edit', edit_article_path(article), 'data-no-turbolink' => true %></td>
             <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>

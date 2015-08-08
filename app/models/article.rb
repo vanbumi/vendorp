@@ -1,6 +1,10 @@
 class Article < ActiveRecord::Base
 	
-	validates 	:category, presence: true
+	validates 	:category, :title, :body, :image_url, :admin_id, presence: true
+	validates 	:image_url, allow_blank: false, format: {
+	with: 		%r{\.(gif|jpg|png)\Z}i,
+	message: 'must be a URL for GIF, JPG or PNG image.'
+	}
 
 	belongs_to 	:admin
 	belongs_to 	:category
@@ -12,3 +16,4 @@ class Article < ActiveRecord::Base
 # mount_uploader :field, Class
 mount_uploader :image_url, ImageUploader
 end
+
