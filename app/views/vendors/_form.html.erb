@@ -82,15 +82,14 @@
     </div>
     <br>
     <% if current_vendor.supervendor? %>
-    <div class="field">
-      <%= f.label :supervendor, 'Make him/her as Supervendor?' %>
-      <%= f.select(:supervendor, [
-       ['No', 0], ['Yes', 1] 
-       ], class: 'form-control'
-       )%>
-    </div>
+      <%= f.label :supervendor, 'Super Vendor ?: ' %>
+      <%= f.radio_button :supervendor, '1' %> 
+      <%= label :supervendor, 'Yes' %>
+      <%= f.radio_button :supervendor, '0' %>
+      <%= label :supervendor, 'No' %>  
     <% end %>
-        <br>
+    <br>
+    <br>
 
     <div class="actions">
       <%= f.submit class: 'btn btn-danger' %>

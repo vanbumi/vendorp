@@ -4,8 +4,10 @@
 	<%= render 'form' %>
 
 	<%= link_to 'Show', @vendor %> |
-	<%= link_to 'Back', vendors_page_path %> |
-	<% if admin_signed_in? %>
+	<%= link_to 'Go to Vendor Page', vendors_page_path %>
+	<% if current_vendor.supervendor? %>
+		| <%= link_to 'Back to Vendor List', vendors_path %>	
+	<% elsif admin_signed_in? %>
 		<%= link_to 'Back to vendor list', vendors_path, class: 'pull-right' %>
 	<% end %>
 	<br>
