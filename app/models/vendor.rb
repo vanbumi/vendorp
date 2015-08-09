@@ -4,6 +4,10 @@ class Vendor < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  # validasi
+  validates	:name, :section, :description, :contactp, :email, :address, :city, presence: true      
+
+
 	#mount uploader untuk menjalankan class uploader
 	#formatnya adalah
 	# mount_uploader :field, Class
@@ -13,7 +17,6 @@ class Vendor < ActiveRecord::Base
 	has_many   	:albums, dependent: :destroy
 	has_many   	:galleries, dependent: :destroy
 	belongs_to 	:article
-	belongs_to 	:vendor_cat
 	belongs_to  :section
 	
 

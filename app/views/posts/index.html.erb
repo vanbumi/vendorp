@@ -18,7 +18,7 @@
       <th>Category</th>
       <th>Kolom</th>
       <!-- <th>Image url</th> -->
-      <th colspan="3"></th>
+      <th colspan="3">Actions</th>
     </tr>
   </thead>
 
@@ -28,12 +28,12 @@
         <td><%= post.title %></td>
         <td><%= post.body %></td>
         <td><%= post.vendor.name if post.vendor %></td>
-        <td><%= post.business %></td>
+        <td><%= post.section.name if post.section %></td>
         <td><%= post.kolom %></td>
         <!-- <td><%= post.image_url %></td> -->
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '', post, class: 'glyphicon glyphicon-eye-open' %></td>
+        <td><%= link_to '', edit_post_path(post), class: 'glyphicon glyphicon-pencil' %></td>
+        <td><%= link_to '', post, class: 'glyphicon glyphicon-trash', method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

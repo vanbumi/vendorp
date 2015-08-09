@@ -18,7 +18,7 @@
 
         <p>
           <strong>Business Category:</strong>
-          <%= @post.business %>
+          <%= @post.section.name if @post.section %>
         </p>
         <% if vendor_signed_in? %>
           <p>

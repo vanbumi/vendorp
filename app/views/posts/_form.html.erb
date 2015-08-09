@@ -17,7 +17,7 @@
   </div>
   <br>
   <div class="field">
-    <%= f.label :Post_Content, 'Content' %><br>
+    <%= f.label :body, 'Content' %><br>
     <%= f.text_area :body, class: 'form-control' %>
   </div>
   <br>
@@ -27,15 +27,8 @@
   </div>
   <br>
   <div class="field">
-    <%= f.label :Business_type, "Business Category" %><br>
-    <%= f.select(:business) do %>
-      <%  [
-            # ['Catering', 1], ['Photographer', 2]
-            ['Catering', 'Catering'], ['Photographer', 'Photographer']
-          ].each do |c| -%>
-        <%= content_tag(:option, c.first, value: c.last) %>
-      <% end %>
-    <% end %>
+    <%= f.label :section_id, "Section / Business Category" %><br>
+    <%= f.collection_select :section_id, Section.all, :id, :name, :multiple => true, :prompt => 'Pilih Section / Category Usaha', :size => 5  %>
   </div>
   <br>
   <div class="field">
@@ -45,12 +38,15 @@
   <br>
   <div class="field">
     <%= f.label :kolom, 'Post Kolom: ' %>
-    <%= f.select(:kolom, [['Satu', 1],['Dua', 2],['Tiga', 3]]) %>
+    <%= f.select(:kolom, [['Satu', 1],['Dua', 2],['Tiga', 3]], :prompt => 'Pilih Kolom') %>
+    <label type="label" class="label label-default label-xs" data-toggle="tooltip" data-placement="right" title="Pilih Kolom untuk Tampilan, Kolom 1: Kiri, Kolom 2: Tengah, Kolom 3: Kanan">?</label>
+
   </div>
   <br>
   <div class="field">
     <%= f.label :active, 'Activate to show: ' %>
     <%= f.select(:active, [['No', 'No'],['Yes', 'Yes']]) %>
+    <label type="label" class="label label-default label-xs" data-toggle="tooltip" data-placement="right" title="Yes untuk Tampilkan, No untuk tidak Menampilkan ke Pengunjung">?</label>
   </div>
   <br>
 

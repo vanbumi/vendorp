@@ -7,12 +7,13 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
+
     if current_vendor.supervendor
       @posts = Post.all.order("created_at DESC")
     else  
       @posts = Post.where(:vendor_id => current_vendor.id).order("created_at DESC")
     end
-    
+
   end
 
   # GET /posts/1
@@ -86,6 +87,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :body, :name, :business, :image_url, :active, :vendor, :vendor_id, :kolom)
+      params.require(:post).permit(:title, :body, :name, :business, :image_url, :active, :vendor, :vendor_id, :kolom, :section_id)
     end
 end
