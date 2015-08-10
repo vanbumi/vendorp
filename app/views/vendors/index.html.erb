@@ -6,9 +6,9 @@
   <%= text_field_tag :search, params[:search], placeholder: "Search Name" %>
   <%= text_field_tag :search, params[:search], placeholder: "Search City" %>
   <%= submit_tag "Search" %>
-  <%= link_to 'Refresh', vendors_path %>
+  <%= link_to ' Refresh', vendors_path, class: 'fa fa-refresh' %>
 <% end %>
-
+<br>
 
 <table class="table table-hover">
   <thead>
@@ -18,7 +18,7 @@
       <th>City</th>
       <th>Section</th>
       <th>Supervendor</th>
-      <th>Actions</th>
+      <th colspan="3">Actions</th>
     </tr>
   </thead>
 
@@ -34,9 +34,9 @@
         <% else %>
           <td><%= '' %></td>  
         <% end %>
-        <td><%= link_to 'Show', vendor %></td>
-        <td><%= link_to 'Edit', edit_vendor_path(vendor) %></td>
-        <td><%= link_to 'Destroy', vendor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '', vendor, class: 'fa fa-eye' %></td>
+        <td><%= link_to '', edit_vendor_path(vendor), class: 'fa fa-pencil-square-o' %></td>
+        <td><%= link_to '', vendor, class: 'fa fa-trash-o', method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

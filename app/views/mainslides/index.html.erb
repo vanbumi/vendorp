@@ -7,7 +7,7 @@
     <tr>
       <th>Title</th>
       <th>Descrip</th>
-      <th colspan="3"></th>
+      <th colspan="3">Actions</th>
     </tr>
   </thead>
 
@@ -16,9 +16,9 @@
       <tr>
         <td><%= mainslide.title %></td>
         <td><%= mainslide.descrip %></td>
-        <td><%= link_to 'Show', mainslide %></td>
-        <td><%= link_to 'Edit', edit_mainslide_path(mainslide) %></td>
-        <td><%= link_to 'Destroy', mainslide, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '', mainslide, class: 'fa fa-eye' %></td>
+        <td><%= link_to '', edit_mainslide_path(mainslide), class: 'fa fa-pencil-square-o' %></td>
+        <td><%= link_to '', mainslide, class: 'fa fa-trash-o', method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Mainslide', new_mainslide_path %>
+<%= link_to ' new Header Slide', new_mainslide_path, class: 'fa fa-plus-square-o' %>

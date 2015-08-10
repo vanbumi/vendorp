@@ -9,7 +9,7 @@
       <th>Image url</th>
       <th>Cloud url</th>
       <th>Description</th>
-      <th colspan="3"></th>
+      <th colspan="3">Actions</th>
     </tr>
   </thead>
 
@@ -20,9 +20,9 @@
         <td><%= sidebar.image_url %></td>
         <td><%= sidebar.cloud_url %></td>
         <td><%= sidebar.description %></td>
-        <td><%= link_to 'Show', sidebar %></td>
-        <td><%= link_to 'Edit', edit_sidebar_path(sidebar) %></td>
-        <td><%= link_to 'Destroy', sidebar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '', sidebar, class: 'fa fa-eye' %></td>
+        <td><%= link_to '', edit_sidebar_path(sidebar), class: 'fa fa-pencil-square-o' %></td>
+        <td><%= link_to '', sidebar, class: 'fa fa-trash-o', method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Sidebar', new_sidebar_path %>
+<%= link_to ' New Sidebar', new_sidebar_path, class: 'fa fa-plus-square-o' %>

@@ -5,6 +5,11 @@ class HomesController < ApplicationController
   	@articles = Article.where("category_id = '1'").order('created_at DESC').limit(3)
   	@articles2 = Article.where("category_id = '2'").order('created_at DESC').limit(3)
   	@articles3 = Article.where("category_id = '3'").order('created_at DESC').limit(3)
+
+    # Wedding-day
+    @articles4 = Article.where("category_id = '7'").order('created_at DESC').limit(1)
+    @articles5 = Article.where("category_id = '8'").order('created_at DESC').limit(1)
+    
     @articles2sb = Article.where("category_id = '2'").order('created_at DESC').limit('2,3')
 
     @sidebars = Sidebar.where("active = 'Y'").order('created_at DESC').limit(6)

@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :album, 'Album' %><br> 
+    <%= f.label :album_id, 'Album' %><br> 
     <%= f.collection_select :album_id, Album.all, :id, :title, :multiple => true, :prompt => 'Pilih Album', :size => 5 %>
   </div>
   <br>
@@ -35,6 +35,11 @@
     <%= f.label :image_url, 'Upload Image' %><br>
     <%= f.file_field :image_url %>
   </div>
+  <!-- <br>
+  <div class="field">
+    <%= f.label :image_url, 'Upload Via Cloud' %><br>
+    <%= f.text_field :image_url, class: 'form-control' %>
+  </div> -->
   <br>
   <div class="actions">
     <%= f.submit 'Save!', class: 'btn btn-default' %>

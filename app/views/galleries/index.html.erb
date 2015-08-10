@@ -22,9 +22,9 @@
         <td><%= gallery.album.title %></td>
         <td><%= gallery.vendor.name %></td>
         <!-- <td><%= gallery.image_url %></td> -->
-        <td><%= link_to 'Show', gallery %></td>
-        <td><%= link_to 'Edit', edit_gallery_path(gallery) %></td>
-        <td><%= link_to 'Destroy', gallery, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '', gallery, class: 'fa fa-eye' %></td>
+        <td><%= link_to '', edit_gallery_path(gallery), class: 'fa fa-pencil-square-o' %></td>
+        <td><%= link_to '', gallery, class: 'fa fa-trash-o', method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Gallery', new_gallery_path %>
+<%= link_to ' New Gallery', new_gallery_path, class: 'fa fa-plus-square-o' %>
