@@ -16,7 +16,10 @@
 
 <p>
   <strong>Image Gallery</strong><br><br>
-  <%= image_tag(@gallery.image_url, :alt => 'img-kosong') %>
+  <div class="col-md-8 col-sm-12">
+  	<%= image_tag(@gallery.image_url, :alt => 'img-kosong') %>
+  </div>
+  	
 </p>
 <br>
 <%= link_to 'Edit', edit_gallery_path(@gallery) %> |
