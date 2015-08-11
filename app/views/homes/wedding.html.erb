@@ -6,23 +6,48 @@
           <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
           </p>
-          <div class="jumbotron">
-              <div class="row">
-                <h1>Wedding Day</h1>
+          <div class="top" style="padding-left: 20px">
+          
+              <div class="row" style="padding-top:20px">
+                <% @articles4.each do |article4| %>
+                  <%= image_tag article4.image_url, class: 'img-responsive' %>
+                <% end %>
               </div>  
           </div>
 
           <div class="row">
+            <!-- wedding day left -->
+            <% @articles4.each do |article4| %>
             <div class="col-xs-6 col-md-6">
-              <h2>Heading1</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <h2><%= article4.title %></h2>
+              <div class="row">
+                <div class="col-xs-4 col-md-3">
+                  <%= image_tag article4.image_url.url(:thumb), width: '200', height: '100', class: 'img-responsive' %>
+                </div>
+                <div class="col-xs-12 col-md-9">
+                  <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>    
+                </div>
+              </div>
+              
               <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
             </div><!--/.col-xs-6.col-lg-4-->
+          <% end %>
+
+            <!-- wedding day right -->
+            <% @articles5.each do |article5| %>
             <div class="col-xs-6 col-md-6">
-              <h2>Heading2</h2>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              <h2><%= article5.title %></h2>
+              <div class="row">
+                <div class="col-xs-4 col-md-3">
+                  <%= image_tag article5.image_url.url(:thumb), width: '200', height: '100', class: 'img-responsive' %>
+                </div>
+                <div class="col-xs-12 col-md-9">
+                  <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>    
+                </div>
+              </div>
               <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
             </div><!--/.col-xs-6.col-lg-4-->
+            <% end %>
           </div><!--/row-->
 
           <div class="row">
@@ -43,7 +68,7 @@
 
     <!-- sidebar-offcanvas -->
     <div class="col-md-3">
-      samping
+      <%= render 'shared/sidebar2' %>
     </div>
     
 

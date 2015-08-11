@@ -17,6 +17,7 @@ class HomesController < ApplicationController
     @sidebars = Sidebar.where("active = 'Y'").order('created_at DESC').limit(6)
     @vendors = Vendor.all
 
+    # main-slider
     @mainslides1 = Mainslide.where("slidenumber = '1' AND active = 'Y' ").limit('1')
     @mainslides2 = Mainslide.where("slidenumber = '2' AND active = 'Y' ").limit('1')
     @mainslides3 = Mainslide.where("slidenumber = '3' AND active = 'Y' ").limit('1')
@@ -61,14 +62,15 @@ class HomesController < ApplicationController
     @articles2sb = Article.where("category_id = '2'").order('created_at DESC').limit('3,3')
   end
 
-  def Wedding
-
-    @articles = Article.where("category_id = '1'").order('created_at DESC').limit(3)
-    @articles2 = Article.where("category_id = '2'").order('created_at DESC').limit(3)
-    @articles3 = Article.where("category_id = '3'").order('created_at DESC').limit(3)
-
-    @sidebars = Sidebar.where("active = 'Y'").order('created_at DESC').limit(6)
-    
+  def wedding
+    @articles4 = Article.where("category_id = '7'").order('created_at DESC').limit(1)
+    @articles4a = Article.where("category_id = '7'").order('created_at DESC').limit('1,5')
+    @articles5 = Article.where("category_id = '8'").order('created_at DESC').limit(1)
+    @articles5a = Article.where("category_id = '8'").order('created_at DESC').limit('1,5')
+  
+    # sidebar
+    @sidebars = Sidebar.where("active = 'Y'").order('created_at DESC').limit(6) 
+    @articles2sb = Article.where("category_id = '2'").order('created_at DESC').limit('3,3')
   end
 
   def event

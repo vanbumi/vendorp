@@ -16,7 +16,7 @@
 
   <form>        
     <div class="form-group">  
-      <%= f.label :Category %><br> 
+      <%= f.label :Category, 'Article Category: ' %>
       <%= f.collection_select :category_id, Category.all, :id, :title, :prompt => 'Pilih Category', :multiple => true, :size => 5 %>  
     </div>
     
