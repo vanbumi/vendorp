@@ -85,7 +85,6 @@
           <ul class="list-unstyled list-inline"> 
             <% @articles3.each do |article3| %>     
             <li>  
-              
                 <div class="thumbnail">
                   <%= image_tag article3.image_url.url(:thumb), :alt => 'article3.title', class: 'img-responsive' %>
                     <div class="caption">
@@ -114,7 +113,7 @@
       </div><!-- row -->
 
       <!-- wedding-day left -->
-    <div class="row" style="border:#eee px solid; padding-left:px">
+  <div class="row" style="border:#eee px solid; padding-left:px">
     <div class="row" style="padding-left:30px;"><h3><img src="http://res.cloudinary.com/media-anugrah-solusi/image/upload/c_scale,w_40/v1439231168/pinkheart_xlmb3b.png"> Wedding Day</h3></div>
       <% @articles4.each do |article4| %> 
       <div class="col-sm-6 col-md-6">
@@ -140,8 +139,24 @@
         </div>
       </div> 
       <% end %>
-
-    </div>
+  </div>
+  <div class="row" style="padding-left:px">
+    <!-- Artikel Baris left -->  
+     <% @articles4a.each do |article4a| %>
+      <div class="col-md-6 col-sm-6" style="border-top:#eee 1px solid">
+        <h3><%= link_to truncate(article4a.title, length: 21), article_path(article4a) %></h3>
+        <p><%= truncate(strip_tags(article4a.body), length: 80) %></p>
+      </div>  
+     <% end %>
+     
+     <!-- Artikel Baris left -->  
+     <% @articles5a.each do |article5a| %>
+      <div class="col-md-6 col-sm-6" style="border-top:#eee 1px solid">
+        <h3><%= link_to truncate(article5a.title, length: 21), article_path(article5a) %></h3>
+        <p><%= truncate(strip_tags(article5a.body), length: 80) %></p>
+      </div>  
+     <% end %>
+  </div>
 
       
       

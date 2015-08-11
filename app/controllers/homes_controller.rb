@@ -8,7 +8,9 @@ class HomesController < ApplicationController
 
     # Wedding-day
     @articles4 = Article.where("category_id = '7'").order('created_at DESC').limit(1)
+    @articles4a = Article.where("category_id = '7'").order('created_at DESC').limit('1,5')
     @articles5 = Article.where("category_id = '8'").order('created_at DESC').limit(1)
+    @articles5a = Article.where("category_id = '8'").order('created_at DESC').limit('1,5')
     
     @articles2sb = Article.where("category_id = '2'").order('created_at DESC').limit('2,3')
 
