@@ -7,9 +7,21 @@
 		<br>
 		<div class="row">
 			
-			<div class="main col-md-12 col-sm-12" style="border:#eee 1px solid; padding:5px" >
+			<div class="main col-md-12 col-sm-12" style="border-top:#eee 1px solid; border-bottom:#eee 1px solid; padding:5px" >
 				<div class="lead text-center">	
 					<p>Collection</p>
+				</div>
+				<div class="col-md-8 col-md-offset-3">
+					<ul class="list-inline">
+						<% @galleries.each do |galleri| %>
+							<li>
+								<%= image_tag galleri.image_url.url(:thumb), width: '100', class: 'img-circle' %>
+							</li>
+						<% end %>
+					</ul>
+				<p>Total Photo: </p>
+				<span class="glyphicon glyphicon-picture lg" aria-hidden="true"></span>
+				<%= link_to ' View All', class: 'btn btn-default' %>	
 				</div>	
 			</div>
 

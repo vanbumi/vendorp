@@ -66,7 +66,7 @@ class VendorsController < ApplicationController
   # GET /vendors/1
   # GET /vendors/1.json
   def show
-
+    @galleries = Gallery.all
   end
 
   # GET /vendors/new
