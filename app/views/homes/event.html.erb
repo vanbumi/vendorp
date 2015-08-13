@@ -13,36 +13,68 @@
               </div>  
           </div>
 
-          <div class="col-sm-6 col-lg-6 col-md-6  ">
-          <div class="lead text-center bg-primary">Events</div>  
-          <ul class="list-unstyled list-inline"> 
-            <% @articles3.each do |article3| %>     
-            <li>  
-              
-                <div class="thumbnail">
-                  <%= image_tag article3.image_url.url(:thumb), :alt => 'article3.title', class: 'img-responsive' %>
-                    <div class="caption">
-                      <h4 class="pull-right"><span class='label label-primary'>New</span></h4>
-                        <h4><%= link_to truncate(article3.title, length: 21), article_path(article3) %></h4>
-                      <p class="pull-right"><%= article3.author %></p>
-                        <p>Author</p>  
-                          <p><%= truncate(strip_tags(article3.body), length: 80) %></p>
-                    </div>
-                    <div class="ratings">
-                      <p class="pull-right">15 reviews</p>
-                      <p>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                      </p>
-                    </div>
-                </div>
-              
-            </li>
-            <% end %> 
-          </ul>
+          <div class="lead text-center bg-primary">Events and Promo</div>
+          <!-- left -->
+          <div class="col-sm-6 col-lg-6 col-md-6  ">  
+            <ul class="list-unstyled list-inline"> 
+              <% @articles3.each do |article3| %>     
+              <li>  
+                
+                  <div class="thumbnail">
+                    <%= image_tag article3.image_url.url(:thumb), :alt => 'article3.title', class: 'img-responsive' %>
+                      <div class="caption">
+                        <h4 class="pull-right"><span class='label label-primary'>New</span></h4>
+                          <h4><%= link_to truncate(article3.title, length: 21), article_path(article3) %></h4>
+                        <p class="pull-right"><%= article3.author %></p>
+                          <p>Author</p>  
+                            <p><%= truncate(strip_tags(article3.body), length: 80) %></p>
+                      </div>
+                      <div class="ratings">
+                        <p class="pull-right">15 reviews</p>
+                        <p>
+                          <span class="glyphicon glyphicon-star"></span>
+                          <span class="glyphicon glyphicon-star"></span>
+                          <span class="glyphicon glyphicon-star"></span>
+                          <span class="glyphicon glyphicon-star"></span>
+                          <span class="glyphicon glyphicon-star"></span>
+                        </p>
+                      </div>
+                  </div>
+                
+              </li>
+              <% end %> 
+            </ul>
+        </div>
+        <!-- right -->
+        <div class="col-sm-6 col-lg-6 col-md-6  ">  
+            <ul class="list-unstyled list-inline"> 
+              <% @articles3a.each do |article3a| %>     
+              <li>  
+                
+                  <div class="thumbnail">
+                    <%= image_tag article3a.image_url.url(:thumb), :alt => 'article3a.title', class: 'img-responsive' %>
+                      <div class="caption">
+                        <h4 class="pull-right"><span class='label label-primary'>New</span></h4>
+                          <h4><%= link_to truncate(article3a.title, length: 21), article_path(article3a) %></h4>
+                        <p class="pull-right"><%= article3a.author %></p>
+                          <p>Author</p>  
+                            <p><%= truncate(strip_tags(article3a.body), length: 80) %></p>
+                      </div>
+                      <div class="ratings">
+                        <p class="pull-right">15 reviews</p>
+                        <p>
+                          <span class="glyphicon glyphicon-star"></span>
+                          <span class="glyphicon glyphicon-star"></span>
+                          <span class="glyphicon glyphicon-star"></span>
+                          <span class="glyphicon glyphicon-star"></span>
+                          <span class="glyphicon glyphicon-star"></span>
+                        </p>
+                      </div>
+                  </div>
+                
+              </li>
+              <% end %> 
+            </ul>
         </div>
 
         </div><!--/.col-xs-12.col-sm-9-->
