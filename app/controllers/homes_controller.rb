@@ -12,7 +12,9 @@ class HomesController < ApplicationController
     @articles5 = Article.where("category_id = '8'").order('created_at DESC').limit(1)
     @articles5a = Article.where("category_id = '8'").order('created_at DESC').limit('1,5')
     
-    @articles2sb = Article.where("category_id = '2'").order('created_at DESC').limit('2,3')
+    # previous article in sidebar
+    @articles2sb = Article.where("category_id = '2'").order('created_at DESC').limit('3,3')
+    @articles3sb = Article.where("category_id = '3'").order('created_at DESC').limit('3,3')
 
     @sidebars = Sidebar.where("active = 'Y'").order('created_at DESC').limit(6)
     @vendors = Vendor.all
@@ -27,7 +29,10 @@ class HomesController < ApplicationController
   def show
   	@articles = Article.find(params[:id])
 
+    # previous article in sidebar
     @articles2sb = Article.where("category_id = '2'").order('created_at DESC').limit('3,3')
+    @articles3sb = Article.where("category_id = '3'").order('created_at DESC').limit('3,3')
+    
     @sidebars = Sidebar.where("active = 'Y'").order('created_at DESC').limit(6)    
   end
 
@@ -43,7 +48,9 @@ class HomesController < ApplicationController
 
     # sidebar
     @sidebars = Sidebar.where("active = 'Y'").order('created_at DESC').limit(6)
+    # previous article in sidebar
     @articles2sb = Article.where("category_id = '2'").order('created_at DESC').limit('3,3')
+    @articles3sb = Article.where("category_id = '3'").order('created_at DESC').limit('3,3')
    
   end
 
@@ -59,7 +66,9 @@ class HomesController < ApplicationController
 
     # sidebar
     @sidebars = Sidebar.where("active = 'Y'").order('created_at DESC').limit(6) 
+    # previous article in sidebar
     @articles2sb = Article.where("category_id = '2'").order('created_at DESC').limit('3,3')
+    @articles3sb = Article.where("category_id = '3'").order('created_at DESC').limit('3,3')
   end
 
   def wedding
@@ -70,7 +79,9 @@ class HomesController < ApplicationController
   
     # sidebar
     @sidebars = Sidebar.where("active = 'Y'").order('created_at DESC').limit(6) 
+    # previous article in sidebar
     @articles2sb = Article.where("category_id = '2'").order('created_at DESC').limit('3,3')
+    @articles3sb = Article.where("category_id = '3'").order('created_at DESC').limit('3,3')
   end
 
   def event
@@ -81,7 +92,9 @@ class HomesController < ApplicationController
 
     # sidebar
     @sidebars = Sidebar.where("active = 'Y'").order('created_at DESC').limit(6)
+    # previous article in sidebar
     @articles2sb = Article.where("category_id = '2'").order('created_at DESC').limit('3,3')
+    @articles3sb = Article.where("category_id = '3'").order('created_at DESC').limit('3,3')
 
   end
 
@@ -92,7 +105,9 @@ class HomesController < ApplicationController
     @articles3 = Article.where("category_id = '3'").order('created_at DESC').limit(3)
 
     @sidebars = Sidebar.where("active = 'Y'").order('created_at DESC').limit(6)
+    # previous article in sidebar
     @articles2sb = Article.where("category_id = '2'").order('created_at DESC').limit('3,3')
+    @articles3sb = Article.where("category_id = '3'").order('created_at DESC').limit('3,3')
 
   end
 
