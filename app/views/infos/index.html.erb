@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="col-md-10">
+    <p id="notice"><%= notice %></p>
+
+    <h1>Company Info</h1>
+
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Comp name</th>
+          <th>Comp address</th>
+          <th>Comp phone</th>
+          <th>Comp email</th>
+          <th>Comp web</th>
+          <th>Comp social</th>
+          <th colspan="3">Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @infos.each do |info| %>
+          <tr>
+            <td><%= info.comp_name %></td>
+            <td><%= info.comp_address %></td>
+            <td><%= info.comp_phone %></td>
+            <td><%= info.comp_email %></td>
+            <td><%= info.comp_web %></td>
+            <td><%= info.comp_social %></td>
+            <td><%= link_to '', info, class: 'fa fa-eye' %></td>
+            <td><%= link_to '', edit_info_path(info), class: 'fa fa-pencil-square-o' %></td>
+            <td><%= link_to '', info, class: 'fa fa-trash-o', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <%= link_to 'New Info', new_info_path %>
+  </div>  
+</div>

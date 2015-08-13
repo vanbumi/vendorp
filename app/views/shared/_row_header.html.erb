@@ -6,16 +6,19 @@
     </div> -->
     
     <div id="logo" align="center" style="padding-top:15px">
-    	<form class="navbar-form" role="search">
-	      <div class="form-group">
-	        <input type="text" class="form-control" placeholder="Search Vendor">
-	      </div>
-	      <div class="form-group">
-	        <input type="text" class="form-control" placeholder="Kota">
-	      </div>
-	      <button type="submit" class="btn btn-default">Find</button>
-	    </form>
+
+		    <%= form_tag vendors_path, :method => 'get' do %>
+				    <p>
+				        <%= select_tag :section_id, options_from_collection_for_select(Section.all, :id, :name, params[:section_id]), include_blank: true, prompt: 'Vendor Category', class: '' %>
+				        <%= text_field_tag :city, params[:city] %>
+
+				        <%= submit_tag "Search", :name => nil %>
+				    </p>
+				<% end %>  
+		    
     </div>
+
+  	
 
   </header>
 </div>

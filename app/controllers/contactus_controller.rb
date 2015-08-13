@@ -27,6 +27,7 @@ class ContactusController < ApplicationController
   # GET /contactus/new
   def new
     @contactu = Contactu.new
+    @infos = Info.all
   end
 
   # GET /contactus/1/edit

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <!-- Logo Company -->
+  <%= image_tag(@info.image_url) %>
+</p>
+<p>
+  <strong>Comp name:</strong>
+  <%= @info.comp_name %>
+</p>
+
+<p>
+  <strong>Comp address:</strong>
+  <%= @info.comp_address %>
+</p>
+
+<p>
+  <strong>Comp phone:</strong>
+  <%= @info.comp_phone %>
+</p>
+
+<p>
+  <strong>Comp email:</strong>
+  <%= @info.comp_email %>
+</p>
+
+<p>
+  <strong>Comp web:</strong>
+  <%= @info.comp_web %>
+</p>
+
+<p>
+  <strong>Comp social:</strong>
+  <%= @info.comp_social %>
+</p>
+
+<%= link_to 'Edit', edit_info_path(@info) %> |
+<%= link_to 'Back', infos_path %>

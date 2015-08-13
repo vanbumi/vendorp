@@ -119,6 +119,19 @@ class VendorsController < ApplicationController
     end
   end
 
+  # def search
+  #   title = params[:title]
+  #   company = params[:company]
+  #   location_id = params[:location_id]
+  #   @posts = Post.search(title, company, location_id)
+  # end
+
+  def search
+    city = params[:city]
+    section_id = params[:section_id]
+    @vendors = Vendor.search(city, section_id)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_vendor

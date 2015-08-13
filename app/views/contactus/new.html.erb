@@ -9,14 +9,24 @@
 		</div>	
 
 		<div class="col-md-3">
-			<h1 class="bg-primary text-center">Contact Info</h1>
-			<address>
-				<strong>Vendor Pernikahan Dot Com</strong><br>
-				795 Folsom Ave, Suite 600<br>
-  			San Francisco, CA 94107<br>
-  			<strong>Email:</strong><br>
-  			vendorpernikahan@gmail.com<br>
-			</address> 
+			<h1 class="bg-primary text-center">Contact Info</h1><br>
+			<% @infos.each do |info| %>
+				<address>
+					<p class="text-center"><%= image_tag info.image_url, alt: 'logo', width: '150', height: '150', class: 'img-circle' %></p>
+					<hr>
+					<strong><%= info.comp_name %></strong><br>
+					<%= info.comp_address %><br>
+					<strong>Phone:</strong><br>
+					<%= info.comp_phone %>
+	  			<strong>Email:</strong><br>
+	  			<%= info.comp_email  %><br>
+	  			<strong>Website:</strong><br>
+	  			<%= info.comp_web  %><br>
+	  			<strong>Social Media:</strong><br>
+	  			<%= info.comp_social  %><br>
+	  			<hr>
+				</address> 
+			<% end %>
 		</div>
 	</div>	
 </div>

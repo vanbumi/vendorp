@@ -19,10 +19,20 @@ class Vendor < ActiveRecord::Base
 	belongs_to 	:article
 	belongs_to  :section
 	
-
 	def self.search(search)
 	  where("name LIKE ?", "%#{search}%") 
 	  where("city LIKE ?", "%#{search}%")
 	end
+
+	# def self.search(city, section_id)
+	#   return scoped unless city.present? || section_id.present?
+	# 	where(['city LIKE ? AND section_id = ?', "%#{city}%", section_id])
+	# end
+
+	# def self.search(title, company, location_id)
+	#   return scoped unless title.present? || company.present? || location_id.present?
+	#   where(['title LIKE ? AND company LIKE ? AND location_id = ?', "%#{title}%", "%#    
+	#   {company}%", location_id])
+	# end
 
 end

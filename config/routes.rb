@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :infos, path: 'admin/infos'
   resources :mainslides, path: 'admin/mainslides'
   resources :sections, path: 'admin/sections'
   resources :vendor_cats, path: 'admin/vendor_cats'
