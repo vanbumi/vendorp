@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   layout 'user_layout'
 
+  before_action :authenticate_user!
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
