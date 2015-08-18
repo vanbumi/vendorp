@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+<br>
+
+<img src="<%= @user.image_url %>" class="img-circle" width="200" height="200" alt="img-user"><br>
+<br>
+<br>
+<p>Name: <%= @user.name %><br></p>
+<p>Email: <%= @user.email %></p>
+<br>
+
+<br><br>
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

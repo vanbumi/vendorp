@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  devise_for :users
+  resources :users, path: 'admin/users'
+
+  
   resources :infos, path: 'admin/infos'
   resources :mainslides, path: 'admin/mainslides'
   resources :sections, path: 'admin/sections'

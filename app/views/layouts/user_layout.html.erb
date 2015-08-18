@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Vendor Pernikahan</title>
+  <title>Halaman User</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
   <!-- FA -->
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <style type="text/css">
@@ -39,7 +39,7 @@
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -48,39 +48,40 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Halaman Administrator VP</a>
+          <%= link_to "User Area", vendors_page_path, class: 'navbar-brand' %>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-        
           <ul class="nav navbar-nav navbar-right">
-            <!-- <li><a href="#">Dashboard</a></li>-->
-            <% if current_admin.superadmin? %>
-              <li><%= link_to '',contactus_path, class: 'fa fa-envelope fa-2x text-danger' %></li>
-              <li><%= link_to ' Superadmin : ', '', class: 'fa fa-user fa-lg' %></li>
-            <% end %>
             
-            <% if admin_signed_in? %>
-            <li style="padding-top:10px"><%= image_tag(current_admin.image_url, width: '35', height: '35', :alt => "foto", class: "img-circle") %></li>
+              <li style="font-size:15px; font-weight:bold"><%= link_to "You are SuperUser!" %></li>
+              
+              <li><%= link_to "Hello SuperUser!" %></li>
+              
+
+            <% if user_signed_in? %>
+            <li style="padding-top:8px"><%= image_tag(current_user.image_url, :alt => "test", :height => '35', :width => '35', class: "img-circle") %>
+            </li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_admin.name %><span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.name %><span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><%= link_to ' Home', root_path, class: 'fa fa-home' %></li>
                 <li role="separator" class="divider"></li>
-                <li><%= link_to ' My Profile', current_admin, class: 'fa fa-user' %></li>
+                <li><%= link_to ' My Profile', current_vendor, class: 'fa fa-user' %></li>
                 <li role="separator" class="divider"></li>
-                <li><%= link_to ' Mail Box', contactus_path, class: 'fa fa-envelope-o' %></li>
+                <li><%= link_to ' My Post', posts_path, class: 'fa fa-file-text' %></li>
+                <li role="separator" class="divider"></li>
+                <li><%= link_to ' My Gallery', galleries_path, class: 'fa fa-picture-o' %></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="#">Another action</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="#">Another action</a></li>
-                <li role="separator" class="divider"></li>
-                <li><%= link_to 'Sign Out', destroy_admin_session_path, method: :delete %></li>
+                <li><%= link_to 'Sign Out', destroy_vendor_session_path, method: :delete %></li>
+
               </ul>
             <% end %>
             </li>
-            
-        </ul>
-          
+
+          </ul>
+
         </div>
       </div>
     </nav>
@@ -91,87 +92,101 @@
     <div class="col-sm-3 col-md-2 sidebar">
       <div class="panel">
         <div class="panel-heading">
-          <h3 class="title"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> <%= link_to 'Home', root_path, target: '_blank' %></h3>
+          <h3 class="title"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> <%= link_to 'Home', root_path, target: "_blank" %></h3>
         </div>
             <!-- Accordion -->
               <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-
+              
                 <div class="panel panel-default">
                   <div class="panel-heading" role="tab" id="headingOne">
                     <h4 class="panel-title">
                       <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Article
+                        Main Menu
                       </a>
                     </h4>
                   </div>
                   <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    
                     <div class="panel-body">
-                      <%= link_to "All Articles", articles_path %>
+                        <%= link_to 'Admin Area', admins_path %> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    </div>
+                    
+                    <div class="panel-body">
+                      <%= link_to "User Area", users_path %> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                     </div>
                     <div class="panel-body">
-                      <!-- disable turbolink -->
-                      <%= link_to "Add New", new_article_path, 'data-no-turbolink' => true %>
+                      <%= link_to "Vendor Area", vendors_page_path %> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                     </div>
+                    
+                      <div class="panel-body">
+                        <%= link_to "Vendor List", vendors_path %> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                      </div>
+                    
+                    <!-- <div class="panel-body">
+                      <%= link_to "Sub menu" %>
+                    </div> -->
                     <div class="panel-body">
-                      <%= link_to "Articles Category", categories_path %>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="panel panel-default">
-                  <div class="panel-heading" role="tab" id="headingOneB">
-                    <h4 class="panel-title">
-                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOneB" aria-expanded="false" aria-controls="collapseOneB">
-                        Post
-                      </a>
-                    </h4>
-                  </div>
-                  <div id="collapseOneB" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOneB">
-                    <div class="panel-body">
-                      <%= link_to "All Posts", posts_path %>
-                    </div>
-                    <div class="panel-body">
-                      <%= link_to "Add New", new_post_path %>
+                      <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                     </div>
                   </div>
                 </div>
 
                 <!-- <div class="panel panel-default">
-                  <div class="panel-heading" role="tab" id="headingOneB">
+                  <div class="panel-heading" role="tab" id="headingOne2">
                     <h4 class="panel-title">
-                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#headingOneB" aria-expanded="false" aria-controls="headingOneB">
-                        Post
+                      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne2">
+                        Profile
                       </a>
                     </h4>
                   </div>
-                  <div id="headingOneB" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOneB">
-                    <div class="panel-body">
-                      <%= link_to 'Vendor Area', vendors_page_path %>
+                  <div id="collapseOne2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne2">
+                    <div class="panel-body"> 
+                    <% if vendor_signed_in? %> 
+                      <%= link_to "My Profile", current_vendor %>
+                    <% end %>  
                     </div>
                     <div class="panel-body">
-                      <%= link_to 'Vendors List', vendors_path %>
+                      <%= link_to 'Sub menu' %>
                     </div>
                   </div>
                 </div> -->
 
                 <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingOne2">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne2" aria-expanded="false" aria-controls="collapseOne2">
+                        Vendor Profile
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseOne2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne2">
+                    <div class="panel-body">
+                      <%= link_to "My Profile", current_vendor %>
+                    </div>
+                    <div class="panel-body">
+                      <%= link_to "My Status" %>
+                    </div>  
+                  </div>
+                </div>
+
+                <div class="panel panel-default">
                   <div class="panel-heading" role="tab" id="headingTwo">
                     <h4 class="panel-title">
                       <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Vendor
+                        Paid Member
                       </a>
                     </h4>
                   </div>
                   <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                     <div class="panel-body">
-                      <%= link_to 'Vendor Area', vendors_page_path %>
+                      <%= link_to "Member Area", vendors_member_path %>
                     </div>
                     <div class="panel-body">
-                      <%= link_to 'Vendors List', vendors_path %>
+                      <%= link_to "Price List", vendors_pricelist_path %>
                     </div>
                     <div class="panel-body">
-                      <%= link_to 'Section (Jenis Usaha)', sections_path %>
-                    </div>
+                      <%= link_to "Sub Menu 3" %>
+                    </div>  
                   </div>
                 </div>
 
@@ -179,16 +194,48 @@
                   <div class="panel-heading" role="tab" id="headingThree">
                     <h4 class="panel-title">
                       <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        User
+                        My Stuff!
                       </a>
                     </h4>
                   </div>
                   <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                     <div class="panel-body">
-                      <%= link_to "User List", users_path %>
+                      <% if current_vendor %>
+                        <%= link_to "My Post", posts_path %>
+                      <% end %>
                     </div>
                     <div class="panel-body">
-                      <%= link_to "Sub Menu" %>
+                      <%= link_to "Add New Post", new_post_path %>
+                    </div>
+                    <div class="panel-body">
+                      <% if current_vendor %>
+                        <%= link_to "My Gallery", galleries_path %>
+                      <% end %>
+                    </div>
+                    <div class="panel-body">
+                      <% if current_vendor %>
+                        <%= link_to "My Album", albums_path %>
+                      <% end %>
+                    </div>
+                    <div class="panel-body">
+                      <% if current_vendor %>
+                        <%= link_to "My Paket" %>
+                      <% end %>
+                    </div>
+                    <div class="panel-body">
+                      <% if current_vendor %>
+                        <%= link_to "My Coupon" %>
+                      <% end %>
+                    </div>
+                    <div class="panel-body">
+                      <% if current_vendor %>
+                        <%= link_to "My Event" %>
+                      <% end %>
+                    </div>
+                    <div class="panel-body">
+                      <% if current_vendor %>
+                        <%= link_to "My Status" %>
+                      <% end %>
                     </div>
                   </div>
                 </div>
@@ -196,16 +243,19 @@
                   <div class="panel-heading" role="tab" id="headingFour">
                     <h4 class="panel-title">
                       <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                        Sidebar
+                        FAQ
                       </a>
                     </h4>
                   </div>
                   <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
                     <div class="panel-body">
-                      <%= link_to "All Sidebar", sidebars_path %>
+                      <%= link_to "Sub Menu 1" %>
                     </div>
                     <div class="panel-body">
-                      <%= link_to 'New Sidebar', new_sidebar_path %>
+                      <%= link_to "Sub Menu 2" %>
+                    </div>
+                    <div class="panel-body">
+                      <%= link_to "Sub Menu 3" %>
                     </div>
                   </div>
                 </div>
@@ -213,55 +263,24 @@
                   <div class="panel-heading" role="tab" id="headingFive">
                     <h4 class="panel-title">
                       <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                        Image Slider
+                        Menu 5
                       </a>
                     </h4>
                   </div>
                   <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
                     <div class="panel-body">
-                      <%= link_to "Head Slider", mainslides_path %>
+                      <%= link_to "Sub Menu 1" %>
                     </div>
                     <div class="panel-body">
-                      <%= link_to "Sub Menu" %>
-                    </div>
-                  </div>
-                </div>
-                <div class="panel panel-default">
-                  <div class="panel-heading" role="tab" id="headingSix">
-                    <h4 class="panel-title">
-                      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                        Admin
-                      </a>
-                    </h4>
-                  </div>
-                  <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
-                    <div class="panel-body">
-                      <%= link_to "All Admins", admins_path %>
+                      <%= link_to "Sub Menu 2" %>
                     </div>
                     <div class="panel-body">
-                      <%= link_to "Sub Menu" %>
-                    </div>
-                  </div>
-                </div>
-                <div class="panel panel-default">
-                  <div class="panel-heading" role="tab" id="headingSeven">
-                    <h4 class="panel-title">
-                      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                        Company Info
-                      </a>
-                    </h4>
-                  </div>
-                  <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSeven">
-                    <div class="panel-body">
-                      <%= link_to "Profile", infos_path %>
-                    </div>
-                    <div class="panel-body">
-                      <%= link_to "Add Info", new_info_path %>
+                      <%= link_to "Sub Menu 3" %>
                     </div>
                   </div>
                 </div>
               </div><!-- #Accordion -->
-          
+                       
       </div> <!-- panel -->  
     </div> <!-- #sidebar -->
     <!-- Mainbar -->
@@ -276,3 +295,5 @@
 
 </body>
 </html>
+
+
