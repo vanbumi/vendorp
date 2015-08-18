@@ -11,3 +11,11 @@
 
 @import "bootstrap-datepicker";
 @import "bootstrap-datepicker3";
+
+// *= require_self
+//  *= require fancybox
+//  *= require_tree .
+
+@import "fancybox";
+
+
