@@ -36,6 +36,7 @@ Rails.application.routes.draw do
   resources :homes do
     collection do
       get 'vendor'
+      get 'vendorlist'
       get 'guest'
       get 'artikel'
       get 'wedding'
