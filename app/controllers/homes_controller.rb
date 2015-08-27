@@ -62,7 +62,10 @@ class HomesController < ApplicationController
     @sidebars = Sidebar.where("active = 'Y'").order('created_at DESC').limit(6)
     # previous article in sidebar
     @articles2sb = Article.where("category_id = '2'").order('created_at DESC').limit('3,3')
-    @articles3sb = Article.where("category_id = '3'").order('created_at DESC').limit('4,3')       
+    @articles3sb = Article.where("category_id = '3'").order('created_at DESC').limit('4,3')
+
+    @vendors = Vendor.all
+
   end
 
   def show_post

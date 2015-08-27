@@ -8,8 +8,32 @@
       </div>  
     </div>
 
-    <div class="row">
+    <div class="row"><!-- main row -->
+
+      <% @vendors.each do |vendor| %>
     	<div class="col-xs-4 col-md-4">
+    		<div align="center" style="border:#eee 1px solid">
+          <div class="title single">
+            <h4><%= vendor.name %></h4>
+          </div>
+          <div class="category">Foto</div>
+          <div align="center"><%= image_tag vendor.image_url, width: "150", height: "170" %></div>
+          <div class="vendorrate">
+						<i class="fa fa-star empty"></i><i class="fa fa-star empty"></i><i class="fa fa-star empty"></i><i class="fa fa-star empty"></i><i class="fa fa-star empty"></i><br />
+            <span>Rating 0.0 - 0 Review</span>
+          </div>
+          <footer>
+            <strong id="love35604">8</strong>&nbsp;Loves&nbsp;&nbsp;&nbsp;
+            <strong>2.7k</strong>&nbsp;Views&nbsp;&nbsp;&nbsp;
+          </footer>
+          <div id="btnLove35604" class="bottom-button">                      	
+						<a href="javascript:;" onClick="openLogin('http://www.weddingku.com/wedding-vendors');" class="btn white rounded"><i class="fa fa-heart"></i></a>			
+          </div>
+        </div>
+    	</div>
+      <% end %>
+
+    	<!-- <div class="col-xs-4 col-md-4">
     		<div align="center" style="border:#eee 1px solid">
           <div class="title single">
            	<h4><a href="http://www.weddingku.com/wedding-vendors/foto/lime-photography">Lime Photography</a></h4>
@@ -28,9 +52,9 @@
 						<a href="javascript:;" onClick="openLogin('http://www.weddingku.com/wedding-vendors');" class="btn white rounded"><i class="fa fa-heart"></i></a>			
           </div>
         </div>
-    	</div>
+    	</div> -->
 
-    	<div class="col-xs-4 col-md-4">
+    	<!-- <div class="col-xs-4 col-md-4">
     		<div align="center" style="border:#eee 1px solid">
           <div class="title single">
            	<h4><a href="http://www.weddingku.com/wedding-vendors/foto/lime-photography">Lime Photography</a></h4>
@@ -49,96 +73,9 @@
 						<a href="javascript:;" onClick="openLogin('http://www.weddingku.com/wedding-vendors');" class="btn white rounded"><i class="fa fa-heart"></i></a>			
           </div>
         </div>
-    	</div>
+    	</div> -->
 
-    	<div class="col-xs-4 col-md-4">
-    		<div align="center" style="border:#eee 1px solid">
-          <div class="title single">
-           	<h4><a href="http://www.weddingku.com/wedding-vendors/foto/lime-photography">Lime Photography</a></h4>
-          </div>
-          <div class="category">Foto</div>
-          <div align="center"><a href="http://www.weddingku.com/wedding-vendors/foto/lime-photography" class="title"><img src="http://images.weddingku.com/images/upload/partners/promotionp/1439914191-35604_iqnUM7.jpg" alt="Lime Photography"></a></div>
-          <div class="vendorrate">
-						<i class="fa fa-star empty"></i><i class="fa fa-star empty"></i><i class="fa fa-star empty"></i><i class="fa fa-star empty"></i><i class="fa fa-star empty"></i><br />
-            <span>Rating 0.0 - 0 Review</span>
-          </div>
-          <footer>
-            <strong id="love35604">8</strong>&nbsp;Loves&nbsp;&nbsp;&nbsp;
-            <strong>2.7k</strong>&nbsp;Views&nbsp;&nbsp;&nbsp;
-          </footer>
-          <div id="btnLove35604" class="bottom-button">                      	
-						<a href="javascript:;" onClick="openLogin('http://www.weddingku.com/wedding-vendors');" class="btn white rounded"><i class="fa fa-heart"></i></a>			
-          </div>
-        </div>
-    	</div>
-
-    </div>
-    <br><br>
-    <div class="row">
-    	<div class="col-xs-4 col-md-4">
-    		<div align="center" style="border:#eee 1px solid">
-          <div class="title single">
-           	<h4><a href="http://www.weddingku.com/wedding-vendors/foto/lime-photography">Lime Photography</a></h4>
-          </div>
-          <div class="category">Foto</div>
-          <div align="center"><a href="http://www.weddingku.com/wedding-vendors/foto/lime-photography" class="title"><img src="http://images.weddingku.com/images/upload/partners/promotionp/1439914191-35604_iqnUM7.jpg" alt="Lime Photography"></a></div>
-          <div class="vendorrate">
-						<i class="fa fa-star empty"></i><i class="fa fa-star empty"></i><i class="fa fa-star empty"></i><i class="fa fa-star empty"></i><i class="fa fa-star empty"></i><br />
-            <span>Rating 0.0 - 0 Review</span>
-          </div>
-          <footer>
-            <strong id="love35604">8</strong>&nbsp;Loves&nbsp;&nbsp;&nbsp;
-            <strong>2.7k</strong>&nbsp;Views&nbsp;&nbsp;&nbsp;
-          </footer>
-          <div id="btnLove35604" class="bottom-button">                      	
-						<a href="javascript:;" onClick="openLogin('http://www.weddingku.com/wedding-vendors');" class="btn white rounded"><i class="fa fa-heart"></i></a>			
-          </div>
-        </div>
-    	</div>
-
-    	<div class="col-xs-4 col-md-4">
-    		<div align="center" style="border:#eee 1px solid">
-          <div class="title single">
-           	<h4><a href="http://www.weddingku.com/wedding-vendors/foto/lime-photography">Lime Photography</a></h4>
-          </div>
-          <div class="category">Foto</div>
-          <div align="center"><a href="http://www.weddingku.com/wedding-vendors/foto/lime-photography" class="title"><img src="http://images.weddingku.com/images/upload/partners/promotionp/1439914191-35604_iqnUM7.jpg" alt="Lime Photography"></a></div>
-          <div class="vendorrate">
-						<i class="fa fa-star empty"></i><i class="fa fa-star empty"></i><i class="fa fa-star empty"></i><i class="fa fa-star empty"></i><i class="fa fa-star empty"></i><br />
-            <span>Rating 0.0 - 0 Review</span>
-          </div>
-          <footer>
-            <strong id="love35604">8</strong>&nbsp;Loves&nbsp;&nbsp;&nbsp;
-            <strong>2.7k</strong>&nbsp;Views&nbsp;&nbsp;&nbsp;
-          </footer>
-          <div id="btnLove35604" class="bottom-button">                      	
-						<a href="javascript:;" onClick="openLogin('http://www.weddingku.com/wedding-vendors');" class="btn white rounded"><i class="fa fa-heart"></i></a>			
-          </div>
-        </div>
-    	</div>
-
-    	<div class="col-xs-4 col-md-4">
-    		<div align="center" style="border:#eee 1px solid">
-          <div class="title single">
-           	<h4><a href="http://www.weddingku.com/wedding-vendors/foto/lime-photography">Lime Photography</a></h4>
-          </div>
-          <div class="category">Foto</div>
-          <div align="center"><a href="http://www.weddingku.com/wedding-vendors/foto/lime-photography" class="title"><img src="http://images.weddingku.com/images/upload/partners/promotionp/1439914191-35604_iqnUM7.jpg" alt="Lime Photography"></a></div>
-          <div class="vendorrate">
-						<i class="fa fa-star empty"></i><i class="fa fa-star empty"></i><i class="fa fa-star empty"></i><i class="fa fa-star empty"></i><i class="fa fa-star empty"></i><br />
-            <span>Rating 0.0 - 0 Review</span>
-          </div>
-          <footer>
-            <strong id="love35604">8</strong>&nbsp;Loves&nbsp;&nbsp;&nbsp;
-            <strong>2.7k</strong>&nbsp;Views&nbsp;&nbsp;&nbsp;
-          </footer>
-          <div id="btnLove35604" class="bottom-button">                      	
-						<a href="javascript:;" onClick="openLogin('http://www.weddingku.com/wedding-vendors');" class="btn white rounded"><i class="fa fa-heart"></i></a>			
-          </div>
-        </div>
-    	</div>
-
-    </div>
+    </div><!-- main row -->
 
 	</div><!-- col-xs-12 col-md-9 -->
 
