@@ -1,11 +1,17 @@
 class Vendor < ActiveRecord::Base
+
+  before_save :default_values
+  def default_values
+    self.section_id ||= 11
+  end
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
   # validasi
-  validates	:name, :section, :description, :contactp, :email, :address, :city, presence: true      
+  # validates	:name, :section, :description, :contactp, :email, :address, :city, presence: true      
 
 
 	#mount uploader untuk menjalankan class uploader
