@@ -7,7 +7,8 @@ require 'capistrano/bundler'
 require 'capistrano/rails'
 
 # If you are using rvm add these lines:
-require 'capistrano/rvm'
+# require 'capistrano/rvm'
+require 'capistrano/rbenv'
 
 # Include tasks from other gems included in your Gemfile
 #
@@ -28,7 +29,11 @@ require 'capistrano/rvm'
 # require 'capistrano/rails/migrations'
 # require 'capistrano/passenger'
 
-set :rvm_type, :user
-set :rvm_ruby_version, '2.2.0p0'
+# set :rvm_type, :user
+# set :rvm_ruby_version, '2.2.0p0'
+
+set :rbenv_type, :user
+set :rbenv_ruby, '2.2.3'
+
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
 Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
