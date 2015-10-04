@@ -102,9 +102,9 @@ ActiveRecord::Schema.define(version: 20150823184732) do
   create_table "mainslides", force: :cascade do |t|
     t.string   "title",       limit: 255
     t.string   "descrip",     limit: 255
-    t.string   "cloud_url",   limit: 255
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+    t.string   "cloud_url",   limit: 255
     t.string   "active",      limit: 255
     t.integer  "slidenumber", limit: 4
   end
@@ -133,10 +133,10 @@ ActiveRecord::Schema.define(version: 20150823184732) do
   create_table "sidebars", force: :cascade do |t|
     t.string   "title",       limit: 255
     t.string   "image_url",   limit: 255
-    t.text     "description", limit: 65535
-    t.datetime "created_at",                              null: false
-    t.datetime "updated_at",                              null: false
-    t.string   "active",      limit: 255,   default: "N"
+    t.string   "description", limit: 255
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.string   "active",      limit: 255, default: "N"
     t.string   "cloud_url",   limit: 255
   end
 
